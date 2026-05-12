@@ -1,0 +1,573 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Data compiled from https://www.loc.gov/marc/bibliographic/nlr/nlr.html and
+  https://www.oclc.org/bibformats/en/home.html. In case of disagreement between
+  these sources, the less restrictive of the two has been followed most often. -->
+<mandatorySubfields>
+  <datafield tag="017">
+    <subfield code="a"/>
+    <subfield code="b"/>
+  </datafield>
+  <datafield tag="018">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="024">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="025">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="026">
+    <subfield code="2"/>
+  </datafield>
+  <datafield tag="027">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="028">
+    <subfield code="a"/>
+    <subfield code="b"/>
+  </datafield>
+  <datafield tag="030">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="032">
+    <subfield code="a"/>
+    <subfield code="b"/>
+  </datafield>
+  <datafield tag="034">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="035">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="036">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="037">
+    <subfield code="b"/>
+  </datafield>
+  <datafield tag="038">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="040">
+    <subfield code="b"/>
+  </datafield>
+  <datafield tag="041">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="042">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="043">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="044">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="047">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="049">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="050">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="051">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="052">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="055">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="060">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="061">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="070">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="071">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="072">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="074">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="080">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="082">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="083">
+    <subfield code="2"/>
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="084">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="086">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="088">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="090">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="092">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="096">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="098">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="099">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="100">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="110">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="111">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="130">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="210">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="222">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="240">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="242">
+    <subfield code="a"/>
+    <subfield code="y"/>
+  </datafield>
+  <datafield tag="243">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="245">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="246">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="247">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="250">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="251">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="254">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="255">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="256">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="257">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="263">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="300">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="306">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="307">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="310">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="321">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="335">
+    <subfield code="2"/>
+  </datafield>
+  <datafield tag="336">
+    <subfield code="2"/>
+  </datafield>
+  <datafield tag="337">
+    <subfield code="2"/>
+  </datafield>
+  <datafield tag="338">
+    <subfield code="2"/>
+  </datafield>
+  <datafield tag="355">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="357">
+    <subfield code="a"/>
+    <subfield code="b"/>
+  </datafield>
+  <datafield tag="362">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="377">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="380">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="381">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="382">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="383">
+    <subfield code="b"/>
+  </datafield>
+  <datafield tag="384">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="440">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="490">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="500">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="501">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="502">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="504">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="506">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="508">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="510">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="511">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="513">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="515">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="516">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="520">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="521">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="524">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="526">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="530">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="532">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="533">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="535">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="538">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="540">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="544">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="545">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="547">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="550">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="556">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="561">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="563">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="565">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="567">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="580">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="581">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="583">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="585">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="586">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="588">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="590">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="600">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="610">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="611">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="630">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="647">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="648">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="650">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="651">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="653">
+    <subfield code="a"/>
+  </datafield>
+  <!--<datafield tag="654">
+    <subfield code="2"/>
+  </datafield>
+  <datafield tag="655">
+    <subfield code="2"/>
+  </datafield>-->
+  <datafield tag="656">
+    <subfield code="2"/>
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="657">
+    <subfield code="2"/>
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="658">
+    <subfield code="2"/>
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="662">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="688">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="691">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="695">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="696">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="698">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="699">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="700">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="710">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="711">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="720">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="730">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="740">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="751">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="752">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="753">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="754">
+    <subfield code="2"/>
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="790">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="793">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="798">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="800">
+    <subfield code="a"/>
+    <subfield code="t"/>
+  </datafield>
+  <datafield tag="810">
+    <subfield code="a"/>
+    <subfield code="t"/>
+  </datafield>
+  <datafield tag="811">
+    <subfield code="a"/>
+    <subfield code="t"/>
+  </datafield>
+  <datafield tag="830">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="850">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="851">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="852">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="853">
+    <subfield code="8"/>
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="854">
+    <subfield code="8"/>
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="855">
+    <subfield code="8"/>
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="863">
+    <subfield code="8"/>
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="864">
+    <subfield code="8"/>
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="865">
+    <subfield code="8"/>
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="866">
+    <subfield code="8"/>
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="867">
+    <subfield code="8"/>
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="868">
+    <subfield code="8"/>
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="880">
+    <subfield code="6"/>
+  </datafield>
+  <datafield tag="882">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="886">
+    <subfield code="2"/>
+    <subfield code="b"/>
+  </datafield>
+  <datafield tag="887">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="896">
+    <subfield code="a"/>
+    <subfield code="t"/>
+  </datafield>
+  <datafield tag="898">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="899">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="910">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="936">
+    <subfield code="a"/>
+  </datafield>
+  <datafield tag="991">
+    <subfield code="a"/>
+    <subfield code="b"/>
+  </datafield>
+  <datafield tag="994">
+    <subfield code="a"/>
+    <subfield code="b"/>
+  </datafield>
+  <datafield tag="999">
+    <subfield code="a"/>
+    <subfield code="w"/>
+  </datafield>
+</mandatorySubfields>
