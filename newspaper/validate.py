@@ -10,7 +10,7 @@ import mmap
 import subprocess
 import xml.etree.ElementTree as ET
 
-SAXON_PATH = "../saxon/saxon9.jar"
+SAXON_PATH = "../../saxon/SaxonHE12-4J/saxon-he-12.4.jar"
 errors = 0
 
 #create errors folder
