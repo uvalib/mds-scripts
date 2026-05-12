@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<roles>
+    <role aat="http://vocab.getty.edu/aat/300025687" marcrelator="http://id.loc.gov/vocabulary/relators/pht" technique="https://vocab.getty.edu/aat/300389795" techniqueLabel="photography (discipline)">Photographer</role>
+    <role aat="http://vocab.getty.edu/aat/300025103" marcrelator="http://id.loc.gov/vocabulary/relators/art" technique="http://vocab.getty.edu/aat/300054216" techniqueLabel="painting (image-making)">Artist</role>
+</roles>
