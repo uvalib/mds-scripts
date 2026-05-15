@@ -35,8 +35,8 @@ def validate(path, filename, fp, schema):
     
     #process XML response
     root = ET.fromstring(result)
-    if root.get('error') == 'true':
-        print("Errors reported")
+    if root.get('error') == 'true' or root.get('warning') == 'true':
+        print("Errors or warnings reported")
         errors += 1
         with open("errors/" + filename.replace('.xml', '') + "-errors.xml", "w", encoding="utf-8") as f:
             f.write(result)

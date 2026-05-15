@@ -21,23 +21,25 @@
             </errors>
         </xsl:variable>
         
-        <xsl:choose>
-            <xsl:when test="count($errors//error) &gt; 0">
-                <response error="true">
-                    <xsl:copy-of select="$errors"/>
-                </response>
-            </xsl:when>
-            <xsl:otherwise>
-                <response error="false">No errors reported.</response>
-            </xsl:otherwise>
-        </xsl:choose>
-        
+        <response>
+            <xsl:attribute name="error" select="if (count($errors//error) &gt; 0) then 'true' else 'false'"/>
+            <xsl:attribute name="warning" select="if (count($errors//warning) &gt; 0) then 'true' else 'false'"/>
+            
+            <xsl:copy-of select="$errors"/>
+        </response>
     </xsl:template>
     
     
     <xsl:template match="alto:TextBlock">
         <xsl:if test="not(child::*)">
-            <error><xsl:value-of select="$filename"/>: TextBlock <xsl:value-of select="@ID"/>: no content.</error>
+            <xsl:choose>
+                <xsl:when test="number(@HEIGHT) &gt;= 250">
+                    <error><xsl:value-of select="$filename"/>: TextBlock <xsl:value-of select="@ID"/>: no content (height: <xsl:value-of select="@HEIGHT"/>).</error>
+                </xsl:when>
+                <xsl:otherwise>
+                    <warning><xsl:value-of select="$filename"/>: TextBlock <xsl:value-of select="@ID"/>: no content (height: <xsl:value-of select="@HEIGHT"/>).</warning>
+                </xsl:otherwise>
+            </xsl:choose>
         </xsl:if>
         
         <!-- ensure that a non-empty TextBlock has a valid language code -->
