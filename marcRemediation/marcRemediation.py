@@ -106,8 +106,8 @@ args = parser.parse_args()
 rows = 100 if not args.rows else int(args.rows)
 
 # read the previous last key from yesterday's ckeys file, if it exists; default to 0 if it doesn't
-today = datetime.today().strftime('%Y%m%d')
-yesterday = (datetime.today() - timedelta(days = 1)).strftime('%Y%m%d')
+today = datetime.today().strftime('%Y-%m-%d')
+yesterday = (datetime.today() - timedelta(days = 1)).strftime('%Y-%m-%d')
 
 #if the start argument is not set, then read prevLastKey from file
 if not args.start:
