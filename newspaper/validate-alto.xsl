@@ -25,7 +25,7 @@
             <xsl:attribute name="error" select="if (count($errors//error) &gt; 0) then 'true' else 'false'"/>
             <xsl:attribute name="warning" select="if (count($errors//warning) &gt; 0) then 'true' else 'false'"/>
             
-            <xsl:copy-of select="$errors"/>
+            <xsl:copy-of select="$errors/*"/>
         </response>
     </xsl:template>
     

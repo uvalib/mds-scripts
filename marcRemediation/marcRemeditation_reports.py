@@ -18,20 +18,20 @@ def update_db(today):
     CREATE TABLE IF NOT EXISTS bib (
         id INTEGER PRIMARY KEY);
     """
+    
+    """
     try:
         with sqlite3.connect('report.db') as conn:
             cursor = conn.cursor()
             #create table if it doesn't exist
             cursor.execute(create_table)   
             conn.commit()
-            
-            
-            
-            #cursor.executemany("""INSERT INTO hier(concept, conceptLabel, parent, parentLabel, altLabel, parentAltLabels) VALUES(?,?,?,?,?,?)""", concepts)
-            #conn.commit()
     
     except sqlite3.OperationalError as e:
         print(e) 
+    """
     
+now = datetime.now().isoformat()
+print(now)
 today = datetime.today().strftime('%Y%m%d')
 update_db(today)

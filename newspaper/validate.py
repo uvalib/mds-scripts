@@ -12,6 +12,8 @@ import xml.etree.ElementTree as ET
 
 SAXON_PATH = "../../saxon/SaxonHE12-4J/saxon-he-12.4.jar"
 errors = 0
+# add warnings or errors into lines list to write to a text file
+lines = []
 
 #create errors folder
 if not os.path.exists("errors"):
@@ -19,6 +21,7 @@ if not os.path.exists("errors"):
 
 def validate(path, filename, fp, schema):
     global errors
+    global lines
     print("Processing " + schema + ": " + filename)
     #print(path)
     
@@ -33,13 +36,16 @@ def validate(path, filename, fp, schema):
     result = subprocess.check_output(cmd, shell=True, text=True)
     #print(result)
     
+
+    
     #process XML response
     root = ET.fromstring(result)
     if root.get('error') == 'true' or root.get('warning') == 'true':
         print("Errors or warnings reported")
         errors += 1
-        with open("errors/" + filename.replace('.xml', '') + "-errors.xml", "w", encoding="utf-8") as f:
-            f.write(result)
+        
+        for child in root:
+            lines.append(child.tag + ": " + child.text)
 
 
 #report number of errors
@@ -60,3 +66,10 @@ for path, dirs, files in os.walk(r"current"):
                     out = validate(path, filename, fp, schema='mets')                    
                 elif s.find(b'http://www.loc.gov/standards/alto/ns-v2#') != -1:
                     out = validate(path, filename, fp, schema='alto')
+                    
+print("Process completed. Writing log file, if applicable.")
+#write all warnings and errors to single error.log text file, if there are any
+if len(lines) > 0:
+    with open('errors/errors.log', 'w', encoding="utf-8") as file:
+        data_to_write = '\n'.join(lines)
+        file.write(data_to_write)
