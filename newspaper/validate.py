@@ -46,8 +46,8 @@ def validate(path, filename, fp, schema):
 if errors > 0:
     print("File errors reported: " + errors + ". See errors folder for individual reports.")
 
-#iterate recursively from the root location of this Python file to look for XML files
-for path, dirs, files in os.walk(r"."):
+#iterate recursively through the 'current' folder relative to this Python script to look for XML files
+for path, dirs, files in os.walk(r"current"):
     for filename in files:
         fp = os.path.join(path, filename)
         if ".xml" in filename:
