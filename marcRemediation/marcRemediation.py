@@ -92,7 +92,7 @@ def create_report(today):
     os.remove(xml_report)
     
     #insert function call for processing logs into SQLite below
-    #update_db(today)
+    update_db(today)
 
 """
 BEGIN PROCESSING OF ARGUMENTS 
