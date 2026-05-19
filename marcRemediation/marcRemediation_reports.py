@@ -75,7 +75,7 @@ def update_db(today):
         insert_data(db, 'bibs', bibs_rows)
         insert_data(db, 'bibs_messages', bibs_messages_rows)
     else:
-        print("No errors to report")
+        print("No errors to report.")
 
 #insert rows into table
 def insert_data(db, table, rows):
