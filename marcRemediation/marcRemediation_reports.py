@@ -15,7 +15,7 @@ import xml.etree.ElementTree as ET
 #read error logs for the today variable
 def update_db(today):
     db = 'report.db'
-    filename = today + ".errors.log"
+    filename = "logs/" + today + ".errors.log"
     
     #create tables if necessary
     create_tables(db)    

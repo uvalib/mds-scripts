@@ -19,8 +19,6 @@ from marcRemediation_reports import update_db
 
 #ENV should be "test" or "prod"
 ENV = "test"
-
-dir = "/software/UVUL/Unicorn/Bincustom/MARC-maint/Validate" if ENV == "prod" else ""
 SAXON_PATH = "../../saxon/SaxonHE12-4J/saxon-he-12.4.jar"
 
 #FUNCTIONS
@@ -39,7 +37,7 @@ def process_marcxml (today, url):
         print('Downloaded ' + url + " to " + xml_file)
         
         #execute Saxon XSLT transformation of MARC XML extracted from Sirsi into fixed file
-        cmd = 'java -jar ' + SAXON_PATH + ' -xsl:fixMarcErrors.xsl -s:' + xml_file + ' -o:' + xml_upd + ' 2> ' + today + '.changes.log'        
+        cmd = 'java -jar ' + SAXON_PATH + ' -xsl:fixMarcErrors.xsl -s:' + xml_file + ' -o:' + xml_upd + ' 2> ' + 'logs/' + today + '.changes.log'        
         result = subprocess.call(cmd, shell=True, text=True)
         
         print("Fixed MARC XML: " + xml_upd)
@@ -77,14 +75,14 @@ def create_report(today):
         lines.append(line)                    
 
     #write lines back to text file, if there are any
-    with open(today + ".errors.log", 'w+', encoding="utf-8") as file:  
+    with open("logs/" + today + ".errors.log", 'w+', encoding="utf-8") as file:  
         for line in lines:
             file.write('%s\n' %line) 
         file.close()    
 
     if len(lines) > 0:            
         # write elements of list
-        print("Wrote error log to " + today + ".errors.log")
+        print("Wrote error log to logs/" + today + ".errors.log")
  
     #delete the XML report file after writing the text file
     print("Removed " + xml_report)
@@ -94,7 +92,7 @@ def create_report(today):
     update_db(today)
     
 def cleanup(today, dryrun):
-    print("Cleaning up XML. Moving log files to log folder.")
+    print("Cleaning up XML.")
 
     #remove MARC XML
     os.remove(today + ".xml")
@@ -107,12 +105,6 @@ def cleanup(today, dryrun):
         os.replace(today + ".marc", "marc/" + today + ".marc")
     else:
         os.remove(today + ".marc")
-    
-    #create logs folder if it doesn't exist and move the logs there
-    if not os.path.exists("logs"):
-        os.makedirs("logs")
-    os.replace(today + ".errors.log", "logs/" + today + ".errors.log")
-    os.replace(today + ".changes.log", "logs/" + today + ".changes.log")
 
 """
 BEGIN PROCESSING OF ARGUMENTS 
@@ -150,7 +142,11 @@ if not args.start:
         print("There is no ckeys file from yesterday. Starting from 0")
 else:
     prevLastKey = int(args.start)
-    
+
+
+#create logs folder if it doesn't exist
+if not os.path.exists("logs"):
+    os.makedirs("logs")  
 
 #this is where the HTTP request goes to get the start and end ckeys 
 
