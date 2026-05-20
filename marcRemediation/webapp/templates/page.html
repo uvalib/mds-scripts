@@ -52,8 +52,11 @@
                             </svg>
                             <h2>Report for "{{ message[1] }}"</h2>
                         </div>
-                                            
+                    
                         {% if bibs|length > 0 %}
+                        
+                            {% include 'pagination.html' %}
+                        
                             <table class="table table-striped table-responsive">
                                 <thead>
                                     <tr>

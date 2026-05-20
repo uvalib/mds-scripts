@@ -7,17 +7,21 @@ Function: Simple Python Flask web app to display marcRemediation reports stored 
 """
 
 from flask import Flask, render_template, request
-import sqlite3
+import sqlite3, math
 
 DATABASE = '../report.db'
+LIMIT = 25
 
 app = Flask(__name__)
 
 @app.route('/')
 @app.route('/home')
 def index():
+    
+    
     return render_template('page.html', page="index")
 
+#make query for a single bib_id and return a list of all errors and warnings
 @app.route('/bib/<bib>')
 def page_bib(bib):
     sql = """SELECT message_id, message, type
@@ -53,18 +57,21 @@ def page_messages():
 @app.route('/message/<message>')
 def page_message(message):
     page = request.args.get('page', 1, type=int)  # Get page number from query params (default = 1)
+    offset = (page - 1) * LIMIT
     
-    bibs_count_sql = """
-    
+    bibs_count_sql = """SELECT COUNT(DISTINCT(bib_id))
+    FROM bibs_messages
+    WHERE message_id = ? 
     """
-        
+    
     #query bibs associated with the error message id, order by most recent by default
-    bibs_sql = """SELECT bib_id, bibs.date
+    bibs_sql = """SELECT DISTINCT(bib_id), bibs.date
     FROM bibs_messages
     INNER JOIN bibs ON bibs.id = bibs_messages.bib_id
     WHERE message_id = ?
     ORDER BY bibs.date DESC
-    """
+    """    
+    pagination = 'LIMIT ' + str(LIMIT) + ' OFFSET ' + str(offset)
     
     #query message metadata based on message id
     message_sql = """SELECT id, message, type
@@ -76,14 +83,21 @@ def page_message(message):
     cursor = connect.cursor()
     
     #fetch bibs
-    cursor.execute(bibs_sql, (message,))
+    cursor.execute(bibs_sql + ' ' + pagination, (message,))
     bibs = cursor.fetchall()
+    
+    #get total count of bibs for the message and then formulate the last page for pagination
+    cursor.execute(bibs_count_sql, (message,))
+    count = cursor.fetchone()
+    count = int(count[0])
+    
+    last = math.ceil(count / LIMIT)
     
     #fetch message
     cursor.execute(message_sql, (message,))
     message_row = cursor.fetchone()
 
-    return render_template("page.html", page="message", message=message_row, bibs=bibs)
+    return render_template("page.html", page="message", message=message_row, bibs=bibs, limit=LIMIT, count=count, page_num=page, last=last)
 
 if __name__ == '__main__':
     app.run(debug=False)
