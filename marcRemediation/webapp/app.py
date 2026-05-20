@@ -33,14 +33,37 @@ def page_bib(bib):
     rows = cursor.fetchall()
     return render_template("page.html", page="bib", bib=bib, rows=rows)
 
+#get a list of all messages. These are relatively limited and do not need to be paginated
+@app.route('/message')
+def page_messages():
+    sql = """SELECT id, message, type
+    FROM messages
+    ORDER BY message ASC
+    """
+    connect = sqlite3.connect(DATABASE)
+    cursor = connect.cursor()
+    
+    #fetch bibs
+    cursor.execute(sql)
+    rows = cursor.fetchall()
+    
+    return render_template("page.html", page="messages", rows=rows)
+
+#get bibs associated with a message id, paginated.
 @app.route('/message/<message>')
 def page_message(message):
+    page = request.args.get('page', 1, type=int)  # Get page number from query params (default = 1)
     
-    #query bibs associated with the error message id
+    bibs_count_sql = """
+    
+    """
+        
+    #query bibs associated with the error message id, order by most recent by default
     bibs_sql = """SELECT bib_id, bibs.date
     FROM bibs_messages
     INNER JOIN bibs ON bibs.id = bibs_messages.bib_id
     WHERE message_id = ?
+    ORDER BY bibs.date DESC
     """
     
     #query message metadata based on message id
@@ -59,7 +82,7 @@ def page_message(message):
     #fetch message
     cursor.execute(message_sql, (message,))
     message_row = cursor.fetchone()
-    #return message_row
+
     return render_template("page.html", page="message", message=message_row, bibs=bibs)
 
 if __name__ == '__main__':
