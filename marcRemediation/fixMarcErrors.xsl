@@ -66,7 +66,7 @@
         </xsl:choose>
       </xsl:variable>
       <xsl:value-of
-        select="concat($recordID, ' :: ', normalize-space($context), ' - ', normalize-space(lower-case(replace($messageText, 'ǂ', '\$'))), ' :: fix')"
+        select="concat($recordID, ' :: ', normalize-space($context), ' - ', normalize-space(lower-case(replace($messageText, '$', '\$'))), ' :: fix')"
       />
     </xsl:message>
   </xsl:template>
@@ -182,7 +182,7 @@
           <xsl:if test="count(*:subfield[@code = $left]) &gt; 1">
             <xsl:call-template name="createLogMessage">
               <xsl:with-param name="context">datafield <xsl:value-of select="$tag"/></xsl:with-param>
-              <xsl:with-param name="messageText">Non-repeatable ǂ<xsl:value-of select="$left"/> subfields compressed</xsl:with-param>
+              <xsl:with-param name="messageText">Non-repeatable $<xsl:value-of select="$left"/> subfields compressed</xsl:with-param>
             </xsl:call-template>
           </xsl:if>        
         </subfield>
@@ -5850,7 +5850,7 @@
   </xsl:template>
 
   <!-- MATCH TEMPLATES (phase 1, pass 0) -->
-  <!-- OCLC uses the alveolar click ('ǂ') or the double dagger ('‡') as a subfield
+  <!-- OCLC uses the alveolar click ('$') or the double dagger ('‡') as a subfield
        delimiter. If these are pasted from an OCLC screen display, they will appear
        to be data, not delimiters.-->
   <xsl:template match="*:subfield" mode="pass0">
@@ -5862,7 +5862,7 @@
     </xsl:variable>
     <xsl:choose>
       <!-- Pass through subfields without OCLC delimiters -->
-      <xsl:when test="not(matches(., '[ǂ‡]'))">
+      <xsl:when test="not(matches(., '[$‡]'))">
         <subfield>
           <xsl:copy-of select="@*"/>
           <xsl:value-of select="$thisContent"/>
@@ -5870,12 +5870,12 @@
       </xsl:when>
       <!-- Create additional subfields based on the OCLC delimiters -->
       <xsl:otherwise>
-        <xsl:analyze-string select="." regex="[ǂ‡]">
+        <xsl:analyze-string select="." regex="[$‡]">
           <xsl:non-matching-substring>
             <xsl:choose>
               <!-- Subfield content is a single letter -->
               <!-- This happens if there's a single letter before the use of OCLC 
-                delimiters; e.g., "a ǂb24000 ǂdW0773730 ǂeW0773000 ǂfN0374500 ǂgN0373730" -->
+                delimiters; e.g., "a $b24000 $dW0773730 $eW0773000 $fN0374500 $gN0373730" -->
               <xsl:when test="matches(normalize-space(.), '^[a-z]$')">
                 <subfield>
                   <xsl:attribute name="code">
@@ -6037,7 +6037,7 @@
               <!-- Keep the current value -->
               <xsl:value-of select="substring(., $position, $length)"/>
             </xsl:when>
-            <!-- Datafield 300/ǂa indicates there's a single item -->
+            <!-- Datafield 300/$a indicates there's a single item -->
             <xsl:when
               test="number(../*:datafield[@tag = '300'][1]/*:subfield[@code = 'a'][1]) = 1 or number(substring-before(replace(../*:datafield[@tag = '300'][1]/*:subfield[@code = 'a'][1], '^\D*(\d)', '$1'), ' ')) = 1">
               <xsl:text>m</xsl:text>
@@ -6050,7 +6050,7 @@
                 </xsl:call-template>
               </xsl:if>
             </xsl:when>
-            <!-- Datafield 300/ǂa indicates there's more than 1 item -->
+            <!-- Datafield 300/$a indicates there's more than 1 item -->
             <xsl:when
               test="number(../*:datafield[@tag = '300'][1]/*:subfield[@code = 'a'][1]) &gt; 1 or number(substring-before(replace(../*:datafield[@tag = '300'][1]/*:subfield[@code = 'a'][1], '^\D*(\d)', '$1'), ' ')) &gt; 1">
               <xsl:text>c</xsl:text>
@@ -6096,7 +6096,7 @@
         />
       </xsl:variable>
       <xsl:choose>
-        <!-- Set to 'a' (archival) when 040/ǂa = 'appm' or 'dacs' -->
+        <!-- Set to 'a' (archival) when 040/$a = 'appm' or 'dacs' -->
         <xsl:when
           test="../*:datafield[@tag = '040']/*:subfield[@code = 'e'][matches(., '(appm|dacs)', 'i')]">
           <xsl:text>a</xsl:text>
@@ -6108,7 +6108,7 @@
             </xsl:call-template>
           </xsl:if>
         </xsl:when>
-        <!-- Set to ' ' when 040/ǂa = 'aacr' or 'rda' -->
+        <!-- Set to ' ' when 040/$a = 'aacr' or 'rda' -->
         <xsl:when
           test="../*:datafield[@tag = '040']/*:subfield[@code = 'e'][matches(., '(aacr|rda)', 'i')]">
           <xsl:text>&#32;</xsl:text>
@@ -6120,7 +6120,7 @@
             </xsl:call-template>
           </xsl:if>
         </xsl:when>
-        <!-- Set to 'a' (archival) when 099/ǂa or 999/ǂa matches '^MSS ' -->
+        <!-- Set to 'a' (archival) when 099/$a or 999/$a matches '^MSS ' -->
         <xsl:when
           test="../*:datafield[@tag = '099' or @tag = '999']/*:subfield[@code = 'a'][matches(., '^MSS ', 'i')]">
           <xsl:text>a</xsl:text>
@@ -7140,7 +7140,7 @@
     </controlfield>
   </xsl:template>
 
-  <!-- On 490 with too many subfield ǂ6s, delete all but the first subfield ǂ6 -->
+  <!-- On 490 with too many subfield $6s, delete all but the first subfield $6 -->
   <xsl:template match="*:datafield[@tag = '490'][count(*:subfield[@code = '6']) &gt; 1]"
     mode="pass1">
     <datafield>
@@ -7150,12 +7150,12 @@
       <xsl:apply-templates select="*:subfield[@code != '6']" mode="pass1"/>
       <xsl:call-template name="createLogMessage">
         <xsl:with-param name="context">datafield 490</xsl:with-param>
-        <xsl:with-param name="messageText">Only first ǂ6 retained</xsl:with-param>
+        <xsl:with-param name="messageText">Only first $6 retained</xsl:with-param>
       </xsl:call-template>
     </datafield>
   </xsl:template>
 
-  <!-- On 880 with too many subfield ǂ6s, join extra subfield ǂ6s to subfield ǂa -->
+  <!-- On 880 with too many subfield $6s, join extra subfield $6s to subfield $a -->
   <xsl:template
     match="*:datafield[@tag = '880'][count(*:subfield[@code = '6']) &gt; 1][count(*:subfield[@code = '6']) &gt; 1]"
     mode="pass1">
@@ -7172,8 +7172,8 @@
               <xsl:value-of select="concat(' ', .)"/>
               <xsl:call-template name="createLogMessage">
                 <xsl:with-param name="context">datafield 880</xsl:with-param>
-                <xsl:with-param name="messageText">Subfield ǂ6s after first appended to
-                  ǂa</xsl:with-param>
+                <xsl:with-param name="messageText">Subfield $6s after first appended to
+                  $a</xsl:with-param>
               </xsl:call-template>
             </xsl:when>
             <xsl:otherwise>
@@ -7240,11 +7240,11 @@
     <xsl:call-template name="createMaterialSpecific007"/>
   </xsl:template>-->
 
-  <!-- Translate country names in 044/ǂ9 to country codes in ǂa -->
+  <!-- Translate country names in 044/$9 to country codes in $a -->
   <xsl:template match="*:datafield[@tag = '044']" mode="pass2">
     <xsl:copy>
       <xsl:apply-templates select="@*"/>
-      <!-- Collect MARC country names from subfield ǂ9 -->
+      <!-- Collect MARC country names from subfield $9 -->
       <xsl:variable name="countryCodes">
         <xsl:for-each select="*:subfield[@code = '9']">
           <xsl:variable name="thisValue">
@@ -7252,7 +7252,7 @@
           </xsl:variable>
           <subfield>
             <xsl:choose>
-              <!-- When ǂ9 equals a name in $marcCountryCodes -->
+              <!-- When $9 equals a name in $marcCountryCodes -->
               <xsl:when test="$marcCountryCodes/*:country[. = $thisValue]">
                 <xsl:attribute name="code">
                   <xsl:text>a</xsl:text>
@@ -7268,7 +7268,7 @@
                   </xsl:choose>
                 </xsl:for-each>
               </xsl:when>
-              <!-- No match in $marcCountryCodes, pass ǂ9 through -->
+              <!-- No match in $marcCountryCodes, pass $9 through -->
               <xsl:otherwise>
                 <xsl:attribute name="code">
                   <xsl:text>9</xsl:text>
@@ -7279,7 +7279,7 @@
           </subfield>
         </xsl:for-each>
       </xsl:variable>
-      <!-- Output each unique code value in a new subfield ǂa -->
+      <!-- Output each unique code value in a new subfield $a -->
       <xsl:for-each
         select="distinct-values(*:subfield[@code = 'a'] | $countryCodes/*:subfield[@code = 'a'])">
         <xsl:sort select="lower-case(.)"/>
@@ -7294,10 +7294,10 @@
         </subfield>
       </xsl:for-each>
       <xsl:call-template name="createLogMessage">
-        <xsl:with-param name="context">datafield 044 subfield ǂ9</xsl:with-param>
-        <xsl:with-param name="messageText">Translated to subfield ǂa</xsl:with-param>
+        <xsl:with-param name="context">datafield 044 subfield $9</xsl:with-param>
+        <xsl:with-param name="messageText">Translated to subfield $a</xsl:with-param>
       </xsl:call-template>
-      <!-- Output subfields other than ǂa and ǂ9 -->
+      <!-- Output subfields other than $a and $9 -->
       <xsl:apply-templates select="*:subfield[not(matches(@code, '[a9]'))]"/>
     </xsl:copy>
   </xsl:template>
@@ -7403,7 +7403,7 @@
   </xsl:template>
 
   <!-- Delete 090 datafield that 
-    1. doesn't have ǂa and doesn't have ǂb, or
+    1. doesn't have $a and doesn't have $b, or
     2. matches '^[A-Z]X\d+=' (noise found in some records) -->
   <xsl:template
     match="*:datafield[@tag = '090'][not(*:subfield[@code = 'a'] and *:subfield[@code = 'b'])] | *:datafield[@tag = '090'][matches(., '^\**[A-Z]X\d+=')]"
@@ -7423,12 +7423,12 @@
           <subfield>
           <xsl:attribute name="code">
             <xsl:choose>
-              <!-- Replace subfield ǂ9 with subfield ǂz -->
+              <!-- Replace subfield $9 with subfield $z -->
               <xsl:when test="@code = '9'">
                 <xsl:text>z</xsl:text>
                 <xsl:call-template name="createLogMessage">
-                  <xsl:with-param name="context">datafield 035 subfield ǂ9</xsl:with-param>
-                  <xsl:with-param name="messageText">Replaced by ǂz</xsl:with-param>
+                  <xsl:with-param name="context">datafield 035 subfield $9</xsl:with-param>
+                  <xsl:with-param name="messageText">Replaced by $z</xsl:with-param>
                 </xsl:call-template>
               </xsl:when>
               <!-- Pass through other subfields -->
@@ -7448,7 +7448,7 @@
   <xsl:template match="*:datafield[@tag = '019'][1]" mode="pass4">
     <datafield>
       <xsl:apply-templates select="@*" mode="pass4"/>
-      <!-- Ignore subfields other than ǂa; they're illegal -->
+      <!-- Ignore subfields other than $a; they're illegal -->
       <xsl:apply-templates select="*:subfield[@code = 'a']" mode="pass4"/>
       <xsl:apply-templates
         select="following-sibling::*:datafield[@tag = '019']/*:subfield[@code = 'a']"
@@ -7524,7 +7524,7 @@
     </xsl:if>
   </xsl:template>
 
-  <!-- 242 subfield ǂy is required for full level record -->
+  <!-- 242 subfield $y is required for full level record -->
   <xsl:template
     match="*:datafield[@tag = '242'][matches(substring(ancestor::*:record/*:leader, 18, 1), '[\s1]')][not(*:subfield[@code = 'y'])]"
     mode="pass4">
@@ -7541,7 +7541,7 @@
     </xsl:call-template>
   </xsl:template>
 
-  <!-- Replace 099 subfield ǂv with subfield ǂa -->
+  <!-- Replace 099 subfield $v with subfield $a -->
   <xsl:template match="*:datafield[@tag = '099']/*:subfield[@code = 'v']" mode="pass4">
     <subfield>
       <xsl:attribute name="code">a</xsl:attribute>
@@ -7550,8 +7550,8 @@
     <xsl:call-template name="createLogMessage">
       <xsl:with-param name="context">datafield <xsl:value-of select="../@tag"
         /></xsl:with-param>
-      <xsl:with-param name="messageText">Subfield ǂv replaced by subfield
-        ǂa</xsl:with-param>
+      <xsl:with-param name="messageText">Subfield $v replaced by subfield
+        $a</xsl:with-param>
     </xsl:call-template>
   </xsl:template>
 
@@ -7603,13 +7603,13 @@
       <xsl:variable name="systemControlNumbers">
         <xsl:apply-templates select="*:datafield[number(@tag) = 35]" mode="phase2"/>
       </xsl:variable>
-      <!-- Subset of captured 035s where subfield ǂa has a parenthetical system identifier -->
+      <!-- Subset of captured 035s where subfield $a has a parenthetical system identifier -->
       <xsl:variable name="systemControlNumbersWithSystemID">
         <xsl:copy-of
           select="$systemControlNumbers/*:datafield[matches(*:subfield[@code = 'a'], '\(')]"
         />
       </xsl:variable>
-      <!-- Clean up 035/ǂa values -->
+      <!-- Clean up 035/$a values -->
       <xsl:variable name="systemControlNumbersClean">
         <xsl:variable name="recordID">
           <xsl:value-of select="*:controlfield[@tag = '001']"/>
@@ -7628,7 +7628,7 @@
                       test="matches(., '[^\(\)A-Za-z0-9]') and matches(., '^[^\(]+')">
                       <xsl:call-template name="createLogMessage">
                         <xsl:with-param name="context">datafield 035</xsl:with-param>
-                        <xsl:with-param name="messageText">Subfield ǂa
+                        <xsl:with-param name="messageText">Subfield $a
                           modified</xsl:with-param>
                       </xsl:call-template>
                     </xsl:if>
@@ -7755,7 +7755,7 @@
         <xsl:value-of select="concat(substring(., 8, 4), '-', substring(., 12, 4))"/>
       </xsl:variable>
       <xsl:choose>
-        <!-- 260ǂc contains a date range -->
+        <!-- 260$c contains a date range -->
         <xsl:when test="matches($c260, $dateRange)">
           <xsl:value-of select="concat(substring(., 1, 6), 'm', substring(., 8))"/>
           <xsl:if test="substring(., 7, 1) != 'm'">
@@ -7765,7 +7765,7 @@
             </xsl:call-template>
           </xsl:if>
         </xsl:when>
-        <!-- 260ǂc contains a copyright or production date -->
+        <!-- 260$c contains a copyright or production date -->
         <xsl:when test="matches($c260, $date1copy) or matches($c260, $date2copy)">
           <xsl:value-of select="concat(substring(., 1, 6), 't', substring(., 8))"/>
           <xsl:if test="substring(., 7, 1) != 't'">
@@ -7775,7 +7775,7 @@
             </xsl:call-template>
           </xsl:if>        
         </xsl:when>
-        <!-- 2 dates in 008 and 260ǂc matches either one; this is a slightly different
+        <!-- 2 dates in 008 and 260$c matches either one; this is a slightly different
           version of the previous test -->
         <xsl:when test="normalize-space($date2) != '' and matches($c260, $date1) or matches($c260, $date2)">
           <xsl:value-of select="concat(substring(., 1, 6), 't', substring(., 8))"/>
@@ -8240,7 +8240,7 @@
           <xsl:with-param name="messageText">Replaced by 043</xsl:with-param>
         </xsl:call-template>
       </xsl:when>
-      <!-- Replace 041 with 043 when only 1 ǂa subfield and it matches '-' -->
+      <!-- Replace 041 with 043 when only 1 $a subfield and it matches '-' -->
       <xsl:when
         test="count(*:subfield) = 1 and count(*:subfield[@code = 'a']) = 1 and matches(*:subfield[@code = 'a'], '-')">
         <datafield tag="043" ind1=" " ind2=" ">
@@ -8259,7 +8259,7 @@
         <datafield>
           <xsl:apply-templates select="@tag"/>
           <xsl:attribute name="ind1">
-            <!-- Set @ind1 based on presence/absence of subfield ǂh or ǂn -->
+            <!-- Set @ind1 based on presence/absence of subfield $h or $n -->
             <xsl:choose>
               <xsl:when test="*:subfield[matches(@code, '[hn]')]">
                 <xsl:text>1</xsl:text>
@@ -8272,7 +8272,7 @@
           <xsl:apply-templates select="@ind2" mode="phase2"/>
           <xsl:for-each select="*:subfield">
             <xsl:choose>
-              <!-- Split subfields ǂa - ǂz that contain multiple language codes into multiple subfields -->
+              <!-- Split subfields $a - $z that contain multiple language codes into multiple subfields -->
               <xsl:when test="matches(@code, '[a-z]') and string-length(.) &gt; 3">
                 <xsl:choose>
                   <!-- Split multiple codes without separators into multiple subfields -->
@@ -8330,7 +8330,7 @@
                     /> replaced by multiple subfields</xsl:with-param>
                 </xsl:call-template>
               </xsl:when>
-              <!-- "Regular" subfields; i.e., not ǂa - ǂz or not string-length > 3 -->
+              <!-- "Regular" subfields; i.e., not $a - $z or not string-length > 3 -->
               <xsl:otherwise>
                 <xsl:copy>
                   <xsl:apply-templates select="@*" mode="#current"/>
@@ -8344,10 +8344,10 @@
     </xsl:choose>
   </xsl:template>
 
-  <!-- 041 subfield ǂb -->
+  <!-- 041 subfield $b -->
   <xsl:template match="*:datafield[@tag = '041']/*:subfield[@code = 'b']" mode="phase2">
     <xsl:choose>
-      <!-- Substitute ǂj for ǂb for video material -->
+      <!-- Substitute $j for $b for video material -->
       <xsl:when
         test="ancestor::*:record/*:datafield[@tag = '099'][*:subfield[@code = 'a'][matches(., '^VIDEO', 'i')]] or ancestor::*:record/*:datafield[@tag = '245'][*:subfield[@code = 'h'][matches(., 'videorecording', 'i')]] or ancestor::*:record/*:controlfield[@tag = '007'][substring(., 1, 1) = 'v'] or (ancestor::*:record/*:leader[substring(., 7, 1) = 'g'] and ancestor::*:record/*:controlfield[@tag = '008'][matches(substring(., 34, 1), '[mv]')])">
         <subfield code="j">
@@ -8376,7 +8376,7 @@
           <xsl:if test="matches(., '[A-Z]')">
             <xsl:call-template name="createLogMessage">
             <xsl:with-param name="context">datafield <xsl:value-of select="../@tag"/></xsl:with-param>
-          <xsl:with-param name="messageText">Subfield ǂ<xsl:value-of select="@code"/> modified</xsl:with-param>
+          <xsl:with-param name="messageText">Subfield $<xsl:value-of select="@code"/> modified</xsl:with-param>
         </xsl:call-template>
       </xsl:if>
       <!-- Replace obsolete language codes with current values -->
@@ -8390,7 +8390,7 @@
     </xsl:choose>
   </xsl:template>
 
-  <!-- 041 subfields other than ǂb -->
+  <!-- 041 subfields other than $b -->
   <xsl:template match="*:datafield[@tag = '041']/*:subfield[not(matches(@code, '[b]'))]"
     mode="phase2">
     <!-- Fix common errors -->
@@ -8404,7 +8404,7 @@
       <xsl:if test="matches(., '[A-Z]')">
         <xsl:call-template name="createLogMessage">
           <xsl:with-param name="context">datafield <xsl:value-of select="../@tag"/></xsl:with-param>
-          <xsl:with-param name="messageText">Subfield ǂ<xsl:value-of select="@code"/> modified</xsl:with-param>
+          <xsl:with-param name="messageText">Subfield $<xsl:value-of select="@code"/> modified</xsl:with-param>
         </xsl:call-template>
       </xsl:if>
       <!-- Replace obsolete language codes with current values -->
@@ -8475,7 +8475,7 @@
   <xsl:template match="*:datafield[matches(@tag, '541')]/@ind1" mode="phase2">
     <xsl:attribute name="ind1">
       <xsl:choose>
-        <!-- When ǂb (address) is present, set @ind1 to '0' (private) -->
+        <!-- When $b (address) is present, set @ind1 to '0' (private) -->
         <xsl:when test="../*:subfield[@code = 'b']">
           <xsl:text>0</xsl:text>
           <xsl:call-template name="createLogMessage">
@@ -8632,7 +8632,7 @@
           <xsl:variable name="articleLength">
             <xsl:for-each select="$marcArticleList//*:lang[matches(@codes, $langCode)]">
               <xsl:variable name="articleString" select="concat('^', ../*:article)"/>
-              <!-- When subfield ǂa matches an article in the given language -->
+              <!-- When subfield $a matches an article in the given language -->
               <xsl:if test="matches($subfieldA, $articleString)">
                 <xsl:value-of select="string-length($articleString) - 1"/>
               </xsl:if>
@@ -8723,7 +8723,7 @@
     </xsl:call-template>
   </xsl:template>
 
-  <!-- Replace 506ǂs with ǂa -->
+  <!-- Replace 506$s with $a -->
   <xsl:template match="*:datafield[@tag = '506']/*:subfield[@code = 's']" mode="phase2">
     <subfield code="a">
       <xsl:value-of select="."/>
@@ -8731,7 +8731,7 @@
     <xsl:call-template name="createLogMessage">
       <xsl:with-param name="context">datafield <xsl:value-of select="../@tag"
         /></xsl:with-param>
-      <xsl:with-param name="messageText">Subfield ǂs replaced by ǂa</xsl:with-param>
+      <xsl:with-param name="messageText">Subfield $s replaced by $a</xsl:with-param>
     </xsl:call-template>
   </xsl:template>
 
@@ -8752,7 +8752,7 @@
     </datafield>
   </xsl:template>
 
-  <!-- In 653 keep ǂ6 & ǂ8, make all other subfields ǂa -->
+  <!-- In 653 keep $6 & $8, make all other subfields $a -->
   <xsl:template match="*:datafield[@tag = '653']" mode="phase2">
     <datafield>
       <xsl:apply-templates select="@*" mode="phase2"/>
@@ -8768,7 +8768,7 @@
                 <xsl:if test="@code != 'a'">
                   <xsl:call-template name="createLogMessage">
                     <xsl:with-param name="context">datafield <xsl:value-of select="../@tag"/></xsl:with-param>
-                    <xsl:with-param name="messageText">Subfield ǂ<xsl:value-of select="@code"/> replaced by subfield ǂa</xsl:with-param>
+                    <xsl:with-param name="messageText">Subfield $<xsl:value-of select="@code"/> replaced by subfield $a</xsl:with-param>
                   </xsl:call-template>
                 </xsl:if>        
               </xsl:otherwise>
@@ -8791,18 +8791,18 @@
     </xsl:call-template>
   </xsl:template>
 
-  <!-- Delete 773 when ǂa matches library name in 999 -->
+  <!-- Delete 773 when $a matches library name in 999 -->
   <xsl:template match="*:datafield[@tag = '773']" mode="phase2">
     <!-- Create a look-up table of library names -->
     <xsl:variable name="libraries">
       <xsl:copy-of select="../*:datafield[@tag = '999']/*:subfield[@code = 'm']"/>
     </xsl:variable>
-    <!-- Capture ǂa -->
+    <!-- Capture $a -->
     <xsl:variable name="heading">
       <xsl:value-of select="upper-case(normalize-space(*:subfield[@code = 'a']))"/>
     </xsl:variable>
     <xsl:choose>
-      <!-- Don't process the 773 if ǂa matches a library name -->
+      <!-- Don't process the 773 if $a matches a library name -->
       <xsl:when test="$libraries//*:subfield[. eq $heading]">
         <xsl:call-template name="createLogMessage">
           <xsl:with-param name="context">datafield <xsl:value-of select="@tag"
@@ -8860,7 +8860,7 @@
     </xsl:call-template>
   </xsl:template>
 
-  <!-- On 017, 76x, 77x, 786, and 787, replace non-compliant ind2 value based on presence of ǂi -->
+  <!-- On 017, 76x, 77x, 786, and 787, replace non-compliant ind2 value based on presence of $i -->
   <xsl:template
     match="*:datafield[matches(@tag, '(017|760|762|765|767|770|773|774|775|776|777|786|787)')]/@ind2[not(matches(., '[\s8]'))]"
     mode="phase2">
@@ -8899,24 +8899,24 @@
     <xsl:copy>
       <xsl:apply-templates select="@tag"/>
       <xsl:choose>
-        <!-- There's no need for @ind1='7' and ǂ2 when all ǂu subfields start with a standard protocol -->
+        <!-- There's no need for @ind1='7' and $2 when all $u subfields start with a standard protocol -->
         <xsl:when
           test="count(*:subfield[@code = 'u' and matches(., '^(mailto|ftp|telnet|https?):', 'i')]) = count(*:subfield[@code = 'u'])">
           <xsl:attribute name="ind1">
             <xsl:choose>
-              <!-- All ǂu subfields begin with 'mailto:' -->
+              <!-- All $u subfields begin with 'mailto:' -->
               <xsl:when
                 test="count(*:subfield[@code = 'u' and matches(., '^mailto:', 'i')]) = count(*:subfield[@code = 'u'])"
                 >0</xsl:when>
-              <!-- All ǂu subfields begin with 'ftp:' -->
+              <!-- All $u subfields begin with 'ftp:' -->
               <xsl:when
                 test="count(*:subfield[@code = 'u' and matches(., '^ftp:', 'i')]) = count(*:subfield[@code = 'u'])"
                 >1</xsl:when>
-              <!-- All ǂu subfields begin with 'telnet:' -->
+              <!-- All $u subfields begin with 'telnet:' -->
               <xsl:when
                 test="count(*:subfield[@code = 'u' and matches(., '^telnet:', 'i')]) = count(*:subfield[@code = 'u'])"
                 >2</xsl:when>
-              <!-- All ǂu subfields begin with 'https?:' -->
+              <!-- All $u subfields begin with 'https?:' -->
               <xsl:when
                 test="count(*:subfield[@code = 'u' and matches(., '^https?:', 'i')]) = count(*:subfield[@code = 'u'])"
                 >4</xsl:when>
@@ -8929,7 +8929,7 @@
           <xsl:apply-templates select="@ind2" mode="phase2"/>
           <xsl:apply-templates select="*:subfield[not(@code = '2')]" mode="phase2"/>
         </xsl:when>
-        <!-- If all ǂu subfields don't have a common protocol, set @ind1 = '7', put protocol in ǂ2 -->
+        <!-- If all $u subfields don't have a common protocol, set @ind1 = '7', put protocol in $2 -->
         <xsl:when
           test="*:subfield[@code = 'u'][not(matches(., '^(mailto|ftp|telnet|https?)'))]">
           <xsl:attribute name="ind1">
@@ -8976,7 +8976,7 @@
     </xsl:attribute>
   </xsl:template>
 
-  <!-- Delete trailing period in 242/ǂy -->
+  <!-- Delete trailing period in 242/$y -->
   <xsl:template
     match="*:datafield[@tag = '242']/*:subfield[@code = 'y'][matches(., '\.$')]"
     mode="phase2">
@@ -8986,11 +8986,11 @@
     <xsl:call-template name="createLogMessage">
       <xsl:with-param name="context">datafield <xsl:value-of select="../@tag"
         /></xsl:with-param>
-      <xsl:with-param name="messageText">Subfield ǂy modified</xsl:with-param>
+      <xsl:with-param name="messageText">Subfield $y modified</xsl:with-param>
     </xsl:call-template>
   </xsl:template>
 
-  <!-- In subfield ǂ8 replace forward slash w/ backslash -->
+  <!-- In subfield $8 replace forward slash w/ backslash -->
   <xsl:template match="*:subfield[@code = '8'][matches(., '/')]" mode="phase2">
     <xsl:copy>
       <xsl:copy-of select="@code"/>
@@ -8999,11 +8999,11 @@
     <xsl:call-template name="createLogMessage">
       <xsl:with-param name="context">datafield <xsl:value-of select="../@tag"
         /></xsl:with-param>
-      <xsl:with-param name="messageText">Subfield ǂ8 modified</xsl:with-param>
+      <xsl:with-param name="messageText">Subfield $8 modified</xsl:with-param>
     </xsl:call-template>
   </xsl:template>
 
-  <!-- Repair subfield ǂ6 and indicators on 880 -->
+  <!-- Repair subfield $6 and indicators on 880 -->
   <xsl:template match="*:datafield[@tag = '880']" mode="phase2">
     <datafield>
       <xsl:variable name="linkedTagOriginal">
@@ -9024,7 +9024,7 @@
                   <xsl:if test="matches(normalize-space(tokenize(., '/')[1]), '440')">
                     <xsl:call-template name="createLogMessage">
                       <xsl:with-param name="context">datafield 880</xsl:with-param>
-                      <xsl:with-param name="messageText">Subfield ǂ6 modified</xsl:with-param>
+                      <xsl:with-param name="messageText">Subfield $6 modified</xsl:with-param>
                     </xsl:call-template>
                   </xsl:if>
                   <xsl:variable name="linkingTag">
@@ -9063,7 +9063,7 @@
                   <xsl:if test="matches(normalize-space(tokenize(., '/')[1]), '440')">
                     <xsl:call-template name="createLogMessage">
                       <xsl:with-param name="context">datafield 880</xsl:with-param>
-                      <xsl:with-param name="messageText">Subfield ǂ6 modified</xsl:with-param>
+                      <xsl:with-param name="messageText">Subfield $6 modified</xsl:with-param>
                     </xsl:call-template>
                   </xsl:if>
                   <xsl:variable name="linkingTag">
@@ -9083,7 +9083,7 @@
                       <xsl:text>/Zyyy/r</xsl:text>
                       <xsl:call-template name="createLogMessage">
                         <xsl:with-param name="context">datafield 880</xsl:with-param>
-                        <xsl:with-param name="messageText">Subfield ǂ6 modified</xsl:with-param>
+                        <xsl:with-param name="messageText">Subfield $6 modified</xsl:with-param>
                       </xsl:call-template>
                     </xsl:otherwise>
                   </xsl:choose>
@@ -9097,7 +9097,7 @@
                       <xsl:if test="matches(regex-group(1), '^440')">
                         <xsl:call-template name="createLogMessage">
                           <xsl:with-param name="context">datafield 880</xsl:with-param>
-                          <xsl:with-param name="messageText">Subfield ǂ6 modified</xsl:with-param>
+                          <xsl:with-param name="messageText">Subfield $6 modified</xsl:with-param>
                         </xsl:call-template>
                       </xsl:if>
                       <xsl:choose>
@@ -9110,7 +9110,7 @@
                           <xsl:text>/Zyyy/r</xsl:text>
                           <xsl:call-template name="createLogMessage">
                             <xsl:with-param name="context">datafield 880</xsl:with-param>
-                            <xsl:with-param name="messageText">Subfield ǂ6 modified</xsl:with-param>
+                            <xsl:with-param name="messageText">Subfield $6 modified</xsl:with-param>
                           </xsl:call-template>
                         </xsl:when>
                         <!-- script code present, direction missing -->
@@ -9118,7 +9118,7 @@
                           <xsl:value-of select="concat('/', regex-group(2))"/>
                           <xsl:call-template name="createLogMessage">
                             <xsl:with-param name="context">datafield 880</xsl:with-param>
-                            <xsl:with-param name="messageText">Subfield ǂ6 modified</xsl:with-param>
+                            <xsl:with-param name="messageText">Subfield $6 modified</xsl:with-param>
                           </xsl:call-template>                      
                         </xsl:when>
                       </xsl:choose>
@@ -9198,7 +9198,7 @@
             </xsl:otherwise>
           </xsl:choose>
         </xsl:when>
-        <!-- No slash in subfield ǂ6 -->
+        <!-- No slash in subfield $6 -->
         <xsl:when test="not(matches($subfields/*:subfield[@code = '6'], '/'))">
           <xsl:variable name="linkingField">
             <xsl:value-of select="$subfields/*:subfield[@code = '6']"/>
@@ -9241,7 +9241,7 @@
             </xsl:otherwise>
           </xsl:choose>
         </xsl:when>
-        <!-- Malformed subfield ǂ6, use current indicator values -->
+        <!-- Malformed subfield $6, use current indicator values -->
         <xsl:otherwise>
           <xsl:apply-templates select="@ind1" mode="phase2"/>
           <xsl:apply-templates select="@ind2" mode="phase2"/>
@@ -9309,7 +9309,7 @@
   <xsl:template match="*:datafield[@tag = '010'][1]" mode="phase3">
     <xsl:choose>
       <!-- Copy when datafield 010 is not repeated or following-sibling 
-        datafield 010 has fields other than ǂz -->
+        datafield 010 has fields other than $z -->
       <xsl:when
         test="not(following-sibling::*:datafield[@tag = '010']) or following-sibling::*:datafield[@tag = '010']/*:subfield[matches(@code, '[^z]')]">
         <xsl:copy>
@@ -9318,10 +9318,10 @@
         </xsl:copy>
       </xsl:when>
       <!-- Datafield 010 repeated -->
-      <!-- Following sibling 010 has only ǂz subfields -->
+      <!-- Following sibling 010 has only $z subfields -->
       <xsl:when
         test="count(following-sibling::*:datafield[@tag = '010']/*:subfield[@code = 'z']) = count(following-sibling::*:datafield[@tag = '010']/*:subfield)">
-        <!-- Include following sibling ǂz subfields -->
+        <!-- Include following sibling $z subfields -->
         <xsl:copy>
           <xsl:apply-templates select="@*" mode="phase3"/>
           <xsl:apply-templates mode="phase3"/>
@@ -9334,7 +9334,7 @@
   </xsl:template>
 
   <xsl:template match="*:datafield[@tag = '010'][position() &gt; 1]" mode="phase3">
-    <!-- Process 010 if there are subfields other than ǂz -->
+    <!-- Process 010 if there are subfields other than $z -->
     <xsl:choose>
       <xsl:when test="not(count(*:subfield[@code = 'z']) = count(*:subfield))">
         <xsl:copy>
@@ -9354,7 +9354,7 @@
     </xsl:choose>
   </xsl:template>
 
-  <!-- Delete 035 that doesn't have ǂa -->
+  <!-- Delete 035 that doesn't have $a -->
   <!--<xsl:template match="*:datafield[@tag = '035' and not(*:subfield[@code = 'a'])]"/>-->
 
   <!-- Because 040 is not repeatable, join all 040s into a single datafield -->
@@ -9412,7 +9412,7 @@
       <xsl:call-template name="createLogMessage">
         <xsl:with-param name="context">datafield <xsl:value-of select="../@tag"
           /></xsl:with-param>
-        <xsl:with-param name="messageText">Subfield ǂ<xsl:value-of select="@code"/>
+        <xsl:with-param name="messageText">Subfield $<xsl:value-of select="@code"/>
           modified</xsl:with-param>
       </xsl:call-template>
     </xsl:if>
@@ -9429,7 +9429,7 @@
     <xsl:call-template name="createLogMessage">
       <xsl:with-param name="context">datafield <xsl:value-of select="../@tag"
         /></xsl:with-param>
-      <xsl:with-param name="messageText">Subfield ǂ<xsl:value-of select="@code"/>
+      <xsl:with-param name="messageText">Subfield $<xsl:value-of select="@code"/>
         modified</xsl:with-param>
     </xsl:call-template>
 
@@ -9449,15 +9449,15 @@
       <xsl:call-template name="createLogMessage">
         <xsl:with-param name="context">datafield <xsl:value-of select="../@tag"
           /></xsl:with-param>
-        <xsl:with-param name="messageText">Subfield ǂ<xsl:value-of select="@code"/>
+        <xsl:with-param name="messageText">Subfield $<xsl:value-of select="@code"/>
           modified</xsl:with-param>
       </xsl:call-template>
     </xsl:if>
   </xsl:template>
 
   <!-- Delete spaces in direct order, abbreviated names in access 
-    points per Fritz, 3.1-31, A 24, and in 028 and 260 ǂb, since 
-    the values of 028 ǂb and 260 ǂb are supposed to match each other. -->
+    points per Fritz, 3.1-31, A 24, and in 028 and 260 $b, since 
+    the values of 028 $b and 260 $b are supposed to match each other. -->
   <!--<xsl:template
     match="*:datafield[matches(@tag, '[1678]1[01]')]/*:subfield[@code = 'a'] | *:datafield[matches(@tag, '028|260')]/*:subfield[@code = 'b']"
     mode="phase3">
@@ -9472,13 +9472,13 @@
       <xsl:call-template name="createLogMessage">
         <xsl:with-param name="context">datafield <xsl:value-of select="../@tag"
           /></xsl:with-param>
-        <xsl:with-param name="messageText">Subfield ǂ<xsl:value-of select="@code"/>
+        <xsl:with-param name="messageText">Subfield $<xsl:value-of select="@code"/>
           modified</xsl:with-param>
       </xsl:call-template>
     </xsl:if>
   </xsl:template>-->
 
-  <!-- Set 246 @ind2 to '3' when subfield ǂa is not a substring of 245 -->
+  <!-- Set 246 @ind2 to '3' when subfield $a is not a substring of 245 -->
   <xsl:template
     match="*:datafield[@tag = '246' and @ind2 = '0' and normalize-space(*:subfield[@code = 'a']) != '' and normalize-space(ancestor::*:record/*:datafield[@tag = '245'][1]) != '']"
     mode="phase3">
@@ -9518,7 +9518,7 @@
     </xsl:copy>
   </xsl:template>
 
-  <!-- Normalize 336, 337, and 338 subfield ǂ2 -->
+  <!-- Normalize 336, 337, and 338 subfield $2 -->
   <xsl:template
     match="*:datafield[matches(@tag, '33[678]')]/*:subfield[@code = '2'][matches(normalize-space(.), '^rda', 'i')]"
     mode="phase3">
@@ -9531,7 +9531,7 @@
             <xsl:call-template name="createLogMessage">
               <xsl:with-param name="context">datafield <xsl:value-of select="../@tag"
                 /></xsl:with-param>
-              <xsl:with-param name="messageText">Subfield ǂ2 modified</xsl:with-param>
+              <xsl:with-param name="messageText">Subfield $2 modified</xsl:with-param>
             </xsl:call-template>
           </xsl:if>
         </xsl:when>
@@ -9541,7 +9541,7 @@
             <xsl:call-template name="createLogMessage">
               <xsl:with-param name="context">datafield <xsl:value-of select="../@tag"
                 /></xsl:with-param>
-              <xsl:with-param name="messageText">Subfield ǂ2 modified</xsl:with-param>
+              <xsl:with-param name="messageText">Subfield $2 modified</xsl:with-param>
             </xsl:call-template>
           </xsl:if>
         </xsl:when>
@@ -9551,7 +9551,7 @@
             <xsl:call-template name="createLogMessage">
               <xsl:with-param name="context">datafield <xsl:value-of select="../@tag"
                 /></xsl:with-param>
-              <xsl:with-param name="messageText">Subfield ǂ2 modifed</xsl:with-param>
+              <xsl:with-param name="messageText">Subfield $2 modifed</xsl:with-param>
             </xsl:call-template>
           </xsl:if>
         </xsl:when>
@@ -9620,7 +9620,7 @@
     <xsl:call-template name="createLogMessage">
       <xsl:with-param name="context">datafield <xsl:value-of select="../@tag"
         /></xsl:with-param>
-      <xsl:with-param name="messageText">Subfield ǂ5 modified</xsl:with-param>
+      <xsl:with-param name="messageText">Subfield $5 modified</xsl:with-param>
     </xsl:call-template>
   </xsl:template>
 

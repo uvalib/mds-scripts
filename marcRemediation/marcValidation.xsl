@@ -210,7 +210,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', ../@tag)"/> subfield ǂ<value-of
+                <value-of select="concat('Datafield ', ../@tag)"/> subfield $<value-of
                   select="@code"/> contains Unicode replacement character
                 (U+FFFD)</svrl:text>
             </svrl:successful-report>
@@ -865,8 +865,8 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', ../@tag)"/> when subfield ǂa is
-                present, subfield ǂb must also be present.</svrl:text>
+                <value-of select="concat('Datafield ', ../@tag)"/> when subfield $a is
+                present, subfield $b must also be present.</svrl:text>
             </svrl:failed-assert>
           </variable>
           <sequence select="$failed-assert"/>
@@ -1041,7 +1041,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>Datafield 260 or 264 with
-                subfields ǂa and ǂb is required for full level serial records.</svrl:text>
+                subfields $a and $b is required for full level serial records.</svrl:text>
             </svrl:failed-assert>
           </variable>
           <sequence select="$failed-assert"/>
@@ -1091,7 +1091,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>Datafield 260 or 264 with
-                subfield ǂc is required for full level map records.</svrl:text>
+                subfield $c is required for full level map records.</svrl:text>
             </svrl:failed-assert>
           </variable>
           <sequence select="$failed-assert"/>
@@ -1183,7 +1183,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', ../@tag)"/> subfield ǂ6 must match
+                <value-of select="concat('Datafield ', ../@tag)"/> subfield $6 must match
                 regex:
                 '^\d{3}-\d{2}(/(\([BNS23]|\$1|\d{3}|[A-Za-z]{4})(/r)?)?$'.</svrl:text>
             </svrl:failed-assert>
@@ -1229,7 +1229,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', ../@tag)"/> subfield ǂ8 must match
+                <value-of select="concat('Datafield ', ../@tag)"/> subfield $8 must match
                 regex: '^[0-9]+(\.[0-9]+)?(\\[apux])?$'.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -1283,7 +1283,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>There are usually at least
-                two subfield ǂ8s with the same linkingNumber (<value-of
+                two subfield $8s with the same linkingNumber (<value-of
                   select="$linkingNumber"/>).</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -6274,7 +6274,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -6363,7 +6363,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -6376,7 +6376,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -6389,7 +6389,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -6402,7 +6402,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -6491,7 +6491,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -6504,7 +6504,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -6593,7 +6593,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -6606,7 +6606,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -6695,7 +6695,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -6708,7 +6708,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -6721,7 +6721,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂi is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $i is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -6734,7 +6734,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -6747,7 +6747,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -6802,7 +6802,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -6815,7 +6815,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -6916,7 +6916,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -6929,7 +6929,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -6984,7 +6984,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -7161,7 +7161,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -7174,7 +7174,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -7187,7 +7187,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -7276,7 +7276,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -7289,7 +7289,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂl is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $l is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -7302,7 +7302,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ0 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $0 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -7315,7 +7315,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -7328,7 +7328,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -7374,7 +7374,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', ../@tag)"/> subfield ǂa must match
+                <value-of select="concat('Datafield ', ../@tag)"/> subfield $a must match
                 '\d{4}-\d{3}[\dX]'.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -7463,7 +7463,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -7476,7 +7476,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ0 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $0 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -7489,7 +7489,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -7502,7 +7502,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -7591,7 +7591,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -7604,7 +7604,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -7617,7 +7617,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -7630,7 +7630,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -7643,7 +7643,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -7698,7 +7698,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -7744,7 +7744,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is required
                 when @ind1 = '7'.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -7875,7 +7875,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -7964,7 +7964,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -7977,7 +7977,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -7990,7 +7990,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -8003,7 +8003,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂe is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $e is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -8016,7 +8016,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -8029,7 +8029,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -8084,7 +8084,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -8173,7 +8173,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -8186,7 +8186,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -8241,7 +8241,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -8330,7 +8330,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -8343,7 +8343,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -8356,7 +8356,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -8411,7 +8411,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -8424,7 +8424,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -8513,7 +8513,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -8526,7 +8526,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -8581,7 +8581,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -8670,7 +8670,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -8683,7 +8683,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -8696,7 +8696,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -8709,7 +8709,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂe is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $e is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -8722,7 +8722,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂg is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $g is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -8735,7 +8735,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂm is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $m is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -8748,7 +8748,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂn is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $n is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -8761,7 +8761,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂo is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $o is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -8774,7 +8774,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂp is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $p is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -8787,7 +8787,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂr is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $r is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -8800,7 +8800,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -8813,7 +8813,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -8902,7 +8902,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -8915,7 +8915,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -8928,7 +8928,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -8983,7 +8983,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -8996,7 +8996,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -9085,7 +9085,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -9098,7 +9098,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -9187,7 +9187,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -9200,7 +9200,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -9213,7 +9213,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂe is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $e is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -9226,7 +9226,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -9239,7 +9239,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂg is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $g is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -9252,7 +9252,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂj is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $j is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -9265,7 +9265,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂk is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $k is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -9278,7 +9278,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂm is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $m is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -9291,7 +9291,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂn is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $n is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -9304,7 +9304,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂp is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $p is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -9317,7 +9317,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂr is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $r is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -9330,7 +9330,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂx is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $x is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -9343,7 +9343,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂy is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $y is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -9356,7 +9356,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂz is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $z is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -9369,7 +9369,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -9382,7 +9382,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -9395,7 +9395,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -9450,7 +9450,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -9539,7 +9539,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -9552,7 +9552,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -9607,7 +9607,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -9708,7 +9708,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -9721,7 +9721,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -9734,7 +9734,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -9789,7 +9789,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -9878,7 +9878,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -9891,7 +9891,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -9904,7 +9904,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -9917,7 +9917,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -9972,7 +9972,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -10073,7 +10073,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -10086,7 +10086,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -10141,7 +10141,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -10242,7 +10242,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -10255,7 +10255,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -10268,7 +10268,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -10281,7 +10281,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -10336,7 +10336,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -10381,7 +10381,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', ../@tag)"/> subfield ǂb must match
+                <value-of select="concat('Datafield ', ../@tag)"/> subfield $b must match
                 a valid MARC language code.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -10483,7 +10483,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -10496,7 +10496,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -10509,7 +10509,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -10555,7 +10555,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is required
                 when @ind2 = '7'.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -10698,7 +10698,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -10787,7 +10787,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -10842,7 +10842,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -10943,7 +10943,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -10998,7 +10998,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -11043,7 +11043,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', ../@tag)"/> subfield ǂa must match
+                <value-of select="concat('Datafield ', ../@tag)"/> subfield $a must match
                 a valid country code.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -11144,7 +11144,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -11233,7 +11233,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -11246,7 +11246,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -11259,7 +11259,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -11272,7 +11272,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -11285,7 +11285,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂe is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $e is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -11298,7 +11298,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂj is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $j is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -11311,7 +11311,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂk is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $k is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -11324,7 +11324,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂl is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $l is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -11337,7 +11337,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂm is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $m is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -11350,7 +11350,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂo is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $o is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -11363,7 +11363,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂp is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $p is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -11376,7 +11376,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂn is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $n is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -11389,7 +11389,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -11402,7 +11402,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -11415,7 +11415,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -11504,7 +11504,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -11559,7 +11559,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -11605,7 +11605,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is required
                 when @ind2 = '7'.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -11694,7 +11694,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -11740,7 +11740,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is required
                 when @ind2 = '7'.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -11841,7 +11841,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂn is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $n is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -11854,7 +11854,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂy is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $y is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -11909,7 +11909,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -11998,7 +11998,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -12011,7 +12011,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -12024,7 +12024,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -12079,7 +12079,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -12124,7 +12124,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb may only occur
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b may only occur
                 once.</svrl:text>
             </svrl:successful-report>
           </variable>
@@ -12184,7 +12184,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', ../@tag)"/> subfield ǂa contains a
+                <value-of select="concat('Datafield ', ../@tag)"/> subfield $a contains a
                 suspect value.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -12230,7 +12230,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', ../@tag)"/> subfield ǂb contains a
+                <value-of select="concat('Datafield ', ../@tag)"/> subfield $b contains a
                 suspect value.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -12319,7 +12319,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -12332,7 +12332,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -12345,7 +12345,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -12400,7 +12400,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -12489,7 +12489,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -12502,7 +12502,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -12515,7 +12515,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -12570,7 +12570,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -12616,7 +12616,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is required
                 when @ind1 = '7'.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -12705,7 +12705,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -12718,7 +12718,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -12731,7 +12731,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -12744,7 +12744,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -12799,7 +12799,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -12888,7 +12888,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -12943,7 +12943,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -13032,7 +13032,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -13045,7 +13045,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -13100,7 +13100,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -13201,7 +13201,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -13214,7 +13214,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -13303,7 +13303,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -13358,7 +13358,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -13447,7 +13447,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -13460,7 +13460,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -13515,7 +13515,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -13604,7 +13604,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -13617,7 +13617,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -13630,7 +13630,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -13685,7 +13685,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -13774,7 +13774,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -13829,7 +13829,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -13918,7 +13918,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -13931,7 +13931,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -13944,7 +13944,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -13957,7 +13957,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -14012,7 +14012,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -14101,7 +14101,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -14114,7 +14114,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂm is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $m is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -14127,7 +14127,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂq is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $q is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -14140,7 +14140,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -14153,7 +14153,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -14208,7 +14208,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -14297,7 +14297,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂm is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $m is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -14310,7 +14310,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂq is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $q is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -14323,7 +14323,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -14336,7 +14336,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -14391,7 +14391,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -14404,7 +14404,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -14493,7 +14493,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -14506,7 +14506,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂq is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $q is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -14519,7 +14519,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -14532,7 +14532,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -14587,7 +14587,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -14676,7 +14676,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -14765,7 +14765,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -14778,7 +14778,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -14791,7 +14791,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -14846,7 +14846,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -14892,7 +14892,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is required
                 when @ind1 = '7'.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -14981,7 +14981,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -14994,7 +14994,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -15049,7 +15049,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -15138,7 +15138,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -15151,7 +15151,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂe is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $e is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -15164,7 +15164,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -15177,7 +15177,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂm is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $m is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -15190,7 +15190,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂq is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $q is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -15245,7 +15245,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -15290,7 +15290,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb may only occur
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b may only occur
                 once.</svrl:text>
             </svrl:successful-report>
           </variable>
@@ -15350,7 +15350,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', ../@tag)"/> subfield ǂa contains a
+                <value-of select="concat('Datafield ', ../@tag)"/> subfield $a contains a
                 suspect value.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -15396,7 +15396,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', ../@tag)"/> subfield ǂb contains a
+                <value-of select="concat('Datafield ', ../@tag)"/> subfield $b contains a
                 suspect value.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -15485,7 +15485,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -15498,7 +15498,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -15511,7 +15511,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂe is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $e is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -15524,7 +15524,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -15537,7 +15537,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -15592,7 +15592,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -15681,7 +15681,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -15694,7 +15694,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -15707,7 +15707,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂe is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $e is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -15720,7 +15720,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -15775,7 +15775,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -15864,7 +15864,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂe is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $e is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -15877,7 +15877,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -15932,7 +15932,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -16033,7 +16033,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -16046,7 +16046,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -16059,7 +16059,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -16072,7 +16072,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -16085,7 +16085,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂl is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $l is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -16098,7 +16098,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂq is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $q is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -16111,7 +16111,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -16124,7 +16124,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂu is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $u is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -16137,7 +16137,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -16150,7 +16150,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -16205,7 +16205,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -16306,7 +16306,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -16319,7 +16319,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -16332,7 +16332,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂl is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $l is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -16345,7 +16345,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -16358,7 +16358,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂu is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $u is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -16371,7 +16371,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -16384,7 +16384,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -16439,7 +16439,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -16540,7 +16540,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -16553,7 +16553,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -16566,7 +16566,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂl is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $l is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -16579,7 +16579,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂq is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $q is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -16592,7 +16592,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -16605,7 +16605,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂu is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $u is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -16618,7 +16618,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -16631,7 +16631,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -16686,7 +16686,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -16787,7 +16787,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -16800,7 +16800,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -16813,7 +16813,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -16826,7 +16826,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂl is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $l is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -16839,7 +16839,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂo is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $o is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -16852,7 +16852,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂr is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $r is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -16865,7 +16865,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -16878,7 +16878,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -16891,7 +16891,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -16946,7 +16946,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -17035,7 +17035,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -17048,7 +17048,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -17061,7 +17061,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -17116,7 +17116,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -17205,7 +17205,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -17218,7 +17218,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -17231,7 +17231,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -17286,7 +17286,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -17387,7 +17387,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -17400,7 +17400,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -17413,7 +17413,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -17426,7 +17426,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂl is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $l is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -17439,7 +17439,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂo is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $o is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -17452,7 +17452,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂr is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $r is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -17465,7 +17465,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -17478,7 +17478,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -17533,7 +17533,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -17622,7 +17622,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -17635,7 +17635,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -17648,7 +17648,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -17661,7 +17661,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -17674,7 +17674,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂy is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $y is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -17687,7 +17687,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -17742,7 +17742,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -17755,7 +17755,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂy is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $y is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -17800,7 +17800,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', ../@tag)"/> subfield ǂy must match
+                <value-of select="concat('Datafield ', ../@tag)"/> subfield $y must match
                 a valid MARC language code.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -17901,7 +17901,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -17914,7 +17914,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -17927,7 +17927,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -17940,7 +17940,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂl is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $l is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -17953,7 +17953,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂo is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $o is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -17966,7 +17966,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂr is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $r is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -17979,7 +17979,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -18034,7 +18034,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -18135,7 +18135,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -18148,7 +18148,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -18161,7 +18161,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -18174,7 +18174,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -18187,7 +18187,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂg is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $g is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -18200,7 +18200,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -18213,7 +18213,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂs is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $s is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -18226,7 +18226,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -18281,7 +18281,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -18370,7 +18370,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -18383,7 +18383,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -18396,7 +18396,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -18409,7 +18409,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -18422,7 +18422,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂi is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $i is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -18435,7 +18435,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ5 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $5 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -18448,7 +18448,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -18503,7 +18503,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -18592,7 +18592,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -18605,7 +18605,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -18618,7 +18618,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -18631,7 +18631,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -18644,7 +18644,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂx is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $x is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -18657,7 +18657,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -18712,7 +18712,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -18801,7 +18801,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -18814,7 +18814,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -18827,7 +18827,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -18840,7 +18840,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -18895,7 +18895,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -18984,7 +18984,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -18997,7 +18997,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -19010,7 +19010,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -19065,7 +19065,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -19166,7 +19166,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -19179,7 +19179,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -19234,7 +19234,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -19323,7 +19323,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -19336,7 +19336,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -19349,7 +19349,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -19362,7 +19362,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -19375,7 +19375,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂe is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $e is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -19388,7 +19388,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -19401,7 +19401,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂg is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $g is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -19414,7 +19414,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -19469,7 +19469,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -19570,7 +19570,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -19583,7 +19583,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -19638,7 +19638,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -19727,7 +19727,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -19740,7 +19740,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -19795,7 +19795,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -19884,7 +19884,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -19897,7 +19897,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -19910,7 +19910,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -19999,7 +19999,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -20012,7 +20012,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -20025,7 +20025,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -20075,7 +20075,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="@tag"/> subfield ǂa is recommended.</svrl:text>
+                <value-of select="@tag"/> subfield $a is recommended.</svrl:text>
             </svrl:failed-assert>
           </variable>
           <sequence select="$failed-assert"/>
@@ -20086,7 +20086,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="@tag"/> subfield ǂb is recommended.</svrl:text>
+                <value-of select="@tag"/> subfield $b is recommended.</svrl:text>
             </svrl:failed-assert>
           </variable>
           <sequence select="$failed-assert"/>
@@ -20097,7 +20097,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="@tag"/> subfield ǂc is recommended.</svrl:text>
+                <value-of select="@tag"/> subfield $c is recommended.</svrl:text>
             </svrl:failed-assert>
           </variable>
           <sequence select="$failed-assert"/>
@@ -20197,7 +20197,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -20298,7 +20298,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -20311,7 +20311,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -20324,7 +20324,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -20337,7 +20337,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂk is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $k is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -20350,7 +20350,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂl is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $l is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -20363,7 +20363,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -20464,7 +20464,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -20477,7 +20477,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -20532,7 +20532,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -20621,7 +20621,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -20634,7 +20634,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -20723,7 +20723,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -20736,7 +20736,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -20749,7 +20749,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -20762,7 +20762,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂe is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $e is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -20775,7 +20775,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -20788,7 +20788,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂg is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $g is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -20801,7 +20801,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -20814,7 +20814,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂi is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $i is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -20827,7 +20827,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -20916,7 +20916,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -20929,7 +20929,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂe is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $e is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -20942,7 +20942,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -20955,7 +20955,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -21010,7 +21010,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -21068,7 +21068,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="@tag"/> subfield ǂc is recommended.</svrl:text>
+                <value-of select="@tag"/> subfield $c is recommended.</svrl:text>
             </svrl:failed-assert>
           </variable>
           <sequence select="$failed-assert"/>
@@ -21168,7 +21168,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -21223,7 +21223,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -21312,7 +21312,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -21325,7 +21325,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -21338,7 +21338,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -21393,7 +21393,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -21482,7 +21482,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -21495,7 +21495,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -21508,7 +21508,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ0 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $0 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -21521,7 +21521,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -21534,7 +21534,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -21589,7 +21589,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -21678,7 +21678,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -21691,7 +21691,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -21704,7 +21704,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ0 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $0 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -21717,7 +21717,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -21730,7 +21730,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -21785,7 +21785,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -21874,7 +21874,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -21887,7 +21887,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -21900,7 +21900,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -21913,7 +21913,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -22002,7 +22002,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -22015,7 +22015,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -22028,7 +22028,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -22041,7 +22041,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -22054,7 +22054,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -22109,7 +22109,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -22198,7 +22198,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -22211,7 +22211,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -22224,7 +22224,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -22279,7 +22279,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -22368,7 +22368,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -22381,7 +22381,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -22394,7 +22394,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -22449,7 +22449,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -22538,7 +22538,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -22551,7 +22551,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -22564,7 +22564,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -22619,7 +22619,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -22708,7 +22708,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -22721,7 +22721,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -22734,7 +22734,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -22823,7 +22823,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -22836,7 +22836,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -22849,7 +22849,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -22862,7 +22862,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -22951,7 +22951,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -22964,7 +22964,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -22977,7 +22977,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -22990,7 +22990,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -23003,7 +23003,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂg is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $g is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -23016,7 +23016,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -23029,7 +23029,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂi is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $i is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -23042,7 +23042,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂj is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $j is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -23055,7 +23055,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂk is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $k is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -23068,7 +23068,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂl is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $l is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -23081,7 +23081,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂm is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $m is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -23094,7 +23094,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂn is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $n is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -23107,7 +23107,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂo is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $o is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -23120,7 +23120,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂp is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $p is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -23133,7 +23133,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂq is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $q is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -23146,7 +23146,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂr is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $r is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -23159,7 +23159,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂs is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $s is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -23172,7 +23172,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -23185,7 +23185,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂu is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $u is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -23198,7 +23198,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂv is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $v is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -23211,7 +23211,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂw is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $w is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -23224,7 +23224,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -23237,7 +23237,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -23326,7 +23326,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -23339,7 +23339,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -23352,7 +23352,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -23365,7 +23365,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -23378,7 +23378,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂe is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $e is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -23391,7 +23391,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -23404,7 +23404,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂg is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $g is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -23417,7 +23417,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -23430,7 +23430,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂi is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $i is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -23443,7 +23443,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -23532,7 +23532,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -23545,7 +23545,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -23558,7 +23558,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -23647,7 +23647,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -23660,7 +23660,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -23673,7 +23673,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -23762,7 +23762,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -23775,7 +23775,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -23788,7 +23788,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -23877,7 +23877,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -23890,7 +23890,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -23903,7 +23903,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -23992,7 +23992,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -24005,7 +24005,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -24018,7 +24018,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -24107,7 +24107,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -24120,7 +24120,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -24133,7 +24133,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -24222,7 +24222,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -24235,7 +24235,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -24248,7 +24248,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂe is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $e is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -24261,7 +24261,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -24274,7 +24274,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂg is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $g is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -24287,7 +24287,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂi is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $i is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -24300,7 +24300,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -24389,7 +24389,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -24402,7 +24402,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -24415,7 +24415,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -24504,7 +24504,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -24517,7 +24517,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -24530,7 +24530,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂe is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $e is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -24543,7 +24543,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -24556,7 +24556,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂg is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $g is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -24569,7 +24569,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -24582,7 +24582,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -24637,7 +24637,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -24687,7 +24687,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', ../@tag)"/> subfield ǂb must match
+                <value-of select="concat('Datafield ', ../@tag)"/> subfield $b must match
                 a valid country code.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -24788,7 +24788,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -24801,7 +24801,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -24856,7 +24856,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -24869,7 +24869,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -24958,7 +24958,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -24971,7 +24971,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂk is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $k is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -24984,7 +24984,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂl is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $l is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -24997,7 +24997,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂs is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $s is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -25010,7 +25010,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂy is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $y is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -25023,7 +25023,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -25036,7 +25036,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ5 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $5 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -25049,7 +25049,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -25138,7 +25138,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -25151,7 +25151,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂz is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $z is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -25164,7 +25164,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -25219,7 +25219,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -25308,7 +25308,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -25321,7 +25321,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -25334,7 +25334,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -25347,7 +25347,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -25360,7 +25360,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂe is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $e is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -25373,7 +25373,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -25386,7 +25386,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂg is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $g is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -25399,7 +25399,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -25412,7 +25412,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂi is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $i is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -25425,7 +25425,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂj is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $j is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -25438,7 +25438,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂk is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $k is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -25451,7 +25451,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂl is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $l is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -25464,7 +25464,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂm is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $m is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -25477,7 +25477,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂu is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $u is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -25490,7 +25490,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂv is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $v is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -25503,7 +25503,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -25516,7 +25516,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ8 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $8 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -25605,7 +25605,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -25618,7 +25618,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -25631,7 +25631,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -25644,7 +25644,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -25657,7 +25657,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂe is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $e is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -25670,7 +25670,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -25683,7 +25683,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂg is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $g is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -25696,7 +25696,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -25709,7 +25709,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂi is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $i is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -25722,7 +25722,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂj is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $j is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -25735,7 +25735,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂk is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $k is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -25748,7 +25748,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂm is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $m is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -25761,7 +25761,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -25774,7 +25774,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -25824,7 +25824,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', ../@tag)"/> subfield ǂk must match
+                <value-of select="concat('Datafield ', ../@tag)"/> subfield $k must match
                 a valid MARC country code.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -25913,7 +25913,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -25926,7 +25926,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -25939,7 +25939,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -25952,7 +25952,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -25965,7 +25965,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂe is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $e is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -25978,7 +25978,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -25991,7 +25991,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂg is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $g is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -26004,7 +26004,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂj is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $j is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -26017,7 +26017,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂk is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $k is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -26030,7 +26030,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂm is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $m is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -26043,7 +26043,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -26056,7 +26056,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -26106,7 +26106,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', ../@tag)"/> subfield ǂk must match
+                <value-of select="concat('Datafield ', ../@tag)"/> subfield $k must match
                 a valid MARC country code.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -26195,7 +26195,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂs is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $s is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -26208,7 +26208,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -26221,7 +26221,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -26234,7 +26234,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -26247,7 +26247,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -26336,7 +26336,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -26349,7 +26349,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -26362,7 +26362,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -26417,7 +26417,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -26463,7 +26463,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is required
                 when @ind2 = '7'.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -26552,7 +26552,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -26565,7 +26565,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -26578,7 +26578,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -26633,7 +26633,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -26722,7 +26722,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -26735,7 +26735,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -26748,7 +26748,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -26803,7 +26803,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -26892,7 +26892,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂr is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $r is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -26905,7 +26905,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂs is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $s is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -26918,7 +26918,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -26931,7 +26931,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -26944,7 +26944,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -26957,7 +26957,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -27012,7 +27012,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -27101,7 +27101,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -27114,7 +27114,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂe is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $e is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -27127,7 +27127,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -27140,7 +27140,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -27153,7 +27153,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -27208,7 +27208,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -27297,7 +27297,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -27310,7 +27310,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -27323,7 +27323,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -27378,7 +27378,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -27467,7 +27467,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂm is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $m is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -27480,7 +27480,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂn is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $n is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -27493,7 +27493,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -27506,7 +27506,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -27519,7 +27519,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -27608,7 +27608,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂm is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $m is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -27621,7 +27621,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂn is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $n is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -27634,7 +27634,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -27647,7 +27647,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -27660,7 +27660,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -27749,7 +27749,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -27762,7 +27762,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -27775,7 +27775,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -27864,7 +27864,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -27877,7 +27877,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -27890,7 +27890,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -27979,7 +27979,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -27992,7 +27992,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -28005,7 +28005,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -28018,7 +28018,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -28031,7 +28031,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂg is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $g is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -28044,7 +28044,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂl is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $l is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -28057,7 +28057,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂq is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $q is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -28070,7 +28070,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -28083,7 +28083,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂu is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $u is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -28096,7 +28096,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂv is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $v is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -28109,7 +28109,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂx is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $x is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -28122,7 +28122,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -28211,7 +28211,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -28224,7 +28224,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -28237,7 +28237,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -28250,7 +28250,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂg is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $g is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -28263,7 +28263,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂl is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $l is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -28276,7 +28276,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -28289,7 +28289,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂu is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $u is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -28302,7 +28302,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂv is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $v is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -28315,7 +28315,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂx is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $x is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -28328,7 +28328,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -28417,7 +28417,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -28430,7 +28430,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -28443,7 +28443,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -28456,7 +28456,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -28469,7 +28469,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂg is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $g is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -28482,7 +28482,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂl is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $l is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -28495,7 +28495,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂq is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $q is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -28508,7 +28508,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -28521,7 +28521,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂu is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $u is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -28534,7 +28534,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂv is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $v is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -28547,7 +28547,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂx is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $x is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -28560,7 +28560,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -28649,7 +28649,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂl is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $l is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -28662,7 +28662,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -28675,7 +28675,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -28730,7 +28730,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -28819,7 +28819,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -28832,7 +28832,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -28845,7 +28845,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ5 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $5 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -28858,7 +28858,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -28913,7 +28913,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -29002,7 +29002,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -29015,7 +29015,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ5 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $5 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -29028,7 +29028,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -29083,7 +29083,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -29172,7 +29172,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -29185,7 +29185,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -29198,7 +29198,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -29211,7 +29211,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -29224,7 +29224,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -29280,8 +29280,8 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required or
-                subfields ǂb, ǂc, and ǂd are required for a full level record.</svrl:text>
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required or
+                subfields $b, $c, and $d are required for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
           <sequence select="$failed-assert"/>
@@ -29369,7 +29369,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -29382,7 +29382,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -29395,7 +29395,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -29450,7 +29450,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -29539,7 +29539,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -29552,7 +29552,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -29602,7 +29602,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 permitted in extended contents note</svrl:text>
             </svrl:successful-report>
           </variable>
@@ -29691,7 +29691,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -29704,7 +29704,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -29717,7 +29717,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -29730,7 +29730,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ5 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $5 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -29743,7 +29743,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -29798,7 +29798,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -29899,7 +29899,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -29912,7 +29912,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -29925,7 +29925,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -30014,7 +30014,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -30027,7 +30027,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -30040,7 +30040,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -30095,7 +30095,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -30184,7 +30184,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -30197,7 +30197,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -30210,7 +30210,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -30223,7 +30223,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂx is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $x is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -30236,7 +30236,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -30249,7 +30249,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -30304,7 +30304,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -30393,7 +30393,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -30406,7 +30406,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -30419,7 +30419,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -30474,7 +30474,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -30563,7 +30563,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -30576,7 +30576,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -30589,7 +30589,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -30644,7 +30644,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -30745,7 +30745,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -30758,7 +30758,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -30771,7 +30771,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂe is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $e is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -30784,7 +30784,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -30797,7 +30797,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂi is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $i is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -30810,7 +30810,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂm is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $m is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -30823,7 +30823,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -30912,7 +30912,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -30925,7 +30925,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂz is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $z is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -30938,7 +30938,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -30993,7 +30993,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -31082,7 +31082,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -31095,7 +31095,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -31150,7 +31150,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -31239,7 +31239,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -31252,7 +31252,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -31265,7 +31265,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -31354,7 +31354,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -31367,7 +31367,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -31380,7 +31380,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -31393,7 +31393,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂz is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $z is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -31406,7 +31406,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -31419,7 +31419,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -31432,7 +31432,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -31487,7 +31487,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -31576,7 +31576,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -31589,7 +31589,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -31602,7 +31602,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -31657,7 +31657,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -31746,7 +31746,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -31759,7 +31759,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -31848,7 +31848,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -31861,7 +31861,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -31874,7 +31874,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -31887,7 +31887,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -31942,7 +31942,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -32031,7 +32031,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -32044,7 +32044,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂz is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $z is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -32057,7 +32057,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -32146,7 +32146,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -32159,7 +32159,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -32172,7 +32172,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -32185,7 +32185,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -32198,7 +32198,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂi is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $i is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -32211,7 +32211,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ5 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $5 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -32224,7 +32224,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -32279,7 +32279,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -32368,7 +32368,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -32381,7 +32381,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -32394,7 +32394,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -32407,7 +32407,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -32420,7 +32420,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂz is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $z is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -32433,7 +32433,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -32446,7 +32446,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -32501,7 +32501,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -32590,7 +32590,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -32603,7 +32603,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -32616,7 +32616,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -32671,7 +32671,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -32760,7 +32760,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -32773,7 +32773,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -32786,7 +32786,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂe is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $e is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -32799,7 +32799,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -32812,7 +32812,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ5 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $5 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -32825,7 +32825,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -32838,7 +32838,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ7 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $7 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -32893,7 +32893,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -32982,7 +32982,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -32995,7 +32995,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -33008,7 +33008,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -33021,7 +33021,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂe is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $e is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -33034,7 +33034,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂl is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $l is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -33047,7 +33047,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂm is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $m is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -33060,7 +33060,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂp is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $p is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -33073,7 +33073,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -33086,7 +33086,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -33099,7 +33099,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -33188,7 +33188,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -33201,7 +33201,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂg is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $g is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -33214,7 +33214,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -33227,7 +33227,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -33282,7 +33282,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -33371,7 +33371,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -33384,7 +33384,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -33473,7 +33473,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -33486,7 +33486,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂi is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $i is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -33499,7 +33499,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -33512,7 +33512,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ5 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $5 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -33525,7 +33525,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -33580,7 +33580,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -33669,7 +33669,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -33682,7 +33682,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -33695,7 +33695,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -33708,7 +33708,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -33721,7 +33721,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂe is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $e is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -33734,7 +33734,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -33747,7 +33747,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂg is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $g is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -33836,7 +33836,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -33849,7 +33849,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -33862,7 +33862,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -33875,7 +33875,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -33888,7 +33888,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂq is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $q is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -33901,7 +33901,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -33914,7 +33914,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -33927,7 +33927,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ5 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $5 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -33940,7 +33940,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -33995,7 +33995,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -34084,7 +34084,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -34097,7 +34097,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -34110,7 +34110,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -34123,7 +34123,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -34136,7 +34136,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂe is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $e is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -34149,7 +34149,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -34162,7 +34162,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -34175,7 +34175,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -34188,7 +34188,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ5 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $5 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -34201,7 +34201,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -34290,7 +34290,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -34303,7 +34303,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -34316,7 +34316,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -34329,7 +34329,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂg is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $g is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -34342,7 +34342,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂi is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $i is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -34355,7 +34355,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂj is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $j is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -34368,7 +34368,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂl is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $l is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -34381,7 +34381,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂm is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $m is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -34394,7 +34394,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂo is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $o is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -34407,7 +34407,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂq is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $q is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -34420,7 +34420,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂr is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $r is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -34433,7 +34433,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂs is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $s is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -34446,7 +34446,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -34459,7 +34459,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -34548,7 +34548,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -34561,7 +34561,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -34616,7 +34616,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -34705,7 +34705,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -34718,7 +34718,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -34731,7 +34731,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -34786,7 +34786,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -34875,7 +34875,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -34888,7 +34888,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂz is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $z is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -34901,7 +34901,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -34914,7 +34914,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -35003,7 +35003,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -35016,7 +35016,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂz is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $z is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -35029,7 +35029,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -35084,7 +35084,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -35173,7 +35173,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -35186,7 +35186,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂz is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $z is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -35199,7 +35199,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -35254,7 +35254,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -35343,7 +35343,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -35356,7 +35356,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -35369,7 +35369,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -35382,7 +35382,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -35395,7 +35395,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂg is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $g is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -35408,7 +35408,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -35421,7 +35421,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂi is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $i is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -35434,7 +35434,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂj is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $j is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -35447,7 +35447,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂk is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $k is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -35460,7 +35460,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂl is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $l is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -35473,7 +35473,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂm is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $m is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -35486,7 +35486,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂn is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $n is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -35499,7 +35499,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -35588,7 +35588,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -35601,7 +35601,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -35614,7 +35614,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -35627,7 +35627,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -35640,7 +35640,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -35729,7 +35729,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -35742,7 +35742,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -35797,7 +35797,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -35886,7 +35886,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -35899,7 +35899,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -35912,7 +35912,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -35925,7 +35925,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ5 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $5 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -35938,7 +35938,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -35993,7 +35993,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -36082,7 +36082,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -36095,7 +36095,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ5 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $5 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -36108,7 +36108,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -36197,7 +36197,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -36210,7 +36210,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -36223,7 +36223,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ5 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $5 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -36236,7 +36236,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -36291,7 +36291,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -36380,7 +36380,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -36393,7 +36393,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -36406,7 +36406,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -36461,7 +36461,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -36550,7 +36550,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -36563,7 +36563,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -36576,7 +36576,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -36631,7 +36631,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -36720,7 +36720,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -36733,7 +36733,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂz is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $z is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -36746,7 +36746,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ5 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $5 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -36759,7 +36759,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -36814,7 +36814,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -36903,7 +36903,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -36916,7 +36916,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -36929,7 +36929,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -36984,7 +36984,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -37073,7 +37073,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -37086,7 +37086,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -37099,7 +37099,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -37112,7 +37112,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ5 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $5 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -37125,7 +37125,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -37180,7 +37180,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -37269,7 +37269,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -37282,7 +37282,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ5 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $5 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -37295,7 +37295,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -37384,7 +37384,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -37397,7 +37397,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -37410,7 +37410,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ5 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $5 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -37423,7 +37423,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -37478,7 +37478,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -37567,7 +37567,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -37580,7 +37580,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -37593,7 +37593,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -37648,7 +37648,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -37737,7 +37737,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -37750,7 +37750,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ5 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $5 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -37763,7 +37763,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -37818,7 +37818,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -37907,7 +37907,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -37920,7 +37920,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -37933,7 +37933,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -37988,7 +37988,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -38078,7 +38078,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -38168,7 +38168,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -38258,7 +38258,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -38348,7 +38348,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -38438,7 +38438,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -38528,7 +38528,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -38618,7 +38618,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -38708,7 +38708,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -38798,7 +38798,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -38887,7 +38887,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -38900,7 +38900,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -38913,7 +38913,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -38926,7 +38926,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -38939,7 +38939,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -38952,7 +38952,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂl is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $l is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -38965,7 +38965,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂo is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $o is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -38978,7 +38978,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂq is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $q is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -38991,7 +38991,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂr is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $r is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -39004,7 +39004,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -39017,7 +39017,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂu is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $u is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -39030,7 +39030,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -39043,7 +39043,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -39056,7 +39056,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -39111,7 +39111,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -39157,7 +39157,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is required
                 when @ind2 = '7'.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -39246,7 +39246,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -39259,7 +39259,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -39272,7 +39272,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -39285,7 +39285,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂl is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $l is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -39298,7 +39298,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂo is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $o is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -39311,7 +39311,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂr is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $r is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -39324,7 +39324,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -39337,7 +39337,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂu is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $u is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -39350,7 +39350,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -39363,7 +39363,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -39376,7 +39376,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -39431,7 +39431,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -39477,7 +39477,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is required
                 when @ind2 = '7'.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -39566,7 +39566,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -39579,7 +39579,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -39592,7 +39592,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -39605,7 +39605,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂl is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $l is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -39618,7 +39618,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂq is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $q is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -39631,7 +39631,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -39644,7 +39644,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂu is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $u is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -39657,7 +39657,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -39670,7 +39670,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -39683,7 +39683,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -39738,7 +39738,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -39784,7 +39784,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is required
                 when @ind2 = '7'.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -39873,7 +39873,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -39886,7 +39886,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -39899,7 +39899,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -39912,7 +39912,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂl is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $l is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -39925,7 +39925,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂo is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $o is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -39938,7 +39938,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂr is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $r is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -39951,7 +39951,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -39964,7 +39964,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -39977,7 +39977,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -39990,7 +39990,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -40045,7 +40045,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -40091,7 +40091,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is required
                 when @ind2 = '7'.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -40180,7 +40180,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -40193,7 +40193,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -40206,7 +40206,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -40219,7 +40219,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -40232,7 +40232,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -40287,7 +40287,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -40333,7 +40333,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is required
                 when @ind2 = '7'.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -40422,7 +40422,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -40435,7 +40435,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -40448,7 +40448,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -40461,7 +40461,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -40516,7 +40516,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -40562,7 +40562,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is required
                 when @ind2 = '7'.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -40651,7 +40651,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -40664,7 +40664,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -40677,7 +40677,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -40690,7 +40690,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -40703,7 +40703,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂe is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $e is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -40716,7 +40716,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -40729,7 +40729,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -40742,7 +40742,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -40797,7 +40797,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -40843,7 +40843,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is required
                 when @ind2 = '7'.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -40932,7 +40932,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -40945,7 +40945,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -40958,7 +40958,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -40971,7 +40971,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -41026,7 +41026,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -41072,7 +41072,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is required
                 when @ind2 = '7'.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -41161,7 +41161,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ5 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $5 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -41174,7 +41174,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -41229,7 +41229,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -41318,7 +41318,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -41331,7 +41331,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -41344,7 +41344,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -41393,7 +41393,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="@tag"/> Either subfield ǂa or subfield ǂb is
+                <value-of select="@tag"/> Either subfield $a or subfield $b is
                 required.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -41482,7 +41482,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -41495,7 +41495,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -41508,7 +41508,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -41521,7 +41521,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ5 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $5 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -41534,7 +41534,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -41583,7 +41583,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="@tag"/> Either subfield ǂa or subfield ǂb is
+                <value-of select="@tag"/> Either subfield $a or subfield $b is
                 required.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -41629,7 +41629,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is required
                 when @ind2 = '7'.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -41718,7 +41718,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -41731,7 +41731,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂk is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $k is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -41744,7 +41744,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -41757,7 +41757,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -41770,7 +41770,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -41825,7 +41825,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -41838,7 +41838,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -41884,7 +41884,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is required
                 when @ind2 = '7'.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -41973,7 +41973,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -41986,7 +41986,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -41999,7 +41999,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -42012,7 +42012,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -42067,7 +42067,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -42080,7 +42080,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -42126,7 +42126,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is required
                 when @ind2 = '7'.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -42215,7 +42215,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -42228,7 +42228,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -42241,7 +42241,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -42254,7 +42254,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -42267,7 +42267,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -42322,7 +42322,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -42335,7 +42335,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -42424,7 +42424,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -42437,7 +42437,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -42450,7 +42450,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -42463,7 +42463,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -42518,7 +42518,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -42607,7 +42607,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -42620,7 +42620,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -42633,7 +42633,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -42646,7 +42646,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -42701,7 +42701,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -42747,7 +42747,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is required
                 when @ind2 = '7'.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -42836,7 +42836,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -42849,7 +42849,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -42862,7 +42862,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -42875,7 +42875,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -42888,7 +42888,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂe is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $e is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -42901,7 +42901,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -42914,7 +42914,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -42927,7 +42927,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -42940,7 +42940,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ9 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $9 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -43029,7 +43029,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -43042,7 +43042,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -43055,7 +43055,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -43068,7 +43068,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -43081,7 +43081,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -43094,7 +43094,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ9 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $9 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -43149,7 +43149,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -43238,7 +43238,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -43251,7 +43251,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -43306,7 +43306,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -43395,7 +43395,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -43408,7 +43408,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -43421,7 +43421,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -43434,7 +43434,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -43447,7 +43447,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂg is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $g is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -43460,7 +43460,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -43473,7 +43473,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂl is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $l is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -43486,7 +43486,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂo is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $o is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -43499,7 +43499,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂq is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $q is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -43512,7 +43512,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂr is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $r is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -43525,7 +43525,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂs is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $s is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -43538,7 +43538,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -43551,7 +43551,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂu is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $u is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -43564,7 +43564,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -43577,7 +43577,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -43590,7 +43590,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -43603,7 +43603,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ9 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $9 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -43658,7 +43658,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -43747,7 +43747,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -43760,7 +43760,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -43773,7 +43773,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -43786,7 +43786,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂg is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $g is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -43799,7 +43799,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -43812,7 +43812,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂl is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $l is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -43825,7 +43825,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂo is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $o is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -43838,7 +43838,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂr is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $r is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -43851,7 +43851,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂs is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $s is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -43864,7 +43864,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -43877,7 +43877,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂu is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $u is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -43890,7 +43890,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -43903,7 +43903,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -43916,7 +43916,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -43929,7 +43929,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ9 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $9 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -44018,7 +44018,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -44031,7 +44031,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -44044,7 +44044,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -44057,7 +44057,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -44070,7 +44070,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂg is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $g is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -44083,7 +44083,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -44096,7 +44096,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂl is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $l is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -44109,7 +44109,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂq is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $q is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -44122,7 +44122,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂs is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $s is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -44135,7 +44135,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -44148,7 +44148,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂu is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $u is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -44161,7 +44161,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -44174,7 +44174,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -44187,7 +44187,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -44200,7 +44200,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ9 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $9 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -44255,7 +44255,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -44344,7 +44344,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -44357,7 +44357,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -44370,7 +44370,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂg is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $g is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -44383,7 +44383,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -44396,7 +44396,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂl is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $l is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -44409,7 +44409,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂo is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $o is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -44422,7 +44422,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂr is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $r is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -44435,7 +44435,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂs is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $s is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -44448,7 +44448,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -44461,7 +44461,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -44474,7 +44474,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -44487,7 +44487,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -44500,7 +44500,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ9 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $9 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -44555,7 +44555,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -44644,7 +44644,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -44657,7 +44657,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -44670,7 +44670,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -44683,7 +44683,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -44696,7 +44696,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -44709,7 +44709,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂl is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $l is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -44722,7 +44722,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂo is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $o is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -44735,7 +44735,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂq is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $q is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -44748,7 +44748,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂr is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $r is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -44761,7 +44761,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -44774,7 +44774,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂu is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $u is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -44787,7 +44787,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂx is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $x is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -44800,7 +44800,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -44813,7 +44813,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -44826,7 +44826,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ5 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $5 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -44839,7 +44839,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -44894,7 +44894,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -44983,7 +44983,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -44996,7 +44996,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -45009,7 +45009,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -45022,7 +45022,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂl is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $l is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -45035,7 +45035,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂo is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $o is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -45048,7 +45048,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂr is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $r is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -45061,7 +45061,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -45074,7 +45074,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂu is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $u is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -45087,7 +45087,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂx is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $x is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -45100,7 +45100,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -45113,7 +45113,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -45126,7 +45126,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ5 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $5 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -45139,7 +45139,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -45194,7 +45194,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -45283,7 +45283,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -45296,7 +45296,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -45309,7 +45309,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -45322,7 +45322,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂl is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $l is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -45335,7 +45335,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂq is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $q is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -45348,7 +45348,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -45361,7 +45361,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂu is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $u is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -45374,7 +45374,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂx is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $x is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -45387,7 +45387,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -45400,7 +45400,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -45413,7 +45413,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ5 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $5 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -45426,7 +45426,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -45481,7 +45481,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -45570,7 +45570,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -45583,7 +45583,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ5 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $5 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -45596,7 +45596,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -45651,7 +45651,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -45740,7 +45740,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -45753,7 +45753,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -45766,7 +45766,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -45779,7 +45779,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂl is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $l is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -45792,7 +45792,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂo is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $o is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -45805,7 +45805,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂr is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $r is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -45818,7 +45818,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -45831,7 +45831,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂx is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $x is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -45844,7 +45844,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -45857,7 +45857,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -45870,7 +45870,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ5 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $5 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -45883,7 +45883,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -45938,7 +45938,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -46027,7 +46027,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -46040,7 +46040,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -46053,7 +46053,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ5 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $5 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -46066,7 +46066,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -46121,7 +46121,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -46210,7 +46210,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -46223,7 +46223,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -46236,7 +46236,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -46249,7 +46249,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -46304,7 +46304,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -46393,7 +46393,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -46406,7 +46406,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -46419,7 +46419,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -46432,7 +46432,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -46487,7 +46487,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -46576,7 +46576,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -46589,7 +46589,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -46602,7 +46602,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -46615,7 +46615,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -46628,7 +46628,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -46683,7 +46683,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -46772,7 +46772,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -46785,7 +46785,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -46840,7 +46840,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -46853,7 +46853,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -46942,7 +46942,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -46955,7 +46955,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -46968,7 +46968,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -46981,7 +46981,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ5 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $5 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -46994,7 +46994,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -47083,7 +47083,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -47096,7 +47096,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -47109,7 +47109,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -47122,7 +47122,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -47135,7 +47135,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -47148,7 +47148,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂm is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $m is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -47161,7 +47161,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂq is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $q is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -47174,7 +47174,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂs is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $s is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -47187,7 +47187,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -47200,7 +47200,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂx is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $x is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -47213,7 +47213,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂy is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $y is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -47226,7 +47226,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -47239,7 +47239,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ7 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $7 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -47328,7 +47328,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -47341,7 +47341,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -47354,7 +47354,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -47367,7 +47367,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -47380,7 +47380,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -47393,7 +47393,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂm is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $m is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -47406,7 +47406,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂq is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $q is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -47419,7 +47419,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂs is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $s is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -47432,7 +47432,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -47445,7 +47445,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂx is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $x is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -47458,7 +47458,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂy is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $y is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -47471,7 +47471,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -47484,7 +47484,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ7 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $7 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -47573,7 +47573,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -47586,7 +47586,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -47599,7 +47599,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -47612,7 +47612,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -47625,7 +47625,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -47638,7 +47638,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂm is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $m is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -47651,7 +47651,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂq is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $q is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -47664,7 +47664,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂs is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $s is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -47677,7 +47677,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -47690,7 +47690,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂu is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $u is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -47703,7 +47703,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂx is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $x is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -47716,7 +47716,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂy is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $y is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -47729,7 +47729,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -47742,7 +47742,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ7 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $7 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -47831,7 +47831,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -47844,7 +47844,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -47857,7 +47857,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -47870,7 +47870,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -47883,7 +47883,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -47896,7 +47896,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂm is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $m is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -47909,7 +47909,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂq is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $q is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -47922,7 +47922,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂs is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $s is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -47935,7 +47935,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -47948,7 +47948,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂu is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $u is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -47961,7 +47961,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂx is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $x is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -47974,7 +47974,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂy is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $y is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -47987,7 +47987,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -48000,7 +48000,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ7 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $7 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -48089,7 +48089,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -48102,7 +48102,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -48115,7 +48115,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -48128,7 +48128,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -48141,7 +48141,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -48154,7 +48154,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂm is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $m is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -48167,7 +48167,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂq is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $q is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -48180,7 +48180,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂs is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $s is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -48193,7 +48193,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -48206,7 +48206,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂu is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $u is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -48219,7 +48219,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂx is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $x is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -48232,7 +48232,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂy is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $y is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -48245,7 +48245,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -48258,7 +48258,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ7 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $7 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -48347,7 +48347,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -48360,7 +48360,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -48373,7 +48373,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -48386,7 +48386,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -48399,7 +48399,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -48412,7 +48412,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂm is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $m is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -48425,7 +48425,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂq is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $q is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -48438,7 +48438,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂs is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $s is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -48451,7 +48451,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -48464,7 +48464,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂu is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $u is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -48477,7 +48477,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂx is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $x is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -48490,7 +48490,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂy is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $y is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -48503,7 +48503,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -48516,7 +48516,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ7 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $7 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -48605,7 +48605,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -48618,7 +48618,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -48631,7 +48631,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -48644,7 +48644,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -48657,7 +48657,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂm is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $m is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -48670,7 +48670,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂp is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $p is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -48683,7 +48683,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂq is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $q is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -48696,7 +48696,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂs is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $s is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -48709,7 +48709,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -48722,7 +48722,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂu is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $u is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -48735,7 +48735,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂx is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $x is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -48748,7 +48748,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂy is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $y is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -48761,7 +48761,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -48774,7 +48774,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ5 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $5 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -48787,7 +48787,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -48800,7 +48800,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ7 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $7 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -48889,7 +48889,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -48902,7 +48902,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -48915,7 +48915,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -48928,7 +48928,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -48941,7 +48941,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -48954,7 +48954,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂm is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $m is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -48967,7 +48967,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂs is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $s is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -48980,7 +48980,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -48993,7 +48993,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂu is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $u is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -49006,7 +49006,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂx is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $x is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -49019,7 +49019,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂy is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $y is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -49032,7 +49032,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ5 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $5 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -49045,7 +49045,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -49058,7 +49058,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ7 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $7 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -49147,7 +49147,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -49160,7 +49160,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -49173,7 +49173,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -49186,7 +49186,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -49199,7 +49199,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂe is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $e is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -49212,7 +49212,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -49225,7 +49225,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -49238,7 +49238,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂm is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $m is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -49251,7 +49251,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂq is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $q is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -49264,7 +49264,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂs is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $s is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -49277,7 +49277,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -49290,7 +49290,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂu is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $u is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -49303,7 +49303,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂx is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $x is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -49316,7 +49316,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂy is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $y is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -49329,7 +49329,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -49342,7 +49342,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ7 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $7 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -49392,7 +49392,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', ../@tag)"/> subfield ǂf must match
+                <value-of select="concat('Datafield ', ../@tag)"/> subfield $f must match
                 a valid MARC country code.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -49481,7 +49481,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -49494,7 +49494,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -49507,7 +49507,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -49520,7 +49520,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -49533,7 +49533,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -49546,7 +49546,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂm is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $m is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -49559,7 +49559,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂq is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $q is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -49572,7 +49572,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂs is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $s is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -49585,7 +49585,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -49598,7 +49598,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂu is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $u is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -49611,7 +49611,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂx is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $x is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -49624,7 +49624,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂy is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $y is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -49637,7 +49637,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -49650,7 +49650,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ7 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $7 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -49739,7 +49739,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -49752,7 +49752,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -49765,7 +49765,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -49778,7 +49778,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -49791,7 +49791,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -49804,7 +49804,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂm is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $m is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -49817,7 +49817,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂq is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $q is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -49830,7 +49830,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂs is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $s is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -49843,7 +49843,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -49856,7 +49856,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂu is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $u is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -49869,7 +49869,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂx is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $x is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -49882,7 +49882,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂy is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $y is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -49895,7 +49895,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -49908,7 +49908,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ7 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $7 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -49997,7 +49997,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -50010,7 +50010,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -50023,7 +50023,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -50036,7 +50036,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -50049,7 +50049,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -50062,7 +50062,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂm is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $m is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -50075,7 +50075,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂq is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $q is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -50088,7 +50088,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂs is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $s is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -50101,7 +50101,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -50114,7 +50114,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂu is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $u is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -50127,7 +50127,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂx is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $x is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -50140,7 +50140,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂy is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $y is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -50153,7 +50153,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -50166,7 +50166,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ7 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $7 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -50255,7 +50255,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -50268,7 +50268,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -50281,7 +50281,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -50294,7 +50294,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -50307,7 +50307,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -50320,7 +50320,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂm is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $m is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -50333,7 +50333,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂq is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $q is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -50346,7 +50346,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂs is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $s is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -50359,7 +50359,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -50372,7 +50372,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂu is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $u is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -50385,7 +50385,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂx is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $x is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -50398,7 +50398,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂy is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $y is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -50411,7 +50411,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -50424,7 +50424,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ7 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $7 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -50513,7 +50513,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -50526,7 +50526,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -50539,7 +50539,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -50552,7 +50552,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -50565,7 +50565,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -50578,7 +50578,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂj is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $j is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -50591,7 +50591,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂm is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $m is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -50604,7 +50604,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂp is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $p is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -50617,7 +50617,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂs is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $s is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -50630,7 +50630,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -50643,7 +50643,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂu is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $u is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -50656,7 +50656,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂv is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $v is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -50669,7 +50669,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂx is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $x is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -50682,7 +50682,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂy is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $y is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -50695,7 +50695,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -50708,7 +50708,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ7 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $7 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -50797,7 +50797,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -50810,7 +50810,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -50823,7 +50823,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -50836,7 +50836,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -50849,7 +50849,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -50862,7 +50862,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂm is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $m is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -50875,7 +50875,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂs is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $s is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -50888,7 +50888,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -50901,7 +50901,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂu is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $u is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -50914,7 +50914,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂx is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $x is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -50927,7 +50927,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂy is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $y is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -50940,7 +50940,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ5 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $5 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -50953,7 +50953,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -50966,7 +50966,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ7 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $7 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -51055,7 +51055,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -51068,7 +51068,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -51081,7 +51081,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -51094,7 +51094,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂe is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $e is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -51107,7 +51107,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂs is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $s is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -51120,7 +51120,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -51133,7 +51133,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂx is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $x is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -51146,7 +51146,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ5 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $5 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -51159,7 +51159,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -51248,7 +51248,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -51261,7 +51261,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -51274,7 +51274,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -51287,7 +51287,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -51300,7 +51300,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -51313,7 +51313,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂl is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $l is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -51326,7 +51326,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂo is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $o is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -51339,7 +51339,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂq is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $q is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -51352,7 +51352,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂr is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $r is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -51365,7 +51365,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -51378,7 +51378,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂu is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $u is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -51391,7 +51391,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂx is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $x is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -51404,7 +51404,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -51417,7 +51417,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -51430,7 +51430,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ5 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $5 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -51443,7 +51443,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -51498,7 +51498,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -51587,7 +51587,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -51600,7 +51600,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -51613,7 +51613,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -51626,7 +51626,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -51639,7 +51639,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂl is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $l is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -51652,7 +51652,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂo is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $o is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -51665,7 +51665,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂr is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $r is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -51678,7 +51678,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -51691,7 +51691,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂu is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $u is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -51704,7 +51704,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂx is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $x is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -51717,7 +51717,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -51730,7 +51730,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -51743,7 +51743,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ5 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $5 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -51756,7 +51756,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -51845,7 +51845,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -51858,7 +51858,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -51871,7 +51871,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -51884,7 +51884,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -51897,7 +51897,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂl is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $l is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -51910,7 +51910,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂq is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $q is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -51923,7 +51923,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -51936,7 +51936,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂu is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $u is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -51949,7 +51949,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂx is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $x is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -51962,7 +51962,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -51975,7 +51975,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -51988,7 +51988,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ5 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $5 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -52001,7 +52001,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -52090,7 +52090,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -52103,7 +52103,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -52116,7 +52116,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -52129,7 +52129,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂl is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $l is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -52142,7 +52142,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂo is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $o is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -52155,7 +52155,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂr is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $r is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -52168,7 +52168,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -52181,7 +52181,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂx is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $x is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -52194,7 +52194,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -52207,7 +52207,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -52220,7 +52220,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ5 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $5 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -52233,7 +52233,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -52288,7 +52288,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -52377,7 +52377,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -52390,7 +52390,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -52403,7 +52403,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -52416,7 +52416,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -52429,7 +52429,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -52442,7 +52442,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂl is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $l is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -52455,7 +52455,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂo is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $o is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -52468,7 +52468,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂq is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $q is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -52481,7 +52481,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂr is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $r is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -52494,7 +52494,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -52507,7 +52507,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂu is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $u is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -52520,7 +52520,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂx is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $x is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -52533,7 +52533,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -52546,7 +52546,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -52559,7 +52559,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ5 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $5 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -52572,7 +52572,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -52585,7 +52585,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ9 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $9 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -52674,7 +52674,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -52687,7 +52687,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -52700,7 +52700,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -52713,7 +52713,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -52726,7 +52726,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂl is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $l is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -52739,7 +52739,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂo is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $o is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -52752,7 +52752,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂr is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $r is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -52765,7 +52765,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -52778,7 +52778,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂu is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $u is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -52791,7 +52791,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂx is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $x is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -52804,7 +52804,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -52817,7 +52817,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -52830,7 +52830,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ5 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $5 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -52843,7 +52843,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -52856,7 +52856,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ9 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $9 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -52945,7 +52945,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -52958,7 +52958,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -52971,7 +52971,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -52984,7 +52984,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -52997,7 +52997,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂl is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $l is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -53010,7 +53010,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂq is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $q is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -53023,7 +53023,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -53036,7 +53036,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂu is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $u is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -53049,7 +53049,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂx is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $x is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -53062,7 +53062,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -53075,7 +53075,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -53088,7 +53088,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ5 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $5 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -53101,7 +53101,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -53114,7 +53114,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ9 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $9 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -53169,7 +53169,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -53258,7 +53258,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -53271,7 +53271,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -53284,7 +53284,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -53297,7 +53297,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂl is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $l is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -53310,7 +53310,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂo is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $o is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -53323,7 +53323,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂr is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $r is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -53336,7 +53336,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -53349,7 +53349,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂx is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $x is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -53362,7 +53362,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -53375,7 +53375,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -53388,7 +53388,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ5 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $5 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -53401,7 +53401,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -53414,7 +53414,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ9 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $9 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -53504,7 +53504,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -53517,7 +53517,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -53530,7 +53530,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -53543,7 +53543,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -53556,7 +53556,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -53569,7 +53569,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂl is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $l is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -53582,7 +53582,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂo is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $o is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -53595,7 +53595,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂq is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $q is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -53608,7 +53608,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂr is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $r is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -53621,7 +53621,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -53634,7 +53634,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂu is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $u is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -53647,7 +53647,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂv is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $v is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -53660,7 +53660,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂx is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $x is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -53673,7 +53673,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -53686,7 +53686,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -53699,7 +53699,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -53712,7 +53712,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ7 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $7 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -53767,7 +53767,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -53780,7 +53780,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -53869,7 +53869,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -53882,7 +53882,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -53895,7 +53895,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -53908,7 +53908,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂl is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $l is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -53921,7 +53921,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂo is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $o is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -53934,7 +53934,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂr is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $r is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -53947,7 +53947,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -53960,7 +53960,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂu is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $u is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -53973,7 +53973,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂv is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $v is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -53986,7 +53986,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂx is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $x is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -53999,7 +53999,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -54012,7 +54012,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -54025,7 +54025,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -54038,7 +54038,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ7 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $7 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -54093,7 +54093,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -54106,7 +54106,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -54195,7 +54195,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -54208,7 +54208,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -54221,7 +54221,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -54234,7 +54234,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂl is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $l is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -54247,7 +54247,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂq is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $q is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -54260,7 +54260,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -54273,7 +54273,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂu is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $u is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -54286,7 +54286,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂv is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $v is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -54299,7 +54299,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂx is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $x is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -54312,7 +54312,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -54325,7 +54325,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -54338,7 +54338,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -54351,7 +54351,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ7 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $7 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -54406,7 +54406,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -54419,7 +54419,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -54508,7 +54508,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -54521,7 +54521,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -54534,7 +54534,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -54547,7 +54547,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂl is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $l is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -54560,7 +54560,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂo is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $o is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -54573,7 +54573,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂr is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $r is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -54586,7 +54586,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -54599,7 +54599,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂv is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $v is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -54612,7 +54612,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂx is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $x is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -54625,7 +54625,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -54638,7 +54638,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -54651,7 +54651,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -54664,7 +54664,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ7 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $7 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -54719,7 +54719,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -54808,7 +54808,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -54821,7 +54821,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -54834,7 +54834,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂe is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $e is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -54889,7 +54889,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -54978,7 +54978,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -54991,7 +54991,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -55004,7 +55004,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂj is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $j is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -55017,7 +55017,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂl is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $l is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -55030,7 +55030,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂn is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $n is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -55043,7 +55043,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂp is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $p is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -55056,7 +55056,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂq is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $q is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -55069,7 +55069,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -55082,7 +55082,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -55095,7 +55095,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -55108,7 +55108,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -55121,7 +55121,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ8 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $8 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -55171,7 +55171,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', ../@tag)"/> subfield ǂn must match
+                <value-of select="concat('Datafield ', ../@tag)"/> subfield $n must match
                 a valid MARC country code.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -55217,7 +55217,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is required
                 when @ind1 = '7'.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -55307,7 +55307,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -55320,7 +55320,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂj is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $j is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -55333,7 +55333,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂk is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $k is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -55346,7 +55346,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂl is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $l is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -55359,7 +55359,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂn is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $n is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -55372,7 +55372,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂo is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $o is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -55385,7 +55385,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂp is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $p is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -55398,7 +55398,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂr is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $r is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -55411,7 +55411,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -55424,7 +55424,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -55437,7 +55437,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -55450,7 +55450,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ7 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $7 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -55539,7 +55539,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -55552,7 +55552,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -55565,7 +55565,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -55578,7 +55578,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -55591,7 +55591,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -55604,7 +55604,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -55617,7 +55617,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ5 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $5 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -55630,7 +55630,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -55643,7 +55643,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ7 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $7 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -55732,7 +55732,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -55787,7 +55787,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -55876,7 +55876,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -55889,7 +55889,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -55990,7 +55990,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -56045,7 +56045,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -56134,7 +56134,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -56147,7 +56147,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -56160,7 +56160,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -56173,7 +56173,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂq is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $q is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -56186,7 +56186,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂx is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $x is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -56199,7 +56199,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂu is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $u is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -56288,7 +56288,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -56301,7 +56301,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂg is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $g is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -56314,7 +56314,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂk is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $k is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -56327,7 +56327,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂq is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $q is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -56416,7 +56416,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -56429,7 +56429,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -56442,7 +56442,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -56455,7 +56455,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -56468,7 +56468,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -56481,7 +56481,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ5 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $5 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -56612,7 +56612,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -56625,7 +56625,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -56714,7 +56714,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -56727,7 +56727,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -56782,7 +56782,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -56872,7 +56872,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -56885,7 +56885,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -56898,7 +56898,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -56911,7 +56911,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -56924,7 +56924,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -56937,7 +56937,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂl is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $l is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -56950,7 +56950,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂo is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $o is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -56963,7 +56963,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂq is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $q is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -56976,7 +56976,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂr is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $r is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -56989,7 +56989,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -57002,7 +57002,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂu is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $u is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -57015,7 +57015,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂv is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $v is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -57028,7 +57028,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂx is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $x is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -57041,7 +57041,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -57054,7 +57054,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -57067,7 +57067,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -57080,7 +57080,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ7 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $7 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -57093,7 +57093,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ9 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $9 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -57148,7 +57148,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -57161,7 +57161,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -57250,7 +57250,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -57263,7 +57263,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -57276,7 +57276,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -57289,7 +57289,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂl is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $l is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -57302,7 +57302,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂo is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $o is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -57315,7 +57315,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂr is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $r is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -57328,7 +57328,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -57341,7 +57341,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂu is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $u is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -57354,7 +57354,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂv is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $v is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -57367,7 +57367,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂx is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $x is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -57380,7 +57380,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -57393,7 +57393,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -57406,7 +57406,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -57419,7 +57419,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ7 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $7 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -57432,7 +57432,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ9 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $9 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -57521,7 +57521,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -57534,7 +57534,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -57547,7 +57547,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -57560,7 +57560,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂl is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $l is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -57573,7 +57573,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂq is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $q is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -57586,7 +57586,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -57599,7 +57599,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂu is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $u is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -57612,7 +57612,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂv is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $v is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -57625,7 +57625,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂx is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $x is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -57638,7 +57638,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -57651,7 +57651,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -57664,7 +57664,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -57677,7 +57677,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ7 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $7 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -57690,7 +57690,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ9 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $9 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -57745,7 +57745,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -57834,7 +57834,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -57847,7 +57847,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -57860,7 +57860,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -57873,7 +57873,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂl is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $l is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -57886,7 +57886,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂo is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $o is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -57899,7 +57899,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂr is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $r is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -57912,7 +57912,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -57925,7 +57925,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂv is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $v is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -57938,7 +57938,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂx is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $x is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -57951,7 +57951,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -57964,7 +57964,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -57977,7 +57977,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -57990,7 +57990,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ7 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $7 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -58003,7 +58003,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ9 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $9 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -58058,7 +58058,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -58148,7 +58148,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -58238,7 +58238,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -58328,7 +58328,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -58418,7 +58418,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -58508,7 +58508,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -58598,7 +58598,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -58688,7 +58688,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -58778,7 +58778,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -58868,7 +58868,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -58958,7 +58958,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -59090,7 +59090,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -59180,7 +59180,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -59270,7 +59270,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -59360,7 +59360,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -59450,7 +59450,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -59540,7 +59540,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -59630,7 +59630,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -59720,7 +59720,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -59810,7 +59810,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -59900,7 +59900,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -59990,7 +59990,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -60080,7 +60080,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -60170,7 +60170,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -60260,7 +60260,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -60350,7 +60350,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -60440,7 +60440,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -60530,7 +60530,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -60620,7 +60620,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -60710,7 +60710,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -60800,7 +60800,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -60890,7 +60890,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -60980,7 +60980,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -61070,7 +61070,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -61160,7 +61160,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -61250,7 +61250,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -61340,7 +61340,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -61441,7 +61441,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -61496,7 +61496,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -61586,7 +61586,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -61675,7 +61675,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -61688,7 +61688,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -61701,7 +61701,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -61714,7 +61714,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -61727,7 +61727,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂi is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $i is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -61740,7 +61740,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂn is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $n is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -61753,7 +61753,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂs is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $s is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -61766,7 +61766,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂz is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $z is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -61856,7 +61856,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -61946,7 +61946,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -62036,7 +62036,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -62126,7 +62126,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -62216,7 +62216,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -62306,7 +62306,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -62396,7 +62396,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -62486,7 +62486,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -62576,7 +62576,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -62666,7 +62666,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -62756,7 +62756,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -62846,7 +62846,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -62936,7 +62936,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -63026,7 +63026,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -63116,7 +63116,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -63206,7 +63206,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -63296,7 +63296,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -63385,7 +63385,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂj is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $j is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -63398,7 +63398,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂk is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $k is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -63411,7 +63411,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂl is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $l is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -63424,7 +63424,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂn is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $n is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -63437,7 +63437,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂo is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $o is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -63450,7 +63450,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂp is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $p is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -63463,7 +63463,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂq is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $q is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -63476,7 +63476,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂr is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $r is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -63489,7 +63489,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -63502,7 +63502,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ3 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $3 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -63515,7 +63515,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -63605,7 +63605,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -63695,7 +63695,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -63785,7 +63785,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -63875,7 +63875,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -63965,7 +63965,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -64055,7 +64055,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -64145,7 +64145,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -64235,7 +64235,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -64325,7 +64325,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -64415,7 +64415,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -64505,7 +64505,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -64595,7 +64595,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -64685,7 +64685,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -64786,7 +64786,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -64876,7 +64876,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -64966,7 +64966,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -65056,7 +65056,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -65146,7 +65146,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -65236,7 +65236,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -65326,7 +65326,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -65416,7 +65416,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -65506,7 +65506,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -65596,7 +65596,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -65686,7 +65686,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -65776,7 +65776,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -65866,7 +65866,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -65956,7 +65956,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -66046,7 +66046,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -66136,7 +66136,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -66226,7 +66226,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -66315,7 +66315,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -66328,7 +66328,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -66341,7 +66341,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -66354,7 +66354,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -66367,7 +66367,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂe is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $e is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -66380,7 +66380,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -66470,7 +66470,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -66560,7 +66560,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -66650,7 +66650,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -66739,7 +66739,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -66752,7 +66752,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -66800,7 +66800,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', ../@tag)"/> subfields ǂa and ǂb are
+                <value-of select="concat('Datafield ', ../@tag)"/> subfields $a and $b are
                 required.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -66848,7 +66848,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', ../@tag)"/> subfield ǂb must match
+                <value-of select="concat('Datafield ', ../@tag)"/> subfield $b must match
                 'YYYYMMDDhhmmss.f'.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -66938,7 +66938,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -67028,7 +67028,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -67129,7 +67129,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -67142,7 +67142,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -67197,7 +67197,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -67210,7 +67210,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂb is required
+                <value-of select="concat('Datafield ', @tag)"/> subfield $b is required
                 for a full level record.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -67259,7 +67259,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', ../@tag)"/> subfield ǂa must match
+                <value-of select="concat('Datafield ', ../@tag)"/> subfield $a must match
                 '(01|02|03|10|11|12|50|90|91|92|93|A1|C0|E0|X0|Z0)'.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -67307,7 +67307,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', ../@tag)"/> subfield ǂb must have a
+                <value-of select="concat('Datafield ', ../@tag)"/> subfield $b must have a
                 value.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -67397,7 +67397,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -67487,7 +67487,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -67577,7 +67577,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -67667,7 +67667,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ6 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $6 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -67756,7 +67756,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -67769,7 +67769,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂv is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $v is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -67782,7 +67782,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂw is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $w is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -67795,7 +67795,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -67808,7 +67808,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -67821,7 +67821,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂi is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $i is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -67834,7 +67834,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂm is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $m is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -67847,7 +67847,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -67860,7 +67860,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂe is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $e is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -67873,7 +67873,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -67886,7 +67886,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂg is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $g is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -67899,7 +67899,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂj is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $j is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -67912,7 +67912,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂk is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $k is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -67925,7 +67925,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂl is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $l is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -67938,7 +67938,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂn is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $n is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -67951,7 +67951,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂp is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $p is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -67964,7 +67964,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂq is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $q is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -67977,7 +67977,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂr is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $r is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -67990,7 +67990,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂs is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $s is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -68003,7 +68003,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -68016,7 +68016,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂu is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $u is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -68029,7 +68029,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂx is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $x is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -68042,7 +68042,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂz is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $z is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -68055,7 +68055,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ0 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $0 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -68068,7 +68068,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ1 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $1 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -68081,7 +68081,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -68128,7 +68128,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', ../@tag)"/> subfields ǂa and ǂw are
+                <value-of select="concat('Datafield ', ../@tag)"/> subfields $a and $w are
                 required.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -68217,7 +68217,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂa is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $a is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -68230,7 +68230,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂv is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $v is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -68243,7 +68243,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂw is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $w is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -68256,7 +68256,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂc is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $c is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -68269,7 +68269,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂh is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $h is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -68282,7 +68282,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂi is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $i is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -68295,7 +68295,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂm is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $m is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -68308,7 +68308,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂd is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $d is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -68321,7 +68321,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂe is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $e is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -68334,7 +68334,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂf is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $f is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -68347,7 +68347,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂg is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $g is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -68360,7 +68360,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂj is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $j is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -68373,7 +68373,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂk is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $k is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -68386,7 +68386,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂl is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $l is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -68399,7 +68399,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂn is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $n is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -68412,7 +68412,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂp is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $p is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -68425,7 +68425,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂq is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $q is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -68438,7 +68438,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂr is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $r is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -68451,7 +68451,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂs is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $s is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -68464,7 +68464,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂt is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $t is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -68477,7 +68477,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂu is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $u is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -68490,7 +68490,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂx is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $x is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -68503,7 +68503,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂz is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $z is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -68516,7 +68516,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ0 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $0 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -68529,7 +68529,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ1 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $1 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -68542,7 +68542,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', @tag)"/> subfield ǂ2 is not
+                <value-of select="concat('Datafield ', @tag)"/> subfield $2 is not
                 repeatable.</svrl:text>
             </svrl:failed-assert>
           </variable>
@@ -68589,7 +68589,7 @@
               <attribute name="location" select="path(.)"/>
               <svrl:text>
                 <value-of select="concat($record001, ' :: ')"/>
-                <value-of select="concat('Datafield ', ../@tag)"/> subfields ǂa and ǂw are
+                <value-of select="concat('Datafield ', ../@tag)"/> subfields $a and $w are
                 required.</svrl:text>
             </svrl:failed-assert>
           </variable>
