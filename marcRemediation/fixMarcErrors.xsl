@@ -66,7 +66,7 @@
         </xsl:choose>
       </xsl:variable>
       <xsl:value-of
-        select="concat($recordID, ' :: ', normalize-space($context), ' - ', normalize-space(lower-case(replace($messageText, '$', '\$'))), ' :: fix')"
+        select="concat($recordID, ' :: ', normalize-space($context), ' - ', normalize-space(lower-case($messageText)), ' :: fix')"
       />
     </xsl:message>
   </xsl:template>

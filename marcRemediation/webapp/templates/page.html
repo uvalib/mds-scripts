@@ -8,6 +8,7 @@
         <style>
             .message-box { padding: 12px; }
             .content { margin-top: 20px }
+            small { font-size:smaller }
         </style>
         
     </head>
@@ -21,7 +22,7 @@
                     <p>Here is some page content.</p>
                     
                     {% elif page == "bib" %}
-                        <h1>Report for {{ bib }}</h1>
+                    <h1>Report for <a href="https://search.lib.virginia.edu/sources/uva_library/items/{{bib}}" target="_blank">{{bib}}</a></h1>
                     
                         {% if rows|length > 0 %}                    
                             {% for row in rows %}
