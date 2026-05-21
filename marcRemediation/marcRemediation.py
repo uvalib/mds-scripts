@@ -23,30 +23,36 @@ SAXON_PATH = "../../saxon/SaxonHE12-4J/saxon-he-12.4.jar"
 
 #FUNCTIONS
 def process_marcxml (today, url):
-        #define XML file names
-    xml_file = today + ".xml"
+    #define XML file names
+    xml_file = download_file(today, url)
     xml_upd = today + "-updated.xml"
     
-    response = requests.get(url)
-    if response.status_code == 200:
-        with open(xml_file, 'wb') as file:
-            file.write(response.content)
-        file.close()
-            
-        #below this point is executed after file.write
-        print('Downloaded ' + url + " to " + xml_file)
-        
-        #execute Saxon XSLT transformation of MARC XML extracted from Sirsi into fixed file
-        cmd = 'java -jar ' + SAXON_PATH + ' -xsl:fixMarcErrors.xsl -s:' + xml_file + ' -o:' + xml_upd + ' 2> ' + 'logs/' + today + '.changes.log'        
-        result = subprocess.call(cmd, shell=True, text=True)
-        
-        print("Fixed MARC XML: " + xml_upd)
-        
-        create_report(today)
-        
-    else:
-        print('Failed to download MARC XML from server.')
+    #below this point is executed after file.write
+    print('Downloaded ' + url + " to " + xml_file)
+    
+    #execute Saxon XSLT transformation of MARC XML extracted from Sirsi into fixed file
+    cmd = 'java -jar ' + SAXON_PATH + ' -xsl:fixMarcErrors.xsl -s:' + xml_file + ' -o:' + xml_upd + ' 2> ' + 'logs/' + today + '.changes.log'        
+    result = subprocess.call(cmd, shell=True, text=True)
+    
+    print("Fixed MARC XML: " + xml_upd)
+    
+    create_report(today)
+    
 
+#large HTTP request requires chunking
+def download_file(today, url):
+    xml_file = today + ".xml"
+     
+    # NOTE the stream=True parameter below
+    with requests.get(url, stream=True) as r:
+        r.raise_for_status()
+        with open(xml_file, 'wb') as f:
+            for chunk in r.iter_content(chunk_size=8192): 
+                # If you have chunk encoded response uncomment if
+                # and set chunk_size parameter to None.
+                #if chunk: 
+                f.write(chunk)
+    return xml_file
 
 def create_report(today):
     xml_upd = today + "-updated.xml"
@@ -93,6 +99,16 @@ def create_report(today):
     
 def cleanup(today, dryrun):
     print("Cleaning up XML.")
+    
+    #parsing the last ckey from the MARC XML file with regex
+    ckeys = []
+    with open(today + ".xml", encoding="utf-8") as file:
+        for line in file:
+            m = re.findall('<controlfield tag="001">u([0-9]+)</controlfield>', line)
+            if m:
+                ckeys.append(m[0])
+    
+    ckeys_last = ckeys[-1]
 
     #remove MARC XML
     os.remove(today + ".xml")
@@ -105,6 +121,10 @@ def cleanup(today, dryrun):
         os.replace(today + ".marc", "marc/" + today + ".marc")
     else:
         os.remove(today + ".marc")
+        
+    print("Processing completed. Writing " + today + ".ckeys")
+    with open(today + ".ckeys", 'w') as file:
+        file.write(ckeys_last)
 
 """
 BEGIN PROCESSING OF ARGUMENTS 
@@ -152,8 +172,12 @@ if not os.path.exists("logs"):
 
 #Request MARC XML file via command line or HTTP request based on ckeys extracted in previous step
 
-ckeys = "u" + str(prevLastKey) + "-" + "u" + str(prevLastKey + rows)
-url = "https://ils.lib.virginia.edu/uhtbin/getMarc?ckey=" + ckeys + "&type=xml"
+start_ckey = "u" + str(prevLastKey)
+#ckeys = "u" + str(prevLastKey) + "-u" + str(prevLastKey + rows)
+#url = "https://ils.lib.virginia.edu/uhtbin/getMarc?ckey=" + ckeys + "&type=xml"
+
+url = "https://ils.lib.virginia.edu/uhtbin/getMarc?start_ckey=" + start_ckey + "&record_count=" + str(rows) + "&type=xml"
+
 process_marcxml(today, url)
 
 #use PyMarc to convert the updated MARC XML back to MARC 21 for upload
@@ -169,10 +193,4 @@ if dryrun != 1:
 
 #cleanup old files
 cleanup(today, dryrun)
-
-#outputting the last ckey to a text file [rewrite this after ckeys can be extracted via API]
-print("Processing completed. Writing " + today + ".ckeys")
-ckeys_last = str(prevLastKey + rows)
-with open(today + ".ckeys", 'w') as file:
-    file.write(ckeys_last)
 

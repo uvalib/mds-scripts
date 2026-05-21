@@ -47,7 +47,6 @@ def index():
     
     last = math.ceil(count / LIMIT)
     
-    
     return render_template('page.html', page="index", bibs=bibs, limit=LIMIT, count=count, page_num=page, last=last)
 
 #make query for a single bib_id and return a list of all errors and warnings
