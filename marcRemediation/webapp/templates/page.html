@@ -21,6 +21,28 @@
                     <h1>MARC Remediation Reports</h1>
                     <p>Here is some page content.</p>
                     
+                    {% if bibs|length > 0 %}
+                    
+                        {% include 'pagination.html' %}
+                        
+                    <table class="table table-striped table-responsive">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th style="width:120px;">Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for row in bibs %}
+                            <tr>
+                                <td><a href="{{url_for('page_bib', bib=row[0])}}" class="alert-link">{{row[0]}}</a></td>
+                                <td>{{row[1]}}</td>
+                            </tr>
+                            {%endfor%}
+                        </tbody>
+                    </table>
+                    {% endif %}
+                    
                     {% elif page == "bib" %}
                     <h1>Report for <a href="https://search.lib.virginia.edu/sources/uva_library/items/{{bib}}" target="_blank">{{bib}}</a></h1>
                     
@@ -41,6 +63,7 @@
                             {% for row in rows %}
                             <div class="message-box alert alert-{{'danger' if row[2] == 'error' else row[2]}}">
                                 <a href="{{url_for('page_message', message=row[0])}}" class="alert-link">{{row[1]}}</a>
+                                <span>Count: {{row[3]}}</span>
                             </div>
                             {%endfor%}
                         {% else %}
@@ -62,14 +85,14 @@
                                 <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Date</th>
+                                        <th style="width:120px;">Date</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     {% for row in bibs %}
                                     <tr>
                                         <td><a href="{{url_for('page_bib', bib=row[0])}}" class="alert-link">{{row[0]}}</a></td>
-                                        <td style="width:120px;">{{row[1]}}</td>
+                                        <td>{{row[1]}}</td>
                                     </tr>
                                     {%endfor%}
                                 </tbody>

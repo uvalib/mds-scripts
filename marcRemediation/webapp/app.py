@@ -17,9 +17,38 @@ app = Flask(__name__)
 @app.route('/')
 @app.route('/home')
 def index():
+    page = request.args.get('page', 1, type=int)  # Get page number from query params (default = 1)
+    offset = (page - 1) * LIMIT
+    
+    bibs_count_sql = """SELECT COUNT(id)
+    FROM bibs
+    """
+        
+    #query bibs, order by most recent by default
+    bibs_sql = """SELECT DISTINCT(bib_id), bibs.date
+    FROM bibs_messages
+    INNER JOIN bibs ON bibs.id = bibs_messages.bib_id
+    INNER JOIN messages ON messages.id = bibs_messages.message_id
+    ORDER BY bibs.date DESC
+    """    
+    pagination = 'LIMIT ' + str(LIMIT) + ' OFFSET ' + str(offset)
+    
+    connect = sqlite3.connect(DATABASE)
+    cursor = connect.cursor()
+    
+    #fetch bibs
+    cursor.execute(bibs_sql + ' ' + pagination)
+    bibs = cursor.fetchall()
+    
+    #get total count of bibs for the message and then formulate the last page for pagination
+    cursor.execute(bibs_count_sql)
+    count = cursor.fetchone()
+    count = int(count[0])
+    
+    last = math.ceil(count / LIMIT)
     
     
-    return render_template('page.html', page="index")
+    return render_template('page.html', page="index", bibs=bibs, limit=LIMIT, count=count, page_num=page, last=last)
 
 #make query for a single bib_id and return a list of all errors and warnings
 @app.route('/bib/<bib>')
@@ -40,9 +69,11 @@ def page_bib(bib):
 #get a list of all messages. These are relatively limited and do not need to be paginated
 @app.route('/message')
 def page_messages():
-    sql = """SELECT id, message, type
+    sql = """SELECT messages.id, messages.message, messages.type, COUNT(DISTINCT bibs_messages.bib_id)
     FROM messages
-    ORDER BY message ASC
+    INNER JOIN bibs_messages ON bibs_messages.message_id = messages.id
+    GROUP BY messages.id
+    ORDER BY messages.type ASC, COUNT(DISTINCT bibs_messages.bib_id) DESC
     """
     connect = sqlite3.connect(DATABASE)
     cursor = connect.cursor()
