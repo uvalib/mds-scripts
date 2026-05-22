@@ -8,12 +8,14 @@ and update an SQLite database with error or warning listings for MARC records.
 Old errors and warnings should be removed after the same record has been reprocessed.
 """
 
-import sqlite3, uuid, sys
+import sqlite3, uuid, sys, os
 from datetime import datetime
 import xml.etree.ElementTree as ET
 
 #read error logs for the today variable
 def update_db(today):
+    print("Updating SQLite database.")
+    
     db = 'report.db'
     filename = "logs/" + today + ".errors.log"
     
@@ -21,8 +23,9 @@ def update_db(today):
     create_tables(db)    
     
     #purge all bib numbers from this batch from the database before reloading updated error list    
-    all_bibs = read_bibs_from_xml(today)
-    delete_bibs_from_db(db, all_bibs)    
+    if os.path.exists(today + ".ckeys"):
+        all_bibs = read_ckeys(today)        
+        delete_bibs_from_db(db, all_bibs)    
     
     #get the messages list from the messages table, to prevent from creating duplicate messages
     messages = load_messages(db)
@@ -76,6 +79,16 @@ def update_db(today):
         insert_data(db, 'bibs_messages', bibs_messages_rows)
     else:
         print("No errors to report.")
+
+#read all ckeys from today's file in order to delete them from SQLite
+def read_ckeys(today):
+    bibs = []
+    
+    with open(today + ".ckeys", 'r') as file:
+        for line in file:
+            bibs.append(line.strip())
+            
+    return bibs
 
 #insert rows into table
 def insert_data(db, table, rows):
@@ -170,6 +183,8 @@ def read_bibs_from_xml(today):
         
     #print(bibs)
     return bibs
+
+
  
 def main():
     #define variables. now is the ISO date

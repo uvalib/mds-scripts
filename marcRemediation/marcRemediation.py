@@ -8,9 +8,8 @@ and then executes an XSLT transformation to fix known errors, and then reports u
 The stdout from the fixMarcErrors.xsl is also written into a log file.
 """
 
-import argparse, os, re, subprocess, requests, sqlite3, pymarc
+import argparse, os, re, subprocess, requests, sqlite3, pymarc, math
 import xml.etree.ElementTree as ET
-import pymarc
 from datetime import datetime
 from datetime import timedelta
 
@@ -20,6 +19,7 @@ from marcRemediation_reports import update_db
 #ENV should be "test" or "prod"
 ENV = "test"
 SAXON_PATH = "../../saxon/SaxonHE12-4J/saxon-he-12.4.jar"
+MAX = 10000
 
 #FUNCTIONS
 def process_marcxml (today, url):
@@ -31,13 +31,15 @@ def process_marcxml (today, url):
     print('Downloaded ' + url + " to " + xml_file)
     
     #execute Saxon XSLT transformation of MARC XML extracted from Sirsi into fixed file
-    cmd = 'java -jar ' + SAXON_PATH + ' -xsl:fixMarcErrors.xsl -s:' + xml_file + ' -o:' + xml_upd + ' 2> ' + 'logs/' + today + '.changes.log'        
+    cmd = 'java -jar ' + SAXON_PATH + ' -xsl:fixMarcErrors.xsl -s:' + xml_file + ' -o:' + xml_upd + ' 2>> ' + 'logs/' + today + '.changes.log'        
     result = subprocess.call(cmd, shell=True, text=True)
     
     print("Fixed MARC XML: " + xml_upd)
     
+    #generate the errors.log file from the updated MARC XML
     create_report(today)
     
+    to_marc21(today)
 
 #large HTTP request requires chunking
 def download_file(today, url):
@@ -80,39 +82,90 @@ def create_report(today):
         #write text back into array, which will be written to a text file
         lines.append(line)                    
 
-    #write lines back to text file, if there are any
-    with open("logs/" + today + ".errors.log", 'w+', encoding="utf-8") as file:  
+    #append lines back to text file, if there are any
+    with open("logs/" + today + ".errors.log", 'a', encoding="utf-8") as file:  
         for line in lines:
             file.write('%s\n' %line) 
         file.close()    
 
     if len(lines) > 0:            
         # write elements of list
-        print("Wrote error log to logs/" + today + ".errors.log")
+        print("Wrote/appended error log to logs/" + today + ".errors.log")
+        
+    #write all ckeys to file so they can be removed from SQLite, and also write the last ckey as a single integer
+    ckeys = extract_ckeys_from_xml(today)
  
     #delete the XML report file after writing the text file
     print("Removed " + xml_report)
     os.remove(xml_report)
     
-    #insert function call for processing logs into SQLite below
-    update_db(today)
-    
-def cleanup(today, dryrun):
-    print("Cleaning up XML.")
-    
-    #parsing the last ckey from the MARC XML file with regex
+#read ckeys via regex from XML file
+def extract_ckeys_from_xml(today):
     ckeys = []
-    with open(today + ".xml", encoding="utf-8") as file:
+    
+    with open(today + "-updated.xml", encoding="utf-8") as file:
         for line in file:
-            m = re.findall('<controlfield tag="001">u([0-9]+)</controlfield>', line)
+            m = re.findall('<controlfield tag="001">(u[0-9]+)</controlfield>', line)
             if m:
                 ckeys.append(m[0])
+                
     
-    ckeys_last = ckeys[-1]
+    #append 
+    with open(today + ".ckeys", 'a') as file:
+        for ckey in ckeys:
+            file.write('%s\n' %ckey) 
+        file.close()    
+     
+    #writing the last ckey to a file
+    ckeys_last = ckeys[-1].replace("u", "")
+    print("Writing " + today + ".last.ckeys")
+    with open(today + ".last.ckeys", 'w') as file:
+        file.write(ckeys_last)
+    
+    return ckeys
+    
+def to_marc21(today):
+    #use PyMarc to convert the updated MARC XML back to MARC 21 for upload
+    with open(today + '.marc', 'ab') as file:
+        for record in pymarc.parse_xml_to_array(open(today + '-updated.xml', 'rb')):
+            file.write(record.as_marc())
+    print("MARC 21 written to " + today + ".marc")
+    file.close()  
+
+#create folders as necessary and delete residual files that might be used for iterations
+def prepare_files(today):  
+    #create logs folder if it doesn't exist
+    if not os.path.exists("logs"):
+        os.makedirs("logs")
+        
+    #delete log files for today if they exist.
+    try:
+        os.remove("logs/" + today + ".changes.log")
+    except OSError:
+        pass
+    try:
+        os.remove("logs/" + today + ".errors.log")
+    except OSError:
+        pass
+    
+    #delete existing ckeys file from today
+    try:
+        os.remove(today + ".ckeys")
+    except OSError:
+        pass
+
+def cleanup(today, dryrun):
+    print("Cleaning up XML.")
 
     #remove MARC XML
     os.remove(today + ".xml")
     os.remove(today + "-updated.xml")
+    
+    #delete existing ckeys file from today
+    try:
+        os.remove(today + ".ckeys")
+    except OSError:
+        pass
     
     #if the script is a dryrun, then move the MARC 21 to marc folder, otherwise delete it
     if dryrun == 1:
@@ -120,15 +173,23 @@ def cleanup(today, dryrun):
             os.makedirs("marc")
         os.replace(today + ".marc", "marc/" + today + ".marc")
     else:
+        #remove MARC 21 file after posting to Sirsi
         os.remove(today + ".marc")
         
-    print("Processing completed. Writing " + today + ".ckeys")
-    with open(today + ".ckeys", 'w') as file:
-        file.write(ckeys_last)
+    print("Process completed")
+
 
 """
 BEGIN PROCESSING OF ARGUMENTS 
 """
+
+# read the previous last key from yesterday's ckeys file, if it exists; default to 0 if it doesn't
+today = datetime.today().strftime('%Y-%m-%d')
+yesterday = (datetime.today() - timedelta(days = 1)).strftime('%Y-%m-%d')
+
+#create folders and purge existing files for today on initial execution of this script
+prepare_files(today)
+
 #define and parse command line arguments
 parser = argparse.ArgumentParser()
 parser.add_argument("-s", "--start", help="Sirsi ckey to start")
@@ -143,15 +204,11 @@ dryrun = 1 if args.dryrun is not None else 0
 if dryrun == 1:
     print("Script is running in dryrun mode. MARC 21 file will be stored in marc folder, but not posted to Sirsi.")
 
-# read the previous last key from yesterday's ckeys file, if it exists; default to 0 if it doesn't
-today = datetime.today().strftime('%Y-%m-%d')
-yesterday = (datetime.today() - timedelta(days = 1)).strftime('%Y-%m-%d')
-
 #if the start argument is not set, then read prevLastKey from file
 if not args.start:
     prevLastKey = 0
     try:
-        with open(yesterday + ".ckeys", "r", encoding="utf-8") as file:
+        with open(yesterday + ".last.ckeys", "r", encoding="utf-8") as file:
             line = file.readlines()[0]
             try:
                 prevLastKey = int(line)
@@ -163,34 +220,28 @@ if not args.start:
 else:
     prevLastKey = int(args.start)
 
+#Request MARC XML file via HTTP request based on ckeys extracted in previous step
+record_count = rows if rows < 10000 else 10000
 
-#create logs folder if it doesn't exist
-if not os.path.exists("logs"):
-    os.makedirs("logs")  
-
-#this is where the HTTP request goes to get the start and end ckeys 
-
-#Request MARC XML file via command line or HTTP request based on ckeys extracted in previous step
-
-start_ckey = "u" + str(prevLastKey)
-#ckeys = "u" + str(prevLastKey) + "-u" + str(prevLastKey + rows)
-#url = "https://ils.lib.virginia.edu/uhtbin/getMarc?ckey=" + ckeys + "&type=xml"
-
-url = "https://ils.lib.virginia.edu/uhtbin/getMarc?start_ckey=" + start_ckey + "&record_count=" + str(rows) + "&type=xml"
-
-process_marcxml(today, url)
-
-#use PyMarc to convert the updated MARC XML back to MARC 21 for upload
-with open(today + '.marc', 'wb') as file:
-    for record in pymarc.parse_xml_to_array(open(today + '-updated.xml', 'rb')):
-        file.write(record.as_marc())
-print("MARC 21 written to " + today + ".marc")
-file.close()
-
+for i in range(math.ceil(rows / MAX)):  
+    if (rows > 10000):
+        print("Requesting batch " + str(i + 1) + " of " + str(math.ceil(rows / MAX)))  
+    if i == 0:
+        start_ckey = "u" + str(prevLastKey)
+        url = "https://ils.lib.virginia.edu/uhtbin/getMarc?start_ckey=" + start_ckey + "&record_count=" + str(record_count) + "&type=xml"
+        process_marcxml(today, url)
+    else:
+        with open(today + ".last.ckeys", "r", encoding="utf-8") as file:
+            start_ckey = "u" + file.readlines()[0]
+            url = "https://ils.lib.virginia.edu/uhtbin/getMarc?start_ckey=" + start_ckey + "&record_count=" + str(record_count) + "&type=xml"
+            process_marcxml(today, url)
+            
 #code to upload to Sirsi goes here
 if dryrun != 1:
-    print("MARC 21 posted to Sirsi")    
+    print("MARC 21 posted to Sirsi") 
+
+#the SQLite database is updated once from the aggregated error log, at the end of the iterative process.
+update_db(today)
 
 #cleanup old files
 cleanup(today, dryrun)
-
