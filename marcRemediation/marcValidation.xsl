@@ -29273,7 +29273,7 @@
         <if
           test="not(*:subfield[matches(@code, 'a')][normalize-space(.) != ''] or (*:subfield[matches(@code, 'b')][normalize-space(.) != ''] and *:subfield[matches(@code, 'c')][normalize-space(.) != ''] and *:subfield[matches(@code, 'd')][normalize-space(.) != '']))">
           <variable name="failed-assert" as="element(svrl:failed-assert)">
-            <svrl:failed-assert test="*:subfield[matches(@code, 'a')][normalize-space(.)
+            <svrl:failed-assert role="error" test="*:subfield[matches(@code, 'a')][normalize-space(.)
               != ''] or (*:subfield[matches(@code, 'b')][normalize-space(.) != ''] and
               *:subfield[matches(@code, 'c')][normalize-space(.) != ''] and
               *:subfield[matches(@code, 'd')][normalize-space(.) != ''])">
