@@ -6,8 +6,8 @@ Date modified: May 2026
 Function: Simple Python Flask web app to display marcRemediation reports stored in SQLite
 """
 
-from flask import Flask, render_template, request
-import sqlite3, math
+from flask import Flask, render_template, request, Response
+import sqlite3, math, requests
 
 DATABASE = '../report.db'
 LIMIT = 25
@@ -64,6 +64,13 @@ def page_bib(bib):
 
     rows = cursor.fetchall()
     return render_template("page.html", page="bib", bib=bib, rows=rows)
+
+#create a local interface to the getMarc MARC 21 request to get around CORS
+@app.route('/marc/<bib>')
+def get_marc(bib):
+    url = "https://ils.lib.virginia.edu/uhtbin/getMarc?ckey=" + bib + "&type=marc21"    
+    response = requests.get(url)
+    return Response(response.content, mimetype="application/marc")
 
 #get a list of all messages. These are relatively limited and do not need to be paginated
 @app.route('/message')
