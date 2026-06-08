@@ -192,8 +192,8 @@ prepare_files(today)
 
 #define and parse command line arguments
 parser = argparse.ArgumentParser()
-parser.add_argument("-s", "--start", help="Sirsi ckey to start")
-parser.add_argument("-r", "--rows", help="Number of ckeys to extract")
+parser.add_argument("-s", "--start", help="Sirsi ckey to start (integer)")
+parser.add_argument("-r", "--rows", help="Number of ckeys to extract (integer)")
 parser.add_argument("-d", "--dryrun", help="Any value set to dryrun will generate all log files, but will not post MARC 21 to Sirsi")
 
 args = parser.parse_args()
