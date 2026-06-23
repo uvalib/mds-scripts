@@ -22,8 +22,8 @@
       <topic>Historic buildings</topic>
       <geographic>Virginia</geographic>
    </subject>
-   <subject authority="lcsh">
-      <name type="personal" authority="lcnaf">
+   <subject authority="lcnaf">
+      <name type="personal" authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n85307501">
          <namePart>Johnston, Frances Benjamin</namePart>
          <namePart type="date">1864-1952</namePart>
       </name>

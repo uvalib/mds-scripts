@@ -7,6 +7,8 @@
 
     <xsl:output method="text" encoding="UTF-8" indent="yes"/>
 
+    <xsl:param name="pid"/>
+
     <xsl:variable name="roles" as="node()*">
         <xsl:copy-of select="document('roles.xml')"/>
     </xsl:variable>
@@ -32,7 +34,7 @@
 
         <identified_by>
             <_array>
-                <xsl:apply-templates select="mods:titleInfo"/>
+                <xsl:apply-templates select="mods:titleInfo[not(@type)]"/>
                 <xsl:apply-templates select="mods:relatedItem[@type = 'original']/mods:identifier[@type = 'local']"/>
             </_array>
         </identified_by>
@@ -54,11 +56,20 @@
         </xsl:if>
 
         <!-- production event -->
-        <xsl:if test="mods:name or mods:relatedItem[@type = 'original']/mods:originInfo">
+        <xsl:if test="mods:name or mods:relatedItem[@type = 'original']/mods:originInfo or mods:originInfo">
             <produced_by>
                 <_object>
                     <type>Production</type>
-                    <xsl:apply-templates select="mods:relatedItem[@type = 'original']/mods:originInfo"/>
+                    
+                    <!-- accommodate differing originInfo, depending on MARC source or manual MODS -->
+                    <xsl:choose>
+                        <xsl:when test="mods:relatedItem[@type = 'original']/mods:originInfo">
+                            <xsl:apply-templates select="mods:relatedItem[@type = 'original']/mods:originInfo"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:apply-templates select="mods:originInfo"/>
+                        </xsl:otherwise>
+                    </xsl:choose>
 
                     <!-- if more than one role is reported among the name(s), then split the production activity into parts -->
                     <xsl:choose>
@@ -282,7 +293,7 @@
                 <_label>
                     <xsl:value-of select="."/>
                 </_label>
-                <xsl:if test="@encoding = 'edtf' or @encoding = 'iso8601'">
+                <xsl:if test="@encoding = 'edtf' or @encoding = 'iso8601' or @encoding = 'marc'">
                     <xsl:variable name="dateRange" as="node()*">
                         <xsl:if test="unparsed-text-available('http://127.0.0.1:8000/')">
                             <xsl:copy-of select="json-to-xml(unparsed-text(concat('http://127.0.0.1:8000/parse?date=', .)))"/>
