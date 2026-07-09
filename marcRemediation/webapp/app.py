@@ -8,11 +8,15 @@ Function: Simple Python Flask web app to display marcRemediation reports stored 
 
 from flask import Flask, render_template, request, Response
 import sqlite3, math, requests
+from werkzeug.middleware.proxy_fix import ProxyFix
 
 DATABASE = '../report.db'
 LIMIT = 25
 
 app = Flask(__name__)
+app.wsgi_app = ProxyFix(
+    app.wsgi_app, x_for=1, x_proto=1, x_host=1, x_prefix=1
+)
 
 @app.route('/')
 @app.route('/home')
