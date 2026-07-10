@@ -11,15 +11,16 @@ import xml.etree.ElementTree as ET
 from datetime import datetime
 
 SAXON_PATH = "../../saxon/SaxonHE12-4J/saxon-he-12.4.jar"
-DOCUMENT_PATH = "current"
+ALTO_VERSION = "alto3"
+#DOCUMENT_PATH = "\\topaz.storage.virginia.edu\digiserv-production\african-american-newspaper-project"
 #african american newspapers: \\topaz.storage.virginia.edu\digiserv-production\african-american-newspaper-project
 
 errors = []
 namespaces = {'mods': 'http://www.loc.gov/mods/v3', 
               'mets': 'http://www.loc.gov/METS/',
-              'alto': 'http://www.loc.gov/standards/alto/ns-v2#',
+              'alto2': 'http://www.loc.gov/standards/alto/ns-v2#',
+              'alto3': 'http://www.loc.gov/standards/alto/ns-v3#',
               'xlink': 'http://www.w3.org/1999/xlink'}
-
 #---------------------
 #ALTO VALIDATION
 #---------------------
@@ -33,7 +34,7 @@ def validate_alto(filename, fp):
     tree = ET.parse(fp)
     root = tree.getroot()
     
-    for text_block in root.findall('.//alto:TextBlock', namespaces):
+    for text_block in root.findall(f".//{ALTO_VERSION}:TextBlock", namespaces):
         lang = text_block.get('language')
         
         #evaluate the heights of empty text blocks
@@ -51,7 +52,7 @@ def validate_alto(filename, fp):
                     msg = f"Warning :: {fp} :: TextBlock {text_block.get('ID')} :: no content (height: {height})"
         
         #search for missing or invalid language attributes on TextBlocks that contain TextLines
-        text_lines = text_block.findall('alto:TextLine', namespaces)
+        text_lines = text_block.findall(f".//{ALTO_VERSION}:TextLine", namespaces)
         if len(text_lines) > 0:
             if not lang:
                 hasError = True
@@ -63,7 +64,7 @@ def validate_alto(filename, fp):
                     msg = f"Error :: {fp} :: TextBlock {text_block.get('ID')} :: invalid language ({lang})"
                     errors.append(msg)
                      
-        #evaluate the content length of child alto:String elements
+        #evaluate the content length of child String elements
         for string in text_block.iter('{http://www.loc.gov/standards/alto/ns-v2#}String'):
             content = string.get("CONTENT")
             cc = string.get("CC").replace(" ", "")
@@ -99,7 +100,7 @@ def validate_mets(filename, path):
         flocat = alto.find("mets:FLocat", namespaces)
                 
         #print(alto.get("ID"))
-        altoFile = flocat.get("{http://www.w3.org/1999/xlink}href").split("/")[-1]
+        altoFile = flocat.get("{http://www.w3.org/1999/xlink}href").replace("file://./", "").replace("/", "\\")
         altoFile = os.path.join(path, altoFile)
         
         data = ET.parse(altoFile).getroot()
@@ -194,15 +195,13 @@ def validate_div(div, hasTitle, fp, combined):
             if altoFile is None:
                 hasError = True
                 msg = f"Error :: {fp} :: area in div {id} :: File ID not found in ALTO fileGrp"
-                print(msg)
                 errors.append(msg)
             else:
                 #xpath = ".//"
-                descendant = altoFile.find(f".//alto:*[@ID = '{blockId}']", namespaces)
+                descendant = altoFile.find(f".//{ALTO_VERSION}:*[@ID = '{blockId}']", namespaces)
                 if descendant is None:
                     hasError = True
                     msg = f"Error :: {fp} :: area in div {id} :: Block ID {blockId} not found in ALTO XML"
-                    print(msg)
                     errors.append(msg)
     
     return hasError    
@@ -219,7 +218,7 @@ def is_valid_date(date_str):
 
 def main():    
     #iterate recursively through the 'current' folder relative to this Python script to look for XML files
-    for path, dirs, files in os.walk(DOCUMENT_PATH):        
+    for path, dirs, files in os.walk(r"\\topaz.storage.virginia.edu\digiserv-production\african-american-newspaper-project\UVA_24-217-01\Article_Segmentation"):        
         
         xml_folder = [filename for filename in files if ".xml" in filename]
         if xml_folder:
@@ -235,7 +234,7 @@ def main():
                     s = mmap.mmap(file.fileno(), 0, access=mmap.ACCESS_READ)
                     if s.find(b'http://www.loc.gov/METS/') != -1:    
                         validate_mets(filename, path)                 
-                    elif s.find(b'http://www.loc.gov/standards/alto/ns-v2#') != -1:
+                    elif s.find(b'http://www.loc.gov/standards/alto/') != -1:
                         validate_alto(filename, fp)
                         
     print("Process completed. Writing log file, if applicable.")
