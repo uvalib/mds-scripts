@@ -16,6 +16,7 @@ ALTO_VERSION = "alto3"
 #african american newspapers: \\topaz.storage.virginia.edu\digiserv-production\african-american-newspaper-project
 
 errors = []
+warnings = []
 namespaces = {'mods': 'http://www.loc.gov/mods/v3', 
               'mets': 'http://www.loc.gov/METS/',
               'alto2': 'http://www.loc.gov/standards/alto/ns-v2#',
@@ -26,6 +27,7 @@ namespaces = {'mods': 'http://www.loc.gov/mods/v3',
 #---------------------
 def validate_alto(filename, fp):
     global errors
+    global warnings
     
     hasError = False
     
@@ -50,14 +52,14 @@ def validate_alto(filename, fp):
                     errors.append(msg)
                 else:
                     msg = f"Warning :: {fp} :: TextBlock {text_block.get('ID')} :: no content (height: {height})"
+                    warnings.append(msg)
         
         #search for missing or invalid language attributes on TextBlocks that contain TextLines
         text_lines = text_block.findall(f".//{ALTO_VERSION}:TextLine", namespaces)
         if len(text_lines) > 0:
             if not lang:
-                hasError = True
                 msg = f"Error :: {fp} :: TextBlock {text_block.get('ID')} :: no language"
-                errors.append(msg)
+                warnings.append(msg)
             else:
                 if len(lang) < 2 or len(lang) > 3:
                     hasError = True
@@ -83,6 +85,7 @@ def validate_alto(filename, fp):
 #---------------------
 def validate_mets(filename, path):
     global errors
+    global warnings
     
     hasError = False
     
@@ -113,17 +116,15 @@ def validate_mets(filename, path):
             if "date" in descendant.tag or "Date" in descendant.tag:
                 tag = descendant.tag.replace('{http://www.loc.gov/mods/v3}', 'mods:')
                 if descendant.get('encoding') != 'iso8601':
-                    hasError = True
                     msg = f"Error :: {fp} :: {tag} :: encoding not iso8601"
-                    errors.append(msg)
+                    warnings.append(msg)
                     
                 #test the ISO8601 content
                 date = descendant.text
                 valid = is_valid_date(date)
-                if valid == False:     
-                    hasError = True               
+                if valid == False:        
                     msg = f"Error :: {fp} :: {tag} :: invalid ISO date: {descendant.text}"
-                    errors.append(msg)
+                    warnings.append(msg)
                     
     #validate METS
     dmdSec = {}
@@ -161,6 +162,7 @@ def validate_mets(filename, path):
 #---------------------
 def validate_div(div, hasTitle, fp, combined):
     global errors
+    global warnings
     
     hasError = False
     
@@ -246,6 +248,14 @@ def main():
             os.makedirs("errors")
         with open('errors/errors.log', 'w', encoding="utf-8") as file:
             text = '\n'.join(errors)
+            file.write(text)
+            
+    if len(warnings) > 0:
+        #create errors folder if it doesn't exist
+        if not os.path.isdir("errors"):
+            os.makedirs("errors")
+        with open('errors/warnings.log', 'w', encoding="utf-8") as file:
+            text = '\n'.join(warnings)
             file.write(text)
         
 if __name__=="__main__":
