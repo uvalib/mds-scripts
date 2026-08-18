@@ -63,7 +63,7 @@ except ImportError:
         "    pip install -U \"anthropic[bedrock]\""
     )
 
-DEFAULT_MODEL = "claude-sonnet-5"
+DEFAULT_MODEL = "anthropic.claude-sonnet-5"
 
 CSV_COLUMNS = ["Field", "Original (Arabic)", "Transliteration (ALA-LC)", "English Translation"]
 
@@ -280,10 +280,10 @@ def main():
 
     args = parser.parse_args()
 
-    api_key = args.api_key or os.environ.get("ANTHROPIC_API_KEY")
+    api_key = args.api_key or os.environ.get("AWS_BEARER_TOKEN_BEDROCK")
     if not api_key:
         sys.exit(
-            "Error: no API key found. Set the ANTHROPIC_API_KEY environment "
+            "Error: no API key found. Set the AWS_BEARER_TOKEN_BEDROCK environment "
             "variable or pass --api-key."
         )
 
