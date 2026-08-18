@@ -13,21 +13,18 @@ from exiftool import ExifTool, ExifToolHelper
 def main():
     with open('ProQuest-test.csv', 'r', encoding="utf-8") as file:
         reader = csv.DictReader(file)
-        start = 0
         for row in reader:
-            if start == 0:
-                pdf = "FullTextPdfs/" + row["ID"] + ".pdf"
-                print("Setting tags for", pdf)
-                with ExifToolHelper() as et:
-                    et.set_tags(
-                        pdf,
-                        tags={"Author": row["AUTHORS"],
-                              "Title": row["TITLE"],
-                              "Subject": row["ABSTRACT"],
-                            "Keywords": ",".join(row["KEYWORD"].split("|"))},
-                        params=["-P", "-overwrite_original"]
-                    )
-            start += 1
+            pdf = "FullTextPdfs/" + row["ID"] + ".pdf"
+            print("Setting tags for", pdf)
+            with ExifToolHelper() as et:
+                et.set_tags(
+                    pdf,
+                    tags={"Author": row["AUTHOR"],
+                          "Title": row["TITLE"],
+                          "Subject": row["ABSTRACT"],
+                        "Keywords": ",".join(row["KEYWORD"].split("|"))},
+                    params=["-P", "-overwrite_original"]
+                )
 
 
 if __name__ == "__main__":
