@@ -67,7 +67,7 @@ DEFAULT_MODEL = "anthropic.claude-sonnet-5"
 
 CSV_COLUMNS = ["Field", "Original (Arabic)", "Transliteration (ALA-LC)", "English Translation"]
 
-SYSTEM_PROMPT = """\
+PAGE_SYSTEM_PROMPT = """\
 You are a bibliographic cataloging assistant. You will be shown photographs \
 of pages from a single physical book: typically a title page, an imprint/\
 copyright/CIP (cataloging-in-publication) page, and possibly a table of \
@@ -146,7 +146,7 @@ not appear to show a book page with bibliographic information at all, \
 still do your best to extract whatever is legible.
 """
 
-USER_PROMPT = (
+PAGE_USER_PROMPT = (
     "Here are photographs of pages from a book (title page, imprint/CIP "
     "page, and/or other relevant pages). Extract the bibliographic metadata "
     "according to the rules you were given, and return only the JSON array."
@@ -181,7 +181,7 @@ def build_message_content(image_paths):
                 },
             }
         )
-    content.append({"type": "text", "text": USER_PROMPT})
+    content.append({"type": "text", "text": PAGE_USER_PROMPT})
     return content
 
 
@@ -193,7 +193,7 @@ def call_claude(image_paths, model, api_key):
     response = client.messages.create(
         model=model,
         max_tokens=4000,
-        system=SYSTEM_PROMPT,
+        system=PAGE_SYSTEM_PROMPT,
         messages=[{"role": "user", "content": build_message_content(image_paths)}],
     )
 
