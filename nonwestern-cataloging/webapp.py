@@ -39,6 +39,7 @@ def upload_file():
         
         #file = request.files['file']
         files = request.files.getlist("file")
+        process_type = request.form.get("type")
         
         for file in files:
             if file and allowed_file(file.filename):            
@@ -52,7 +53,7 @@ def upload_file():
         #initiate OCR process
         
          
-        return redirect(url_for('report'))
+        return redirect(url_for('report', process_type=process_type))
     
     #display upload page if that is not being POSTed
     return render_template('upload.html')
