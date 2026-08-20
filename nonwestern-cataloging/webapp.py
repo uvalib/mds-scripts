@@ -8,7 +8,7 @@ Function: Simple Python Flask web app to interact with Amazon Bedrock AI API
 """
 
 import os, sys
-from flask import Flask, flash, request, redirect, url_for, render_template
+from flask import Flask, flash, request, redirect, url_for, render_template, session
 from werkzeug.utils import secure_filename
 
 import extract_book_metadata, marc_from_image
@@ -24,6 +24,7 @@ if not api_key:
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
+app.secret_key = os.urandom(24)
 
 def allowed_file(filename):
     return '.' in filename and \
@@ -40,6 +41,7 @@ def upload_file():
         #file = request.files['file']
         files = request.files.getlist("file")
         process_type = request.form.get("type")
+        session['process_type'] = process_type
         
         for file in files:
             if file and allowed_file(file.filename):            
@@ -53,18 +55,19 @@ def upload_file():
         #initiate OCR process
         
          
-        return redirect(url_for('report', process_type=process_type))
+        return redirect(url_for('report'))
     
     #display upload page if that is not being POSTed
     return render_template('upload.html')
 
 @app.route('/report')
-def report():   
+def report():    
+    process_type = session.get('process_type', None)
     
-    return render_template("report.html")
+    return render_template("report.html", process_type=process_type)
 
 
 
 if __name__ == '__main__':  
     #run debug with flask --app webapp run --debug
-   app.run()  
+   app.run(debug=True)  
