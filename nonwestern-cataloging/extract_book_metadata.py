@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-extract-book-metadata.py
+extract_book_metadata.py
 
 Extract bibliographic metadata from photographs of a book's title page,
 imprint/copyright page, table of contents, and other relevant pages, using

@@ -109,7 +109,8 @@ PRINTOUT_USER_PROMPT = (
 )
 
 
-def encode_image(path: Path) -> tuple[str, str]:
+def encode_image(path):
+    path = Path(path)
     media_type, _ = mimetypes.guess_type(str(path))
     if media_type not in {"image/jpeg", "image/png", "image/gif", "image/webp"}:
         media_type = "image/jpeg"
@@ -201,7 +202,7 @@ def build_record(parsed: dict) -> Record:
 def write_outputs(record: Record, prefix: Path) -> None:
     mrc_path = prefix.with_suffix(".mrc")
     mrk_path = prefix.with_suffix(".mrk")
-    xml_path = prefix.with_suffix(".xml")
+    #xml_path = prefix.with_suffix(".xml")
 
     with open(mrc_path, "wb") as f:
         f.write(record.as_marc())
@@ -209,18 +210,16 @@ def write_outputs(record: Record, prefix: Path) -> None:
     with open(mrk_path, "w", encoding="utf-8") as f:
         f.write(str(record))
 
-    from pymarc import marcxml
-
+    """from pymarc import marcxml
     xml_bytes = marcxml.record_to_xml(record, namespace=True)
     with open(xml_path, "wb") as f:
         f.write(b'<?xml version="1.0" encoding="UTF-8"?>\n')
         f.write(b'<collection xmlns="http://www.loc.gov/MARC21/slim">\n')
         f.write(xml_bytes)
-        f.write(b"\n</collection>\n")
+        f.write(b"\n</collection>\n")"""
 
     print(f"Wrote {mrc_path}")
     print(f"Wrote {mrk_path}")
-    print(f"Wrote {xml_path}")
 
 
 def main():
