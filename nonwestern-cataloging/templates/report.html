@@ -23,7 +23,17 @@
                     
                     <p> {{ data_filename }}</p>
                     
+                    {% if process_type == "printout" %}
                     
+	                    {% if data|length > 0 %} 
+	                    	<pre>
+	                    		<code>{{ data }} </code>
+	                    	</pre>
+	                    	
+	                    	
+	                    {% endif %}
+                    
+                    {% endif %}
                 </div>
             </div>
         </div>

@@ -97,12 +97,9 @@ def report():
     process_type = session.get('process_type', None)
     data_filename = session.get('data_filename', None)
     
-    try:
-        with open(os.path.join(app.config['UPLOAD_FOLDER'], data_filename + ".mrk"), 'r') as file:
-            data = file.read()
-            return render_template("report.html", process_type=process_type, data_filename=data_filename, data=data)
-    except:
-        return "Error: Unable to read converted MARC file."
+    with open(os.path.join(app.config['UPLOAD_FOLDER'], data_filename + ".mrk"), 'r') as file:
+        data = file.read()
+        return render_template("report.html", process_type=process_type, data_filename=data_filename, data=data)
     
     
 
