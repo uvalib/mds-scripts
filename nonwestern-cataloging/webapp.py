@@ -7,12 +7,12 @@ Function: Simple Python Flask web app to interact with Amazon Bedrock AI API
     to process images to generate MARC records for non-Western materials
 """
 
-import os, sys, uuid
+import os, sys, uuid, json
 from flask import Flask, flash, request, redirect, url_for, render_template, session, send_from_directory
 from werkzeug.utils import secure_filename
 from pathlib import Path
 
-import extract_book_metadata, marc_from_image
+import extract_book_metadata, json_to_marc, marc_from_image
 
 #import 
 DEFAULT_MODEL = "anthropic.claude-sonnet-5"
@@ -41,29 +41,31 @@ def process_file(files, process_type):
     
     if process_type == 'printout':
         image_path = os.path.join(app.config['UPLOAD_FOLDER'], files[0].filename)
-        #parsed = marc_from_image.call_claude(image_path, DEFAULT_MODEL, api_key)
         
-        #record = marc_from_image.build_record(parsed)    
-        #print("\n--- Parsed record preview ---")
-        #print(record)
-        #marc_from_image.write_outputs(record, prefix)        
+        #Use LLM to perform OCR and generate MARC records
+        parsed = marc_from_image.call_claude(image_path, DEFAULT_MODEL, api_key)
+        
+        record = marc_from_image.build_record(parsed)    
+        print("\n--- Parsed record preview ---")
+        print(record)
+        marc_from_image.write_outputs(record, prefix)        
         
     elif process_type == 'page':
         image_paths = []
         for file in files:
             image_paths.append(os.path.join(app.config['UPLOAD_FOLDER'], file.filename))
         
+        #use LLM to OCR page images
         raw_response = extract_book_metadata.call_claude(image_paths, DEFAULT_MODEL, api_key)
-        record = extract_book_metadata.clean_text(raw_response)
+        cleaned_text = extract_book_metadata.clean_text(raw_response)
+        rows = json.loads(cleaned_text)
         
-        prefix = Path(os.path.join(app.config['DOWNLOAD_FOLDER'], data_filename))
-        json_path = prefix.with_suffix(".json")
-        with open(json_path, "w", encoding="utf-8") as f:
-             f.write(str(record))
+        #process JSON response from LLM into MARC
+        record = json_to_marc.build_record(rows, orig_lang="ara", country_override=None, agency="viu")
         
         print("\n--- Parsed record preview ---")
         print(record)
-        #record = {}
+        marc_from_image.write_outputs(record, prefix)
     
     return data_filename
         
@@ -101,12 +103,7 @@ def upload_file():
         #initiate OCR process        
         data_filename = process_file(files, process_type)
         
-        if process_type == 'printout':
-            return redirect(url_for('report', id=data_filename))
-        elif process_type == 'page':            
-            return redirect(url_for('mapping', id=data_filename)) 
-        else:
-            return "Indeterminate process_type" 
+        return redirect(url_for('report', id=data_filename))
         
     
     #display upload page if that is not being POSTed
@@ -115,15 +112,6 @@ def upload_file():
 @app.route('/downloads/<filename>', methods=['GET', 'POST'])
 def download_file (filename):
     return send_from_directory(app.config['DOWNLOAD_FOLDER'], filename)    
-
-@app.route('/mapping/<id>')
-def mapping(id):  
-    if os.path.isfile(os.path.join(app.config['DOWNLOAD_FOLDER'], id + ".json")) == True:
-        with open(os.path.join(app.config['DOWNLOAD_FOLDER'], id + ".json"), 'r') as file:
-            data = file.read()
-            return render_template("mapping.html", data_filename=id, data=data)
-    else:
-        return "Error: no associated JSON output found for ID provided."
 
 @app.route('/report/<id>')
 def report(id):    
@@ -135,11 +123,6 @@ def report(id):
     else:
         return "Error: no associated MARC metadata found for ID provided."
     
-    
-    
-    
-
-
 
 if __name__ == '__main__':  
     #run debug with flask --app webapp run --debug

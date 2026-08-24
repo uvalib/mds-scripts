@@ -10,8 +10,7 @@
             .message-box { padding: 12px; }
             .content { margin-top: 20px }
             small { font-size:smaller }
-        </style>
-        
+        </style>        
     </head>
     <body>        
         <div class="container">
@@ -22,9 +21,19 @@
                     <p>Review the following OCR output update mappings to download a MARC skeleton record for further revision.</p>
                     
                     {% if data|length > 0 %} 
-                    	<pre>
-                    		<code>{{ data }} </code>
-                    	</pre>
+                    
+                    <form>
+                    	<label for="basic-url" class="form-label">Your vanity URL</label>
+                    	<div class="input-group mb-3">
+							<input type="text" class="form-control" placeholder="Username" aria-label="Username">
+							<span class="input-group-text">@</span>
+							<input type="text" class="form-control" placeholder="Server" aria-label="Server">
+						</div>                    
+                    </form>
+                    	
+                   	<pre>
+                   		<code>{{ data }} </code>
+                   	</pre>
                     {% endif %}
                 </div>
             </div>
