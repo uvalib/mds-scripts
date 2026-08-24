@@ -201,7 +201,7 @@ def call_claude(image_paths, model, api_key):
     return "".join(text_parts).strip()
 
 
-def parse_rows(raw_text):
+def clean_text(raw_text):
     """Parse the model's JSON response into a list of row dicts, tolerating
     stray markdown code fences if the model adds them despite instructions."""
     cleaned = raw_text.strip()
@@ -210,7 +210,10 @@ def parse_rows(raw_text):
         if cleaned.startswith("json"):
             cleaned = cleaned[4:]
         cleaned = cleaned.strip()
+        
+    return cleaned
 
+def parse_rows(cleaned):
     try:
         rows = json.loads(cleaned)
     except json.JSONDecodeError as e:
@@ -289,7 +292,8 @@ def main():
 
     print(f"Sending {len(args.images)} image(s) to {args.model}...", file=sys.stderr)
     raw_response = call_claude(args.images, args.model, api_key)
-    rows = parse_rows(raw_response)
+    cleaned = clean_text(raw_response)
+    rows = parse_rows(cleaned)
 
     if not rows:
         sys.exit("Error: no metadata rows were extracted from the images.")

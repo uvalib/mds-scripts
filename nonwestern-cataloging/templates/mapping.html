@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Non-Western Cataloging Project: Metadata Report and Download</title>
+        <title>Non-Western Cataloging Project: Metadata Mapping</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -17,27 +17,15 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 content">
-                    <h1>Report</h1>
+                    <h1>OCR Results and Metadata Mappaing</h1>
                     
-                    	{% if data|length > 0 %} 
-	                    	<p>Review the following MARC and download files for further revision.</p>
-	                    	
-	                    	<ul>
-	                    		<li>
-	                    			<a href="{{ url_for('download_file', filename=data_filename + '.mrk') }}">Mnemonic MARC Text File (*.mrk)</a>
-	                    		</li>
-	                    		<li>
-	                    			<a href="{{ url_for('download_file', filename=data_filename + '.mrc') }}">Binary MARC file  (*.mrc)</a>
-	                    		</li>
-	                    	</ul>
-	                    
-	                    	<pre>
-	                    		<code>{{ data }} </code>
-	                    	</pre>
-	                    	
-	                    	<a href="{{ url_for('upload_file')}}">Start Over</a>
-	                    	
-	                    {% endif %}
+                    <p>Review the following OCR output update mappings to download a MARC skeleton record for further revision.</p>
+                    
+                    {% if data|length > 0 %} 
+                    	<pre>
+                    		<code>{{ data }} </code>
+                    	</pre>
+                    {% endif %}
                 </div>
             </div>
         </div>
