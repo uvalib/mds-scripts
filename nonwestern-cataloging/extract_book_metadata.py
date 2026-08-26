@@ -171,7 +171,7 @@ in the "translation" field too.
 still provide your best-effort transcription/transliteration/translation, \
 but keep it as close to literal as possible.
 
-Respond with ONLY a raw JSON array of objects with exactly the keys \
+Respond with ONLY a valid JSON array of objects with exactly the keys \
 "field", "original", "transliteration", "translation" -- no markdown code \
 fences, no commentary, no preamble, no explanation. If a photograph does \
 not appear to show a book page with bibliographic information at all, \
@@ -181,7 +181,7 @@ still do your best to extract whatever is legible.
 PAGE_USER_PROMPT = (
     "Here are photographs of pages from a book (title page, imprint/CIP "
     "page, and/or other relevant pages). Extract the bibliographic metadata "
-    "according to the rules you were given, and return only the JSON array."
+    "according to the rules you were given, and return only a valid JSON array."
 )
 
 # --------------------------------------------------------------------------
@@ -260,7 +260,7 @@ def call_claude(image_paths, model, api_key):
 
     response = client.messages.create(
         model=model,
-        max_tokens=4000,
+        max_tokens=9600,
         system=PAGE_SYSTEM_PROMPT,
         messages=[{"role": "user", "content": build_message_content(image_paths)}],
     )

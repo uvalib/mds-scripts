@@ -60,9 +60,7 @@ def process_images(files, process_type, lang):
         #use LLM to OCR page images
         print("Sending page images to LLM.")
         raw_response = extract_book_metadata.call_claude(image_paths, DEFAULT_MODEL, api_key)    
-        cleaned = extract_book_metadata.clean_text(raw_response) 
-        print("\n--- JSON Response from Claude ---") 
-        print(cleaned)     
+        cleaned = extract_book_metadata.clean_text(raw_response)
         rows = extract_book_metadata.parse_rows(cleaned)
                 
         #process JSON response from LLM into MARC
