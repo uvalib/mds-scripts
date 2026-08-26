@@ -288,7 +288,7 @@ def parse_rows(cleaned):
         sys.exit(
             "Error: could not parse JSON from Claude's response.\n"
             f"Parse error: {e}\n\n"
-            "Raw response was:\n" + raw_text
+            "Raw response was:\n" + cleaned
         )
 
     if not isinstance(rows, list):

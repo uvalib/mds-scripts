@@ -31,7 +31,7 @@ app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 app.secret_key = os.urandom(24)
 
 
-def process_file(files, process_type, lang):
+def process_images(files, process_type, lang):
     if not os.path.isdir(DOWNLOAD_FOLDER):
         os.mkdir(DOWNLOAD_FOLDER)
             
@@ -59,30 +59,18 @@ def process_file(files, process_type, lang):
         
         #use LLM to OCR page images
         print("Sending page images to LLM.")
-        raw_response = extract_book_metadata.call_claude(image_paths, DEFAULT_MODEL, api_key)
-        
-        print("Output raw response\n")
-        print(raw_response)
-        
-        """cleaned_text = extract_book_metadata.clean_text(raw_response)
-        
-        rows = json.loads(cleaned_text)
+        raw_response = extract_book_metadata.call_claude(image_paths, DEFAULT_MODEL, api_key)    
+        cleaned = extract_book_metadata.clean_text(raw_response) 
+        print("\n--- JSON Response from Claude ---") 
+        print(cleaned)     
+        rows = extract_book_metadata.parse_rows(cleaned)
+                
         #process JSON response from LLM into MARC
-        record = json_to_marc.build_record(rows, orig_lang=lang, country_override=None, agency=AGENCY_CODE)
+        record = extract_book_metadata.build_record(rows, orig_lang=lang, country_override=None, agency=AGENCY_CODE)
         
         print("\n--- Parsed record preview ---")
         print(record)
-        marc_from_image.write_outputs(record, prefix)
-        
-        
-        try:
-            rows = json.loads(cleaned_text)
-        except:
-            print("Error loading JSON response.")
-            return redirect(url_for('error'))
-        else:
-        """
-            
+        marc_from_image.write_outputs(record, prefix)            
             
     return data_filename
         
@@ -118,7 +106,7 @@ def upload_file():
                 file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         
         #initiate OCR process        
-        data_filename = process_file(files, process_type, lang)
+        data_filename = process_images(files, process_type, lang)
         
         return redirect(url_for('report', id=data_filename))
         
