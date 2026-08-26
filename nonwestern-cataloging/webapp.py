@@ -16,6 +16,7 @@ import extract_book_metadata, json_to_marc, marc_from_image
 
 #import 
 DEFAULT_MODEL = "anthropic.claude-sonnet-5"
+AGENCY_CODE = "ViU"
 ALLOWED_EXTENSIONS = {'jpg', 'jpeg'}
 UPLOAD_FOLDER = "uploads"
 DOWNLOAD_FOLDER = "downloads"
@@ -30,7 +31,7 @@ app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 app.secret_key = os.urandom(24)
 
 
-def process_file(files, process_type):
+def process_file(files, process_type, lang):
     if not os.path.isdir(DOWNLOAD_FOLDER):
         os.mkdir(DOWNLOAD_FOLDER)
             
@@ -43,6 +44,7 @@ def process_file(files, process_type):
         image_path = os.path.join(app.config['UPLOAD_FOLDER'], files[0].filename)
         
         #Use LLM to perform OCR and generate MARC records
+        print("Sending printout scan to LLM.")
         parsed = marc_from_image.call_claude(image_path, DEFAULT_MODEL, api_key)
         
         record = marc_from_image.build_record(parsed)    
@@ -56,17 +58,32 @@ def process_file(files, process_type):
             image_paths.append(os.path.join(app.config['UPLOAD_FOLDER'], file.filename))
         
         #use LLM to OCR page images
+        print("Sending page images to LLM.")
         raw_response = extract_book_metadata.call_claude(image_paths, DEFAULT_MODEL, api_key)
-        cleaned_text = extract_book_metadata.clean_text(raw_response)
-        rows = json.loads(cleaned_text)
         
+        print("Output raw response\n")
+        print(raw_response)
+        
+        """cleaned_text = extract_book_metadata.clean_text(raw_response)
+        
+        rows = json.loads(cleaned_text)
         #process JSON response from LLM into MARC
-        record = json_to_marc.build_record(rows, orig_lang="ara", country_override=None, agency="viu")
+        record = json_to_marc.build_record(rows, orig_lang=lang, country_override=None, agency=AGENCY_CODE)
         
         print("\n--- Parsed record preview ---")
         print(record)
         marc_from_image.write_outputs(record, prefix)
-    
+        
+        
+        try:
+            rows = json.loads(cleaned_text)
+        except:
+            print("Error loading JSON response.")
+            return redirect(url_for('error'))
+        else:
+        """
+            
+            
     return data_filename
         
 
@@ -89,9 +106,9 @@ def upload_file():
             flash('No file part')
             return redirect(request.url)
         
-        #file = request.files['file']
         files = request.files.getlist("file")
         process_type = request.form.get("type")
+        lang = request.form.get("lang")
         session['process_type'] = process_type
         
         for file in files:
@@ -101,7 +118,7 @@ def upload_file():
                 file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         
         #initiate OCR process        
-        data_filename = process_file(files, process_type)
+        data_filename = process_file(files, process_type, lang)
         
         return redirect(url_for('report', id=data_filename))
         
@@ -122,6 +139,11 @@ def report(id):
             return render_template("report.html", data_filename=id, data=data)    
     else:
         return "Error: no associated MARC metadata found for ID provided."
+    
+@app.route('/error')
+def error():    
+    return "Indeterminate error page."
+        
     
 
 if __name__ == '__main__':  
