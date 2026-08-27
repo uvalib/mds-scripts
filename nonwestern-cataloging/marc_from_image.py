@@ -108,7 +108,7 @@ PRINTOUT_USER_PROMPT = (
     "JSON structure described in your instructions. Return only the JSON."
 )
 
-
+#base64 encode an image for Claude
 def encode_image(path):
     path = Path(path)
     media_type, _ = mimetypes.guess_type(str(path))
@@ -116,6 +116,26 @@ def encode_image(path):
         media_type = "image/jpeg"
     data = base64.standard_b64encode(path.read_bytes()).decode("ascii")
     return data, media_type
+
+#read image bytes for Gemini
+def get_image_bytes_and_format(path):
+    """Read local image file into bytes and determine format."""
+    ext = os.path.splitext(path)[1].lower()
+    format_map = {
+        ".jpg": "jpeg",
+        ".jpeg": "jpeg",
+        ".png": "png",
+        ".webp": "webp",
+        ".gif": "gif"
+    }
+    
+    if ext not in format_map:
+        raise ValueError(f"Unsupported image extension '{ext}'. Use PNG, JPEG, WEBP, or GIF.")
+    
+    with open(file_path, "rb") as image_file:
+        return image_file.read(), format_map[ext]
+    
+
 
 
 def call_claude(image_path: Path, model: str, api_key: str) -> dict:
