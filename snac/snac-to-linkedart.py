@@ -51,6 +51,43 @@ def process_json(data):
                 ]
             }
         ]
+       
+    #classified_as
+    if "occupations" in data or "nationalities" in data:
+        classified_as = []
+        if "occupations" in data:
+            for occupation in data["occupations"]:
+                obj = {
+                    "id": "null",
+                    "type": "Type",
+                    "_label": occupation["term"]["term"],
+                    "classified_as": [
+                        {
+                            "id": "http://vocab.getty.edu/aat/300263369",
+                            "type": "Type",
+                            "_label": "Occupation"
+                        }
+                    ]
+                }
+                classified_as.append(obj)
+                
+        if "nationalities" in data:
+            for nationality in data["nationalities"]:
+                obj = {
+                "id": "null",
+                "type": "Type",
+                "_label": nationality["term"]["term"],
+                "classified_as": [
+                    {
+                        "id": "http://vocab.getty.edu/aat/300379842",
+                        "type": "Type",
+                        "_label": "Nationality"
+                    }
+                ]
+            }
+            classified_as.append(obj)
+        entity["classified_as"] = classified_as
+
     
     #extract birth and death dates
     if "dates" in data:
@@ -109,6 +146,7 @@ def process_json(data):
                 
         if len(equivalent) > 0:
             entity["equivalent"] = equivalent
+			
     
     print(entity)
     return entity
