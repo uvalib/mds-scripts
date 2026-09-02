@@ -147,8 +147,6 @@ def process_json(data):
         if len(equivalent) > 0:
             entity["equivalent"] = equivalent
 			
-    
-    print(entity)
     return entity
     
 
@@ -157,7 +155,7 @@ def main():
         description="Convert JSON from SNAC into Linked Art JSON-LD"
     )
     parser.add_argument("json_file", help="Path to the JSON source file")
-    parser.add_argument("-o", "--output", default="out.jsonld", help="Output filename")
+    parser.add_argument("-o", "--output", default="out.json", help="Output filename")
     
     args = parser.parse_args()
 
@@ -166,6 +164,10 @@ def main():
         sys.exit("Error: input JSON contained no rows.")
         
     result = process_json(data)
+    
+    print(f"Writing {args.output}")
+    with open(args.output, 'w') as f:
+        json.dump(result, f, indent=4)
     
     #print(result)
 
