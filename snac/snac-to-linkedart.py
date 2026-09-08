@@ -5,6 +5,7 @@ Function: Transform JSON from SNAC Cooperative into basic Linked Art JSON-LD
 """
 
 import os, json, sys, re, argparse
+import xml.etree.ElementTree as ET
 
 def load_rows(path):
     with open(path, "r", encoding="utf-8") as f:
@@ -51,6 +52,50 @@ def process_json(data):
                 ]
             }
         ]
+       
+    #parse the first biogHist from the embedded text property in the JSON and join paragraphs into one statement that does not include escaped XML elements
+    if "biogHists" in data:
+        bio = ""
+        
+        text = data["biogHists"][0]["text"]
+        text = f"<text>{text}</text>"
+        
+        root = ET.fromstring(text)
+        
+        nodes = root.findall('biogHist')
+        
+        if len(nodes) == 0:
+            bio = root.find('text').text
+        else:
+            paragraphs = []
+            for p in nodes[0].findall("{urn:isbn:1-931666-33-4}p"):
+                paragraphs.append(p.text)
+                
+            if len(paragraphs) > 0:
+                bio = " ".join(paragraphs)
+        
+        #if any string has been parsed from the biogHist, then include the biography statement in Linked Art output 
+        if len(bio) > 0:
+            entity["referred_to_by"] = [
+                {
+                    "type": "LinguisticObject",
+                    "content": bio,
+                    "classified_as": [
+                        {
+                            "id": "http://vocab.getty.edu/aat/300435422",
+                            "type": "Type",
+                            "_label": "Biography Statement",
+                            "classified_as": [
+                                {
+                                    "id": "http://vocab.getty.edu/aat/300418049",
+                                    "type": "Type",
+                                    "_label": "Brief Text"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
        
     #classified_as
     if "occupations" in data or "nationalities" in data:
