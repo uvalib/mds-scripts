@@ -2,6 +2,12 @@ import sys
 import os
 import json
 import boto3
+from wand.image import Image
+
+try:
+    from pymarc import Field, Leader, Record, Subfield
+except ImportError:
+    sys.exit("Missing dependency. Run: pip install pymarc")
 
 """Ensure your AWS credentials (AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, and AWS_DEFAULT_REGION) are configured locally via environment variables or the standard AWS CLI configuration."""
 
@@ -54,13 +60,25 @@ def get_image_bytes_and_format(file_path: str):
         return image_file.read(), format_map[ext]
 
 
+#use imagemagick to resize image to 1600x1600 if larger; this is due to content restraints with mistral
+def resize_image(file_path, img):
+    img.transform(resize='1600x1600>')
+    img.format = 'jpeg'
+    img.save(filename=file_path)    
+
 def extract_marc_json(image_path: str, model_id: str = "mistral.ministral-3-14b-instruct") -> str:
     
     # Initialize the Bedrock Runtime client
     client = boto3.client("bedrock-runtime", region_name='us-east-1')
     
+    with Image(filename=image_path) as img:
+        if img.height > 1600 or img.width > 1600:
+            print("Resizing", image_path)
+            resize_image(image_path, img)
+    
     # Read image
     image_bytes, image_format = get_image_bytes_and_format(image_path)
+    
 
     # Structure payload using Amazon Bedrock Converse API format
     messages = [
@@ -82,6 +100,7 @@ def extract_marc_json(image_path: str, model_id: str = "mistral.ministral-3-14b-
         }
     ]
 
+    
     try:
         response = client.converse(
             modelId=model_id,
@@ -102,12 +121,20 @@ def extract_marc_json(image_path: str, model_id: str = "mistral.ministral-3-14b-
             output_text = output_text[3:]
         if output_text.endswith("```"):
             output_text = output_text[:-3]
-
-        return output_text.strip()
+            
+        try:
+            return json.loads(output_text)
+        except json.JSONDecodeError as exc:
+            sys.exit(
+                "Could not parse response as JSON.\n"
+                f"Error: {exc}\n\n--- Raw response ---\n{output_text}"
+            )
 
     except Exception as e:
         print(f"Error invoking Amazon Bedrock: {e}", file=sys.stderr)
         sys.exit(1)
+        
+    
 
 
 if __name__ == "__main__":
@@ -121,7 +148,5 @@ if __name__ == "__main__":
         print(f"Error: File '{image_file}' not found.")
         sys.exit(1)
 
-    json_result = extract_marc_json(image_file)
-    
-    # Print output string directly
-    print(json_result)
+    parsed = extract_marc_json(image_file)
+    json.dumps(parsed)

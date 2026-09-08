@@ -11,6 +11,7 @@ import os, sys, uuid, json
 from flask import Flask, flash, request, redirect, url_for, render_template, session, send_from_directory
 from werkzeug.utils import secure_filename
 from pathlib import Path
+from wand.image import Image
 
 import extract_book_metadata, json_to_marc, marc_from_image
 
@@ -43,6 +44,12 @@ def process_images(files, process_type, lang):
     if process_type == 'printout':
         image_path = os.path.join(app.config['UPLOAD_FOLDER'], files[0].filename)
         
+        #resize image if necessary
+        with Image(filename=image_path) as img:
+            if img.height > 1600 or img.width > 1600:
+                print("Resizing", image_path)
+                resize_image(image_path, img)
+        
         #Use LLM to perform OCR and generate MARC records
         print("Sending printout scan to LLM.")
         parsed = marc_from_image.call_claude(image_path, DEFAULT_MODEL, api_key)
@@ -55,7 +62,14 @@ def process_images(files, process_type, lang):
     elif process_type == 'page':
         image_paths = []
         for file in files:
-            image_paths.append(os.path.join(app.config['UPLOAD_FOLDER'], file.filename))
+            image_path = os.path.join(app.config['UPLOAD_FOLDER'], file.filename)
+            image_paths.append(image_path)
+            
+            #resize image if necessary
+            with Image(filename=image_path) as img:
+                if img.height > 1600 or img.width > 1600:
+                    print("Resizing", image_path)
+                    resize_image(image_path, img)
         
         #use LLM to OCR page images
         print("Sending page images to LLM.")
@@ -71,7 +85,13 @@ def process_images(files, process_type, lang):
         marc_from_image.write_outputs(record, prefix)            
             
     return data_filename
-        
+   
+   
+#use imagemagick to resize image to 1600x1600 if larger; this is due to content restraints with mistral
+def resize_image(image_path, img):
+    img.transform(resize='1600x1600>')
+    img.format = 'jpeg'
+    img.save(filename=image_path)         
 
 def allowed_file(filename):
     return '.' in filename and \

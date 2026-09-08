@@ -32,7 +32,7 @@ Notes
   against the original image before treating the record as final.
 """
 
-import argparse, base64, json, mimetypes, re, sys, os
+import argparse, base64, json, mimetypes, re, sys, os, boto3
 from pathlib import Path
 
 try:
@@ -109,8 +109,8 @@ PRINTOUT_USER_PROMPT = (
 )
 
 #base64 encode an image for Claude
-def encode_image(path):
-    path = Path(path)
+def encode_image(file_path: str):
+    path = Path(file_path)
     media_type, _ = mimetypes.guess_type(str(path))
     if media_type not in {"image/jpeg", "image/png", "image/gif", "image/webp"}:
         media_type = "image/jpeg"
@@ -118,9 +118,9 @@ def encode_image(path):
     return data, media_type
 
 #read image bytes for Gemini
-def get_image_bytes_and_format(path):
+def get_image_bytes_and_format(file_path: str):
     """Read local image file into bytes and determine format."""
-    ext = os.path.splitext(path)[1].lower()
+    ext = os.path.splitext(file_path)[1].lower()
     format_map = {
         ".jpg": "jpeg",
         ".jpeg": "jpeg",
@@ -137,7 +137,7 @@ def get_image_bytes_and_format(path):
     
 
 
-
+#pass images to Claude API and receive JSON response with MARC fields and subfields
 def call_claude(image_path: Path, model: str, api_key: str) -> dict:
     #client = anthropic.Anthropic()
     client = AnthropicBedrockMantle(aws_region="us-east-1")
@@ -182,6 +182,78 @@ def call_claude(image_path: Path, model: str, api_key: str) -> dict:
         )
 
 
+#pass images to Boto3 Bedrock runtime for given LLM model to receive JSON
+def extract_marc_json(image_path: str, model_id: str = "mistral.ministral-3-14b-instruct") -> str:
+    
+    # Initialize the Bedrock Runtime client
+    client = boto3.client("bedrock-runtime", region_name='us-east-1')
+    
+    with Image(filename=image_path) as img:
+        if img.height > 1600 or img.width > 1600:
+            print("Resizing", image_path)
+            resize_image(image_path, img)
+    
+    # Read image
+    image_bytes, image_format = get_image_bytes_and_format(image_path)
+    
+
+    # Structure payload using Amazon Bedrock Converse API format
+    messages = [
+        {
+            "role": "user",
+            "content": [
+                {
+                    "image": {
+                        "format": image_format,
+                        "source": {
+                            "bytes": image_bytes
+                        }
+                    }
+                },
+                {
+                    "text": PRINTOUT_SYSTEM_PROMPT
+                }
+            ]
+        }
+    ]
+
+    
+    try:
+        response = client.converse(
+            modelId=model_id,
+            messages=messages,
+            inferenceConfig={
+                "temperature": 0.0,
+                "maxTokens": 4096
+            }
+        )
+
+        # Extract output text content
+        output_text = response["output"]["message"]["content"][0]["text"].strip()
+        
+        # Clean up any potential markdown code blocks if present
+        if output_text.startswith("```json"):
+            output_text = output_text[7:]
+        if output_text.startswith("```"):
+            output_text = output_text[3:]
+        if output_text.endswith("```"):
+            output_text = output_text[:-3]
+            
+        try:
+            return json.loads(output_text)
+        except json.JSONDecodeError as exc:
+            sys.exit(
+                "Could not parse response as JSON.\n"
+                f"Error: {exc}\n\n--- Raw response ---\n{output_text}"
+            )
+
+    except Exception as e:
+        print(f"Error invoking Amazon Bedrock: {e}", file=sys.stderr)
+        sys.exit(1)
+        
+#--------------------
+# WRITING JSON TO MARC
+#--------------------
 def normalize_leader(leader_str: str) -> str:
     leader_str = (leader_str or "").rstrip("\n")
     if len(leader_str) < 24:
