@@ -14,7 +14,7 @@ def main():
         reader = csv.DictReader(file)
         for row in reader:
             pdf = "FullTextPdfs/" + row["PUB NUMBER"] + ".pdf"
-            print("Setting tags for", pdf)    
+            print(f"{count}: Setting tags for {pdf}")    
             
             #remove line breaks and limit abstract to 1999 characters, as per PDF limitation
             abstract = row["ABSTRACT"].replace("\n", " ")[:1999]
@@ -33,6 +33,7 @@ def main():
                 
             
             #replace OCR with all ETDs published before 2000    
+            """
             if int(row["YEAR"]) < 2000:
                 print("Replacing OCR")
                 
@@ -52,8 +53,9 @@ def main():
                 #print(command)
                 
                 os.system(command)
-                
-                count = count + 1
+                """
+            count = count + 1
+            
 
 if __name__ == "__main__":
     main()
