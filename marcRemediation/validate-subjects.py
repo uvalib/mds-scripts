@@ -11,8 +11,6 @@ from rdflib.namespace import RDF, XSD, SKOS, RDFS
 
 MADS = Namespace('http://www.loc.gov/mads/rdf/v1#')
 
-subjects = {}
-
 def query_lc_name(term, subfield):
     #attempt to fix UTF-8 encoding issues
     term = fix(term)
@@ -27,7 +25,7 @@ def query_lc_name(term, subfield):
         h = response.headers
         
         uri = h["x-uri"]
-        prefLabel = h["x-prefLabel"]
+        prefLabel = fix(h["x-prefLabel"])
         
         if prefLabel != term:
             print(f"Using {prefLabel} instead of {term}")
@@ -186,43 +184,75 @@ def fix(s):
     return unicodedata.normalize("NFC", s)
 
 def main():
+    output = []
+    subjects = {}
     count = 0
     
     with open('all unauthorized 651.csv', newline='', encoding="utf-8") as csvfile:
         reader = csv.DictReader(csvfile)
+        id = ""
         for row in reader:
-            if count <= 1000:
-                value = row["Tag value"].replace("|?UNAUTHORIZED", "")
+            value = row["Tag value"].replace("|?UNAUTHORIZED", "")
+            
+            #strip trailing period, if applicable
+            if value[-1] == ".":
+                value = value[0:-1]                    
+            
+            topics = value.split("|")
+            
+            #either resert or insert missing ckey from previous row
+            if len(row["Catalog Id / Virgo link"]) > 0:
+                id = row["Catalog Id / Virgo link"]
+            else:
+                row["Catalog Id / Virgo link"] = id
+            
+            position = 0
+            for term in topics:
+                #extract the subfield code, which informs the LC API lookup
+                if position == 0:
+                    subfield = "a"
+                else:
+                    subfield = term[0]
+                    term = term[1:]                   
                 
-                #strip trailing period, if applicable
-                if value[-1] == ".":
-                    value = value[0:-1]
+                #perform lookup for the term
+                if term not in subjects:
+                    concept = query_lc_name(term, subfield)
                     
+                    subjects[term] = concept
+                    row[f"{subfield}_label"] = concept["prefLabel"] if len(concept["prefLabel"]) > 0 else term
+                    row[f"{subfield}_uri"] = concept["uri"]
+                    
+                    if subfield == "a":
+                        row["geo"] = concept["geo"]
+                    #create a space between HTTP requests    
+                    time.sleep(1)
+                else:
+                    #fetch term's prefLabel and uri from subjects dict
+                    row[f"{subfield}_label"] = subjects[term]["prefLabel"] if len(subjects[term]["prefLabel"]) > 0 else term
+                    row[f"{subfield}_uri"] = subjects[term]["uri"]
+                    
+                    if subfield == "a":
+                        row["geo"] = subjects[term]["geo"]
                 
-                topics = value.split("|")
-                
-                position = 0
-                for term in topics:
-                    #extract the subfield code, which informs the LC API lookup
-                    if position == 0:
-                        subfield = "a"
-                    else:
-                        subfield = term[0]
-                        term = term[1:]                   
+                position += 1
+             
+            #end for loop; append row into output list        
+            output.append(row)
+            #increase row count    
+            count += 1
                     
-                    if term not in subjects:
-                        concept = query_lc_name(term, subfield)
-                        
-                        subjects[term] = concept
-                        #create a space between HTTP requests    
-                        time.sleep(1)
-                    
-                    position += 1
-                
-                #increase row count    
-                count += 1
-                    
-    print(subjects)
+    
+    
+    
+    with open('new.csv', 'w', newline='') as csvfile:
+        fieldnames = ["Catalog Id / Virgo link", "Title Control No.", "Tag Number", "Ind1", "Ind2", "Tag value", "geo", "a_label", "a_uri", "b_label", "b_uri", "e_label", "e_uri", "g_label", "g_uri", "v_label", "v_uri", "x_label", "x_uri", "y_label", "y_uri", "z_label", "z_uri"]
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        writer.writeheader()
+        for row in output:
+            writer.writerow(row)
+            
+    
 
 if __name__=="__main__":
     main()
