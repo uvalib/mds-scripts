@@ -17,9 +17,9 @@ def main():
         for row in reader:
             if len(row["Catalog Id / Virgo link"] > 0):
                 ckey = "u" + row["Catalog Id / Virgo link"]
-                if ckey not in ckeys:
+                if ckey not in ckeys:  
+                    #ensure the API request is only made once per ckey                    
                     ckeys.append(ckey)
-                    
         
 
 def load_marc(ckey):
