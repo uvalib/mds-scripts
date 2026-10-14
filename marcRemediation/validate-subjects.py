@@ -189,9 +189,13 @@ def main():
     count = 0
     
     with open('all unauthorized 651.csv', newline='', encoding="utf-8") as csvfile:
-        reader = csv.DictReader(csvfile)
+        reader = list(csv.DictReader(csvfile))
         id = ""
+        
+        total = len(reader)
+        
         for row in reader:
+            print(f"{count + 1} of {total}")
             value = row["Tag value"].replace("|?UNAUTHORIZED", "")
             
             #strip trailing period, if applicable
@@ -206,6 +210,7 @@ def main():
             else:
                 row["Catalog Id / Virgo link"] = id
             
+            #evaluate the position of the subject term within the string
             position = 0
             for term in topics:
                 #extract the subfield code, which informs the LC API lookup
