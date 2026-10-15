@@ -6,6 +6,7 @@ Function: Iterate through ckeys in spreadsheet to download MARC file from getMar
 
 import csv, re, os, requests, math
 from pymarc import MARCReader, MARCWriter
+from pymarc import Record, Field, Subfield, Indicators
 
 ROWS = 100
 
@@ -14,7 +15,7 @@ def main():
     ckeys = []
     marc = ""
    
-    csv_data = list(csv.DictReader(open('all unauthorized 651.csv', newline='', encoding="utf-8")))
+    csv_data = list(csv.DictReader(open('new.csv', newline='', encoding="utf-8")))
     
      #read unique Sirsi ckeys    
     for row in csv_data:
@@ -44,10 +45,43 @@ def main():
                     
             
             for f in record.get_fields('651'):
-                print(f)
+                field = dict(f)
                 
-                #ask: does the trailing period need to be inserted back in?
-        
+                #create a string that matches the structure of the tag in the CSV file
+                string_match = ""
+                for k, v in field.items():
+                    if v[-1] == ".":
+                        v = v[0:-1]               
+                    if k != "a":
+                        string_match += f"|{k}"
+                    string_match += v
+                
+                string_match += ".|?UNAUTHORIZED"
+                
+                #iterate through CSV rows associated with ckey to look to see if it matches an invalid subject
+                for row in rows:
+                    if row["Tag value"] == string_match:
+                        #if geo is false, then this field needs to be moved to a 650
+                        if row["geo"] == "false":
+                            subfields = []
+                            
+                            #look for labels: extract the subfield code and verify it is authorized by determining if the URI exists
+                            
+                            for k, v in row.items():
+                                if "label" in k:
+                                    code = k[0]
+                                    if len(row[f"{code}_uri"]) > 0:
+                                        subfields.append(Subfield(code=code, value=v))                            
+                            record.add_field(
+                                Field(
+                                    tag = '650',
+                                    indicators = Indicators('','1'),
+                                    subfields = subfields                                    
+                                    ))
+                            
+                            record.remove_field(f)
+                        
+            print(record)
 
 def download_marc(ckeys):
     print("Downloading MARC")
@@ -55,7 +89,7 @@ def download_marc(ckeys):
     marc = ""
     total = len(ckeys)
     page = 0 #start page at 0 for the beginning
-    while (page * ROWS) < 300:
+    while (page * ROWS) < total:
         start = page * ROWS
         end = (page + 1) * ROWS
         

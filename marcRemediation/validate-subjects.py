@@ -194,7 +194,8 @@ def main():
         
         total = len(reader)
         
-        for row in reader:
+        while count <= 100:
+            row = reader[count]
             print(f"{count + 1} of {total}")
             value = row["Tag value"].replace("|?UNAUTHORIZED", "")
             
