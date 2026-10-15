@@ -9,6 +9,8 @@ from pymarc import MARCReader, MARCWriter
 from pymarc import Record, Field, Subfield, Indicators
 
 ROWS = 100
+INFILE = "marc/subjects.marc"
+OUTFILE = "marc/subjects-updated.marc"
 
 def main():
     count = 0
@@ -26,13 +28,17 @@ def main():
                     
     
     #if the MARC data file doesn't exist, then fetch all related ckeys from getMarc API and combine into subjects.marc
-    if not os.path.exists("marc/subjects.marc"):
+    if not os.path.exists(INFILE):
         download_marc(ckeys)
     else:
         print("MARC already downloaded")
     
+    #delete updated marc file if it exists
+    if os.path.exists(OUTFILE):
+        os.remove(OUTFILE)
+    
     #open file for processing    
-    with open('marc/subjects.marc', 'rb') as file:
+    with open(INFILE, 'rb') as file:
         reader = MARCReader(file)
         for record in reader:
             id = record["001"].value().replace("u", "")
@@ -61,27 +67,37 @@ def main():
                 #iterate through CSV rows associated with ckey to look to see if it matches an invalid subject
                 for row in rows:
                     if row["Tag value"] == string_match:
-                        #if geo is false, then this field needs to be moved to a 650
-                        if row["geo"] == "false":
+                        #only add validated fields
+                        if len(row["geo"]) > 0:
+                            #if geo is false, then this field needs to be moved to a 650
+                            if row["geo"] == "false":
+                                tag = "650"
+                            else:
+                                tag = "651"
+                            
+                            #compile the subfields
                             subfields = []
-                            
-                            #look for labels: extract the subfield code and verify it is authorized by determining if the URI exists
-                            
                             for k, v in row.items():
-                                if "label" in k:
-                                    code = k[0]
-                                    if len(row[f"{code}_uri"]) > 0:
-                                        subfields.append(Subfield(code=code, value=v))                            
+                                    if "label" in k:
+                                        code = k[0]
+                                        #look for labels: extract the subfield code and verify it is authorized by determining if the URI exists
+                                        if len(row[f"{code}_uri"]) > 0:
+                                            subfields.append(Subfield(code=code, value=v))
+                            
+                            #add the replacement field                        
                             record.add_field(
                                 Field(
-                                    tag = '650',
+                                    tag = tag,
                                     indicators = Indicators('','1'),
                                     subfields = subfields                                    
                                     ))
-                            
+                                    
+                            #remove the old field
                             record.remove_field(f)
                         
-            print(record)
+            #print(record)
+            with open(OUTFILE, 'ab') as out:
+                out.write(record.as_marc())
 
 def download_marc(ckeys):
     print("Downloading MARC")
@@ -105,6 +121,9 @@ def download_marc(ckeys):
         page = page + 1
     
     #write aggregated MARC file
+    if not os.path.exists("marc"):
+        os.makedirs("marc")
+    
     with open("marc/subjects.marc", 'w', encoding="utf-8") as file:
         file.write(marc)
     

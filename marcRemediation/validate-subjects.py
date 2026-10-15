@@ -10,6 +10,7 @@ from rdflib import Graph, URIRef, Literal, Namespace, BNode
 from rdflib.namespace import RDF, XSD, SKOS, RDFS
 
 MADS = Namespace('http://www.loc.gov/mads/rdf/v1#')
+namespaces = {'atom': 'http://www.w3.org/2005/Atom'}
 
 def query_lc_name(term, subfield):
     #attempt to fix UTF-8 encoding issues
@@ -80,21 +81,21 @@ def search_lc (term, subfield, scheme, rdftype, subdivision):
     headers = {"User-Agent": "EntityNormalization/UVALibrary"}
     
     response = requests.get(url, headers=headers)
-    root = ET.fromstring(response.content)
     
-    namespaces = {'atom': 'http://www.w3.org/2005/Atom'}
-    
-    #skip string matching on relators due to abbreviations
-    entry = root.find('.//atom:entry', namespaces)
-    if entry is not None:    
-        prefLabel = entry.find('atom:title', namespaces).text
-        uri = entry.find('atom:link', namespaces).get('href')
-        concept = get_rdf(term, uri, prefLabel, subfield)
-        return concept
-    else:
-        print(f"No search result for {term}")
-        #tuple = (term, title, link)                      
-        #return tuple   
+    if response.status_code == 200:
+        root = ET.fromstring(response.content)
+        
+        #skip string matching on relators due to abbreviations
+        entry = root.find('.//atom:entry', namespaces)
+        if entry is not None:    
+            prefLabel = entry.find('atom:title', namespaces).text
+            uri = entry.find('atom:link', namespaces).get('href')
+            concept = get_rdf(term, uri, prefLabel, subfield)
+            return concept
+        else:
+            print(f"No search result for {term}")
+            #tuple = (term, title, link)                      
+            #return tuple   
     
 
 def get_rdf(term, uri, prefLabel, subfield):
@@ -194,7 +195,7 @@ def main():
         
         total = len(reader)
         
-        while count <= 100:
+        while count <= 1000:
             row = reader[count]
             print(f"{count + 1} of {total}")
             value = row["Tag value"].replace("|?UNAUTHORIZED", "")
