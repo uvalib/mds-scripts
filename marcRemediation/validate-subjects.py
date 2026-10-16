@@ -4,7 +4,7 @@ Date: October 2026
 Function: Analyze MARC Geographic subject fields (651) in Sirsi to distinguish which should be moved to 650, and which geographic terms are missing, wrong, or deprecated
 """
 
-import csv, re, os, requests, urllib, time, unicodedata
+import csv, re, os, requests, urllib, time, unicodedata, argparse
 from xml.etree import ElementTree as ET
 from rdflib import Graph, URIRef, Literal, Namespace, BNode
 from rdflib.namespace import RDF, XSD, SKOS, RDFS
@@ -184,70 +184,82 @@ def fix(s):
     s = s.replace('\u00cc\u00a7', '\u0327')                                # combining cedilla
     return unicodedata.normalize("NFC", s)
 
+def parse_tag(row):
+    print("Testing", row["Catalog Id / Virgo link"])
+
 def main():
     output = []
     subjects = {}
     count = 0
     
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-c", "--ckey", help="Integer ckey")
+    args = parser.parse_args()
+    
     with open('all unauthorized 651.csv', newline='', encoding="utf-8") as csvfile:
         reader = list(csv.DictReader(csvfile))
         id = ""
         
-        total = len(reader)
-        
-        while count < total:
-            row = reader[count]
-            print(f"{count + 1} of {total}")
-            value = row["Tag value"].replace("|?UNAUTHORIZED", "")
+        if args.ckey:
+            for row in reader:
+                if row["Catalog Id / Virgo link"] == args.ckey:
+                    return parse_tag(row)
+        else:
+            total = len(reader)
             
-            #strip trailing period, if applicable
-            if value[-1] == ".":
-                value = value[0:-1]                    
-            
-            topics = value.split("|")
-            
-            #either resert or insert missing ckey from previous row
-            if len(row["Catalog Id / Virgo link"]) > 0:
-                id = row["Catalog Id / Virgo link"]
-            else:
-                row["Catalog Id / Virgo link"] = id
-            
-            #evaluate the position of the subject term within the string
-            position = 0
-            for term in topics:
-                #extract the subfield code, which informs the LC API lookup
-                if position == 0:
-                    subfield = "a"
-                else:
-                    subfield = term[0]
-                    term = term[1:]                   
+            while count < total:
+                row = reader[count]
+                print(f"{count + 1} of {total}")
+                value = row["Tag value"].replace("|?UNAUTHORIZED", "")
                 
-                #perform lookup for the term
-                if term not in subjects:
-                    concept = query_lc_name(term, subfield)
-                    
-                    subjects[term] = concept
-                    row[f"{subfield}_label"] = concept["prefLabel"] if len(concept["prefLabel"]) > 0 else term
-                    row[f"{subfield}_uri"] = concept["uri"]
-                    
-                    if subfield == "a":
-                        row["geo"] = concept["geo"]
-                    #create a space between HTTP requests    
-                    time.sleep(1)
-                else:
-                    #fetch term's prefLabel and uri from subjects dict
-                    row[f"{subfield}_label"] = subjects[term]["prefLabel"] if len(subjects[term]["prefLabel"]) > 0 else term
-                    row[f"{subfield}_uri"] = subjects[term]["uri"]
-                    
-                    if subfield == "a":
-                        row["geo"] = subjects[term]["geo"]
+                #strip trailing period, if applicable
+                if value[-1] == ".":
+                    value = value[0:-1]                    
                 
-                position += 1
-             
-            #end for loop; append row into output list        
-            output.append(row)
-            #increase row count    
-            count += 1
+                topics = value.split("|")
+                
+                #either resert or insert missing ckey from previous row
+                if len(row["Catalog Id / Virgo link"]) > 0:
+                    id = row["Catalog Id / Virgo link"]
+                else:
+                    row["Catalog Id / Virgo link"] = id
+                
+                #evaluate the position of the subject term within the string
+                position = 0
+                for term in topics:
+                    #extract the subfield code, which informs the LC API lookup
+                    if position == 0:
+                        subfield = "a"
+                    else:
+                        subfield = term[0]
+                        term = term[1:]                   
+                    
+                    #perform lookup for the term
+                    if term not in subjects:
+                        concept = query_lc_name(term, subfield)
+                        
+                        subjects[term] = concept
+                        row[f"{subfield}_label"] = concept["prefLabel"] if len(concept["prefLabel"]) > 0 else term
+                        row[f"{subfield}_uri"] = concept["uri"]
+                        
+                        if subfield == "a":
+                            row["geo"] = concept["geo"]
+                        #create a space between HTTP requests    
+                        time.sleep(1)
+                    else:
+                        #fetch term's prefLabel and uri from subjects dict
+                        row[f"{subfield}_label"] = subjects[term]["prefLabel"] if len(subjects[term]["prefLabel"]) > 0 else term
+                        row[f"{subfield}_uri"] = subjects[term]["uri"]
+                        
+                        if subfield == "a":
+                            row["geo"] = subjects[term]["geo"]
+                    
+                    position += 1
+                 
+                #end for loop; append row into output list        
+                output.append(row)
+                #increase row count    
+                count += 1
                     
     
     
