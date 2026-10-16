@@ -5,7 +5,7 @@ Function: Iterate through ckeys in spreadsheet to download MARC file from getMar
 """
 
 import csv, re, os, requests, math
-from pymarc import MARCReader, MARCWriter
+from pymarc import MARCReader, MARCWriter, XMLWriter
 from pymarc import Record, Field, Subfield, Indicators
 
 ROWS = 100
@@ -67,37 +67,49 @@ def main():
                 #iterate through CSV rows associated with ckey to look to see if it matches an invalid subject
                 for row in rows:
                     if row["Tag value"] == string_match:
+                        
                         #only add validated fields
                         if len(row["geo"]) > 0:
                             #if geo is false, then this field needs to be moved to a 650
-                            if row["geo"] == "false":
+                            if row["geo"] == "false":                                
                                 tag = "650"
-                            else:
+                            else:             
                                 tag = "651"
                             
                             #compile the subfields
-                            subfields = []
-                            for k, v in row.items():
-                                    if "label" in k:
-                                        code = k[0]
-                                        #look for labels: extract the subfield code and verify it is authorized by determining if the URI exists
-                                        if len(row[f"{code}_uri"]) > 0:
-                                            subfields.append(Subfield(code=code, value=v))
+                            subfield_values = []                            
                             
+                            #TODO! These must be reconstructed in the original order, not alpabetical by subfield code
+                            for k, v in row.items():
+                                if "label" in k:
+                                    code = k[0]
+                                    #look for labels: extract the subfield code and verify it is authorized by determining if the URI exists
+                                    if len(row[f"{code}_uri"]) > 0:
+                                        subfield_values.append({"code": code,
+                                                                "value": v})
+                            
+                            #append trailing period to final value
+                            subfield_values[-1]["value"] = subfield_values[-1]["value"] + "."
+                            
+                            #construct subfields object for Field
+                            subfields = []
+                            for subfield in subfield_values:
+                                subfields.append(Subfield(code=subfield["code"], value=subfield["value"]))
+                                        
                             #add the replacement field                        
-                            record.add_field(
+                            record.add_ordered_field(
                                 Field(
                                     tag = tag,
-                                    indicators = Indicators('','1'),
-                                    subfields = subfields                                    
+                                    indicators = Indicators(' ','0'),
+                                    subfields = subfields                                   
                                     ))
                                     
                             #remove the old field
                             record.remove_field(f)
-                        
-            #print(record)
-            with open(OUTFILE, 'ab') as out:
-                out.write(record.as_marc())
+            if id == "3762509":            
+                print(record)
+            #with open(OUTFILE, 'ab') as out:
+            #    out.write(record.as_marc())
 
 def download_marc(ckeys):
     print("Downloading MARC")
@@ -130,3 +142,4 @@ def download_marc(ckeys):
 
 if __name__=="__main__":
     main()
+    
